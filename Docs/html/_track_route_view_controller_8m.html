@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: Classes/TrackRouteViewController.m-Dateireferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Classes/TrackRouteViewController.m-Dateireferenz</h1><code>#import &quot;<a class="el" href="_app_settings_8h_source.html">AppSettings.h</a>&quot;</code><br/>
+<code>#import &quot;<a class="el" href="_track_route_view_controller_8h_source.html">TrackRouteViewController.h</a>&quot;</code><br/>
+<code>#import &lt;MapKit/MapKit.h&gt;</code><br/>
+<code>#import &quot;<a class="el" href="_c_s_route_annotation_8h_source.html">CSRouteAnnotation.h</a>&quot;</code><br/>
+<code>#import &quot;<a class="el" href="_c_s_route_view_8h_source.html">CSRouteView.h</a>&quot;</code><br/>
+<code>#import &quot;<a class="el" href="_c_s_image_annotation_view_8h_source.html">CSImageAnnotationView.h</a>&quot;</code><br/>
+<code>#import &quot;<a class="el" href="_c_s_map_annotation_8h_source.html">CSMapAnnotation.h</a>&quot;</code><br/>
+<code>#import &quot;<a class="el" href="_m_log_8h_source.html">MLog.h</a>&quot;</code><br/>
+<code>#import &quot;<a class="el" href="_route_point_8h_source.html">RoutePoint.h</a>&quot;</code><br/>
+
+<p><a href="_track_route_view_controller_8m_source.html">gehe zum Quellcode dieser Datei</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Makrodefinitionen</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_track_route_view_controller_8m.html#a0d51da6bcac35dfe8a548f6600e4cc68">MLogString</a>(s,...)</td></tr>
+<tr><td colspan="2"><h2>Variablen</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_track_route_view_controller_8m.html#a9a943d5972310cf2e524cf997043ab18">TRACKING</a> = @&quot;Currently Tracking&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_track_route_view_controller_8m.html#a3e41c415cc15340d7a053e53cfd9e471">NOT_TRACKING</a> = @&quot;Tracking not started yet&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_track_route_view_controller_8m.html#a991ed006484c6b6d4f4666cca41f98cf">ROUTE_TRACKED</a> = @&quot;A route was tracked and is ready for saving&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_track_route_view_controller_8m.html#abc46dd103895b916af43118c7f9acaeb">BUTTON_LABEL_START_TRACKING</a> = @&quot;Route tracken&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_track_route_view_controller_8m.html#a53fab82fc9fb1548571cf861bc30c2b4">BUTTON_LABEL_STOP_TRACKING</a> = @&quot;Tracking stoppen&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *const&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_track_route_view_controller_8m.html#a1513f207aaab0b50c78f2f6da30e765c">BUTTON_LABEL_WAITING_FOR_USER</a> = @&quot;Warte auf Bearbeitung...&quot;</td></tr>
+</table>
+<hr/><h2>Makro-Dokumentation</h2>
+<a class="anchor" id="a0d51da6bcac35dfe8a548f6600e4cc68"></a><!-- doxytag: member="TrackRouteViewController.m::MLogString" ref="a0d51da6bcac35dfe8a548f6600e4cc68" args="(s,...)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MLogString</td>
+          <td>(</td>
+          <td class="paramtype">s, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"> <em>...</em>&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Wert:</b><div class="fragment"><pre class="fragment">[<a class="code" href="interface_m_log.html">MLog</a> <a class="code" href="interface_m_log.html#a71bacb57900885f71ff36f77fd845342">logFile</a>:(char *)__FUNCTION__ <a class="code" href="interface_m_log.html#a71bacb57900885f71ff36f77fd845342">lineNumber</a>:__LINE__ \
+<a class="code" href="interface_m_log.html#a71bacb57900885f71ff36f77fd845342">format</a>:(s),##__VA_ARGS__]
+</pre></div>
+<p>Definiert in Zeile <a class="el" href="_track_route_view_controller_8m_source.html#l00031">31</a> der Datei <a class="el" href="_track_route_view_controller_8m_source.html">TrackRouteViewController.m</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Variablen-Dokumentation</h2>
+<a class="anchor" id="abc46dd103895b916af43118c7f9acaeb"></a><!-- doxytag: member="TrackRouteViewController.m::BUTTON_LABEL_START_TRACKING" ref="abc46dd103895b916af43118c7f9acaeb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NSString* const <a class="el" href="_track_route_view_controller_8m.html#abc46dd103895b916af43118c7f9acaeb">BUTTON_LABEL_START_TRACKING</a> = @&quot;Route tracken&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_track_route_view_controller_8m_source.html#l00023">23</a> der Datei <a class="el" href="_track_route_view_controller_8m_source.html">TrackRouteViewController.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a53fab82fc9fb1548571cf861bc30c2b4"></a><!-- doxytag: member="TrackRouteViewController.m::BUTTON_LABEL_STOP_TRACKING" ref="a53fab82fc9fb1548571cf861bc30c2b4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NSString* const <a class="el" href="_track_route_view_controller_8m.html#a53fab82fc9fb1548571cf861bc30c2b4">BUTTON_LABEL_STOP_TRACKING</a> = @&quot;Tracking stoppen&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_track_route_view_controller_8m_source.html#l00024">24</a> der Datei <a class="el" href="_track_route_view_controller_8m_source.html">TrackRouteViewController.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1513f207aaab0b50c78f2f6da30e765c"></a><!-- doxytag: member="TrackRouteViewController.m::BUTTON_LABEL_WAITING_FOR_USER" ref="a1513f207aaab0b50c78f2f6da30e765c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NSString* const <a class="el" href="_track_route_view_controller_8m.html#a1513f207aaab0b50c78f2f6da30e765c">BUTTON_LABEL_WAITING_FOR_USER</a> = @&quot;Warte auf Bearbeitung...&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_track_route_view_controller_8m_source.html#l00025">25</a> der Datei <a class="el" href="_track_route_view_controller_8m_source.html">TrackRouteViewController.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e41c415cc15340d7a053e53cfd9e471"></a><!-- doxytag: member="TrackRouteViewController.m::NOT_TRACKING" ref="a3e41c415cc15340d7a053e53cfd9e471" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NSString* const <a class="el" href="_track_route_view_controller_8m.html#a3e41c415cc15340d7a053e53cfd9e471">NOT_TRACKING</a> = @&quot;Tracking not started yet&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_track_route_view_controller_8m_source.html#l00020">20</a> der Datei <a class="el" href="_track_route_view_controller_8m_source.html">TrackRouteViewController.m</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_track_route_view_controller_8m_source.html#l00037">TrackRouteViewController::handleTrackingButton:</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a991ed006484c6b6d4f4666cca41f98cf"></a><!-- doxytag: member="TrackRouteViewController.m::ROUTE_TRACKED" ref="a991ed006484c6b6d4f4666cca41f98cf" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NSString* const <a class="el" href="_track_route_view_controller_8m.html#a991ed006484c6b6d4f4666cca41f98cf">ROUTE_TRACKED</a> = @&quot;A route was tracked and is ready for saving&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_track_route_view_controller_8m_source.html#l00021">21</a> der Datei <a class="el" href="_track_route_view_controller_8m_source.html">TrackRouteViewController.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a943d5972310cf2e524cf997043ab18"></a><!-- doxytag: member="TrackRouteViewController.m::TRACKING" ref="a9a943d5972310cf2e524cf997043ab18" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NSString* const <a class="el" href="_track_route_view_controller_8m.html#a9a943d5972310cf2e524cf997043ab18">TRACKING</a> = @&quot;Currently Tracking&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_track_route_view_controller_8m_source.html#l00019">19</a> der Datei <a class="el" href="_track_route_view_controller_8m_source.html">TrackRouteViewController.m</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_track_route_view_controller_8m_source.html#l00037">TrackRouteViewController::handleTrackingButton:</a>.</p>
+
+</div>
+</div>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:33 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

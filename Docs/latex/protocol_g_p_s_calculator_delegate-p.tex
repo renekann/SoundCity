@@ -1,0 +1,42 @@
+\hypertarget{protocol_g_p_s_calculator_delegate-p}{
+\subsection{$<$GPSCalculatorDelegate$>$ Protokollreferenz}
+\label{protocol_g_p_s_calculator_delegate-p}\index{GPSCalculatorDelegate-\/p@{GPSCalculatorDelegate-\/p}}
+}
+
+
+{\ttfamily \#import $<$GPSCalculator.h$>$}
+
+Basisklasse für \hyperlink{interface_map_view_controller}{MapViewController}, \hyperlink{interface_settings_g_p_s_status_details_view_controller}{SettingsGPSStatusDetailsViewController}, \hyperlink{interface_settings_view_controller}{SettingsViewController} und \hyperlink{interface_track_route_view_controller}{TrackRouteViewController}.\subsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_g_p_s_calculator_delegate-p_a0adb149b836a8e03a11ea255a5f01a31}{locationUpdate:}
+\item 
+(void) -\/ \hyperlink{protocol_g_p_s_calculator_delegate-p_a890f58f3468025f475f8bb7d9aa33332}{locationError:}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Ausführliche Beschreibung}
+
+
+Definiert in Zeile 12 der Datei GPSCalculator.h.
+
+\subsubsection{Dokumentation der Elementfunktionen}
+\hypertarget{protocol_g_p_s_calculator_delegate-p_a890f58f3468025f475f8bb7d9aa33332}{
+\index{GPSCalculatorDelegate-\/p@{GPSCalculatorDelegate-\/p}!locationError:@{locationError:}}
+\index{locationError:@{locationError:}!GPSCalculatorDelegate-p@{GPSCalculatorDelegate-\/p}}
+\paragraph[{locationError:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) locationError: (NSError $\ast$) {\em error}\hspace{0.3cm}{\ttfamily  \mbox{[}required\mbox{]}}}\hfill}
+\label{protocol_g_p_s_calculator_delegate-p_a890f58f3468025f475f8bb7d9aa33332}
+
+
+Erneute Implementation in \hyperlink{interface_map_view_controller_a76ee053461c5c2b8e7f1eb1a28e8d65b}{MapViewController} und \hyperlink{interface_track_route_view_controller_a451898caf9041899f09f3c7afa57dc8b}{TrackRouteViewController}.\hypertarget{protocol_g_p_s_calculator_delegate-p_a0adb149b836a8e03a11ea255a5f01a31}{
+\index{GPSCalculatorDelegate-\/p@{GPSCalculatorDelegate-\/p}!locationUpdate:@{locationUpdate:}}
+\index{locationUpdate:@{locationUpdate:}!GPSCalculatorDelegate-p@{GPSCalculatorDelegate-\/p}}
+\paragraph[{locationUpdate:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) locationUpdate: (CLLocation $\ast$) {\em location}\hspace{0.3cm}{\ttfamily  \mbox{[}required\mbox{]}}}\hfill}
+\label{protocol_g_p_s_calculator_delegate-p_a0adb149b836a8e03a11ea255a5f01a31}
+
+
+Erneute Implementation in \hyperlink{interface_map_view_controller_ad3cf36d9e97a1a448f3cedb9a6d74d52}{MapViewController} und \hyperlink{interface_track_route_view_controller_a5e00299e28aae82b6687fc1321ed1873}{TrackRouteViewController}.
+
+Die Dokumentation für dieses Protokoll wurde erzeugt aufgrund der Datei:\begin{DoxyCompactItemize}
+\item 
+Classes/\hyperlink{_g_p_s_calculator_8h}{GPSCalculator.h}\end{DoxyCompactItemize}

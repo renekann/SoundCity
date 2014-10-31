@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: Classes/TrackRouteViewController.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<h1>Classes/TrackRouteViewController.h</h1><a href="_track_route_view_controller_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">//  TrackRouteViewController.h</span>
+<a name="l00003"></a>00003 <span class="comment">//  SoundCity</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//  Created by administrator on 29.10.09.</span>
+<a name="l00006"></a>00006 <span class="comment">//  Copyright 2009 init ag. All rights reserved.</span>
+<a name="l00007"></a>00007 <span class="comment">//</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#import &lt;MapKit/MapKit.h&gt;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#import &lt;CoreLocation/CoreLocation.h&gt;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#import &quot;<a class="code" href="_g_p_s_calculator_8h.html">GPSCalculator.h</a>&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#import &quot;<a class="code" href="_g_p_s_point_8h.html">GPSPoint.h</a>&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#import &quot;<a class="code" href="_route_8h.html">Route.h</a>&quot;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#import &quot;<a class="code" href="_track_route_save_view_controller_8h.html">TrackRouteSaveViewController.h</a>&quot;</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a><a class="code" href="interface_track_route_view_controller.html">00017</a> <span class="keyword">@interface </span><a class="code" href="interface_track_route_view_controller.html">TrackRouteViewController</a> : UIViewController &lt;<a class="code" href="protocol_g_p_s_calculator_delegate-p.html">GPSCalculatorDelegate</a>, MKMapViewDelegate&gt; {
+<a name="l00018"></a>00018         
+<a name="l00019"></a>00019         <span class="comment">// Klasse zur Berechnung des Abstandes zwischen GPS Pos. und POI</span>
+<a name="l00020"></a><a class="code" href="interface_track_route_view_controller.html#a6283bcb2582d7b30fb3a14b85b8e0f3a">00020</a>         <a class="code" href="interface_g_p_s_calculator.html">GPSCalculator</a> *<a class="code" href="interface_track_route_view_controller.html#a6283bcb2582d7b30fb3a14b85b8e0f3a">gpsCalc</a>;
+<a name="l00021"></a><a class="code" href="interface_track_route_view_controller.html#a8ce8f0629bb7838572fa5ab4cb1015f6">00021</a>         <a class="code" href="interface_g_p_s_point.html">GPSPoint</a> *<a class="code" href="interface_track_route_view_controller.html#a8ce8f0629bb7838572fa5ab4cb1015f6">currentGPSPoint</a>;
+<a name="l00022"></a><a class="code" href="interface_track_route_view_controller.html#a9fd48f64851735328ea161516096137f">00022</a>         <a class="code" href="interface_route.html">Route</a> *<a class="code" href="interface_track_route_view_controller.html#a9fd48f64851735328ea161516096137f">route</a>;
+<a name="l00023"></a><a class="code" href="interface_track_route_view_controller.html#ae1dba17062d54b302adb5926250a3823">00023</a>         NSString *<a class="code" href="interface_track_route_view_controller.html#ae1dba17062d54b302adb5926250a3823">state</a>;
+<a name="l00024"></a>00024         
+<a name="l00025"></a>00025         <span class="comment">// dictionary of route views indexed by annotation</span>
+<a name="l00026"></a><a class="code" href="interface_track_route_view_controller.html#a0048826a66f9f97e05c950c9cdb8efe9">00026</a>         NSMutableDictionary *<a class="code" href="interface_track_route_view_controller.html#a0048826a66f9f97e05c950c9cdb8efe9">_routeViews</a>;
+<a name="l00027"></a>00027         
+<a name="l00028"></a>00028         <span class="comment">// VIEWS</span>
+<a name="l00029"></a>00029         
+<a name="l00030"></a>00030         <span class="comment">// Ansicht, um Trackingdaten zu speichern</span>
+<a name="l00031"></a><a class="code" href="interface_track_route_view_controller.html#a155bf96abb68b5883fdca56f840fc6fa">00031</a>         <a class="code" href="interface_track_route_save_view_controller.html">TrackRouteSaveViewController</a> *<a class="code" href="interface_track_route_view_controller.html#a155bf96abb68b5883fdca56f840fc6fa">saveTrackView</a>;
+<a name="l00032"></a>00032         
+<a name="l00033"></a>00033         <span class="comment">// IBOutlets</span>
+<a name="l00034"></a><a class="code" href="interface_track_route_view_controller.html#a91899ed881e6b01cd319463c0d03b504">00034</a>         IBOutlet UILabel *<a class="code" href="interface_track_route_view_controller.html#a91899ed881e6b01cd319463c0d03b504">trackingStatusLabel</a>;
+<a name="l00035"></a><a class="code" href="interface_track_route_view_controller.html#acfdb8629be1a1a142886ecdedbffd9a9">00035</a>         IBOutlet MKMapView *<a class="code" href="interface_track_route_view_controller.html#acfdb8629be1a1a142886ecdedbffd9a9">mapView</a>;
+<a name="l00036"></a><a class="code" href="interface_track_route_view_controller.html#ad5dac71250de25316647ab4f8b3d5ade">00036</a>         IBOutlet UIButton *<a class="code" href="interface_track_route_view_controller.html#ad5dac71250de25316647ab4f8b3d5ade">btnTrackingHandling</a>;
+<a name="l00037"></a><a class="code" href="interface_track_route_view_controller.html#ab96d243d196054d287fc27b9e4f21c11">00037</a>         IBOutlet UIButton *<a class="code" href="interface_track_route_view_controller.html#ab96d243d196054d287fc27b9e4f21c11">btnDiscardTracking</a>;
+<a name="l00038"></a><a class="code" href="interface_track_route_view_controller.html#a746c3e70dcd66a9aebd7728c2446d5b6">00038</a>         IBOutlet UIButton *<a class="code" href="interface_track_route_view_controller.html#a746c3e70dcd66a9aebd7728c2446d5b6">btnSaveTrackingData</a>;
+<a name="l00039"></a>00039         
+<a name="l00040"></a>00040         <span class="comment">// Testing</span>
+<a name="l00041"></a><a class="code" href="interface_track_route_view_controller.html#ae26e0607317b6f8389a08dc7951e18cd">00041</a>         <span class="keywordtype">int</span> <a class="code" href="interface_track_route_view_controller.html#ae26e0607317b6f8389a08dc7951e18cd">dummyGPSPos</a>;
+<a name="l00042"></a>00042 }
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="comment">// Views</span>
+<a name="l00045"></a>00045 @property (nonatomic, retain) <a class="code" href="interface_track_route_save_view_controller.html">TrackRouteSaveViewController</a> *saveTrackView;
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <span class="comment">// Interne</span>
+<a name="l00048"></a>00048 @property (nonatomic, retain) <a class="code" href="interface_g_p_s_calculator.html">GPSCalculator</a> *gpsCalc;
+<a name="l00049"></a>00049 @property <a class="code" href="interface_g_p_s_point.html">GPSPoint</a> *currentGPSPoint;
+<a name="l00050"></a>00050 @property (nonatomic, retain) <a class="code" href="interface_route.html">Route</a> *route;
+<a name="l00051"></a>00051 @property (nonatomic, retain) NSString *state;
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="comment">// IBOutlets</span>
+<a name="l00054"></a><a class="code" href="interface_track_route_view_controller.html#a6b43bd4f8e42c4aa6cb090dc5ef14479">00054</a> @property (nonatomic, retain) UIButton *btnTrackingHandling;
+<a name="l00055"></a><a class="code" href="interface_track_route_view_controller.html#a2ea7a7f545535b9e94105d0706ce23b4">00055</a> @property (nonatomic, retain) UIButton *btnDiscardTracking;
+<a name="l00056"></a><a class="code" href="interface_track_route_view_controller.html#a54cf7a93068f9ae133a033aa8eb35449">00056</a> @property (nonatomic, retain) UIButton *btnSaveTrackingData;
+<a name="l00057"></a>00057 @property (nonatomic, retain) IBOutlet UILabel *trackingStatusLabel;
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 - (IBAction)handleTrackingButton:(<span class="keywordtype">id</span>)sender;
+<a name="l00060"></a>00060 - (IBAction)saveData:(<span class="keywordtype">id</span>)sender;
+<a name="l00061"></a>00061 - (IBAction)discardData:(<span class="keywordtype">id</span>)sender;
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 - (<span class="keywordtype">void</span>)locationUpdate:(CLLocation *)location;
+<a name="l00064"></a>00064 - (<span class="keywordtype">void</span>)locationError:(NSError *)error;
+<a name="l00065"></a>00065 - (<span class="keywordtype">void</span>)updatePositionOnMap;
+<a name="l00066"></a>00066 - (<span class="keywordtype">void</span>)drawRoute;
+<a name="l00067"></a>00067 - (<span class="keywordtype">void</span>)fitMapToRegion;
+<a name="l00068"></a>00068 - (IBAction)dummyUpdate:(<span class="keywordtype">id</span>)sender;
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070 @end
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:32 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

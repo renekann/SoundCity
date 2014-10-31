@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: POIDetailsViewController.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<h1>POIDetailsViewController.h</h1><a href="_p_o_i_details_view_controller_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">//  POIDetailsViewController.h</span>
+<a name="l00003"></a>00003 <span class="comment">//  SoundCity</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//  Created by administrator on 12.10.09.</span>
+<a name="l00006"></a>00006 <span class="comment">//  Copyright 2009 init ag. All rights reserved.</span>
+<a name="l00007"></a>00007 <span class="comment">//</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#import &quot;<a class="code" href="_sound_city_app_delegate_8h.html">SoundCityAppDelegate.h</a>&quot;</span>;
+<a name="l00011"></a>00011 <span class="preprocessor">#import &quot;<a class="code" href="_video_player_8h.html">VideoPlayer.h</a>&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">@class</span> <a class="code" href="interface_p_o_i.html">POI</a>;
+<a name="l00014"></a>00014 
+<a name="l00015"></a><a class="code" href="interface_p_o_i_details_view_controller.html">00015</a> <span class="keyword">@interface </span><a class="code" href="interface_p_o_i_details_view_controller.html">POIDetailsViewController</a>:UITableViewController {
+<a name="l00016"></a>00016         
+<a name="l00017"></a><a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">00017</a>         <a class="code" href="interface_p_o_i.html">POI</a> *<a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>;
+<a name="l00018"></a><a class="code" href="interface_p_o_i_details_view_controller.html#a399b6acaa417e7921abf51b70de6fd22">00018</a>         <a class="code" href="interface_sound_city_app_delegate.html">SoundCityAppDelegate</a> *<a class="code" href="interface_p_o_i_details_view_controller.html#a399b6acaa417e7921abf51b70de6fd22">appDelegate</a>;
+<a name="l00019"></a><a class="code" href="interface_p_o_i_details_view_controller.html#aa7b02f858154ff80725c355aad693658">00019</a>         <a class="code" href="interface_app_settings.html">AppSettings</a> *<a class="code" href="interface_p_o_i_details_view_controller.html#aa7b02f858154ff80725c355aad693658">settings</a>;
+<a name="l00020"></a><a class="code" href="interface_p_o_i_details_view_controller.html#a5b670e066edf54f1f94ff6c521aafad1">00020</a>         UIView *<a class="code" href="interface_p_o_i_details_view_controller.html#a5b670e066edf54f1f94ff6c521aafad1">footerView</a>;
+<a name="l00021"></a><a class="code" href="interface_p_o_i_details_view_controller.html#ac1d9379646041b896d3d66f4ccacdd16">00021</a>         <a class="code" href="interface_video_player.html">VideoPlayer</a> *<a class="code" href="interface_p_o_i_details_view_controller.html#ac1d9379646041b896d3d66f4ccacdd16">videoPlayer</a>;
+<a name="l00022"></a>00022         
+<a name="l00023"></a><a class="code" href="interface_p_o_i_details_view_controller.html#a7652ae673a08d785ae1699559b39344b">00023</a>         NSArray *<a class="code" href="interface_p_o_i_details_view_controller.html#a7652ae673a08d785ae1699559b39344b">contentArray</a>;
+<a name="l00024"></a><a class="code" href="interface_p_o_i_details_view_controller.html#ad31edb83a1fd1d6f6af800f293a25334">00024</a>         NSArray *<a class="code" href="interface_p_o_i_details_view_controller.html#ad31edb83a1fd1d6f6af800f293a25334">sectionArray</a>;
+<a name="l00025"></a>00025         
+<a name="l00026"></a><a class="code" href="interface_p_o_i_details_view_controller.html#a35c04f7920916d5236c5d076580600a8">00026</a>         UIButton *<a class="code" href="interface_p_o_i_details_view_controller.html#a35c04f7920916d5236c5d076580600a8">buttonSound</a>;
+<a name="l00027"></a>00027         
+<a name="l00028"></a>00028 }
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 @property (nonatomic, retain) <a class="code" href="interface_p_o_i.html">POI</a> *poi;
+<a name="l00031"></a>00031 @property (nonatomic, readonly) <a class="code" href="interface_app_settings.html">AppSettings</a> *settings;
+<a name="l00032"></a>00032 @property (nonatomic, retain) NSArray *contentArray;
+<a name="l00033"></a>00033 @property (nonatomic, retain) NSArray *sectionArray;
+<a name="l00034"></a>00034 @property (nonatomic, assign) UIView *footerView;
+<a name="l00035"></a>00035 @property (nonatomic, retain) <a class="code" href="interface_video_player.html">VideoPlayer</a> *videoPlayer;
+<a name="l00036"></a>00036 @property (nonatomic, retain) UIButton *buttonSound;
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 - (<span class="keywordtype">float</span>) calculateHeightOfTextFromWidth:(NSString*) text: (UIFont*)withFont: (<span class="keywordtype">float</span>)width :(UILineBreakMode)lineBreakMode;
+<a name="l00039"></a>00039 - (<span class="keywordtype">void</span>) reloadTable;
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 @end
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:32 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

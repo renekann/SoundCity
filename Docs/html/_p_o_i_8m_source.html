@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: Classes/POI.m Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<h1>Classes/POI.m</h1><a href="_p_o_i_8m.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">//  POI.m</span>
+<a name="l00003"></a>00003 <span class="comment">//  SoundCity</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//  Created by administrator on 12.10.09.</span>
+<a name="l00006"></a>00006 <span class="comment">//  Copyright 2009 init ag. All rights reserved.</span>
+<a name="l00007"></a>00007 <span class="comment">//</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#import &quot;<a class="code" href="_p_o_i_8h.html">POI.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#import &quot;<a class="code" href="_sound_controller_8h.html">SoundController.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#import &quot;<a class="code" href="_m_log_8h.html">MLog.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;math.h&gt;</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 <span class="keyword">@implementation </span><a class="code" href="interface_p_o_i.html">POI</a>
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="keyword">@synthesize</span> <a class="code" href="interface_p_o_i.html#a5bfdf0412280b12e34c4fb6e2e1a2db9">pid</a>, <a class="code" href="interface_p_o_i.html#ae9808e7121230ffff42a799a6dec00e8">title</a>, <a class="code" href="interface_p_o_i.html#aac5100d218d6107bdb9b0a355289c55c">soundURL</a>, <a class="code" href="interface_p_o_i.html#a63afb07b66c43a26aa58ab7759c4f473">coordinate</a>, <a class="code" href="interface_p_o_i.html#af441df0d8c3d29174ca644414856d497">latitude</a>, <a class="code" href="interface_p_o_i.html#a11947092f2cf76ac7b5ecd2678a376da">longitude</a>, <a class="code" href="interface_p_o_i.html#a9551f023faddf40afad4e8b9f5d87c77">appDelegate</a>, <a class="code" href="interface_p_o_i.html#a90eb704b40c5beca89e7461f3c9fd8ff">distance</a>, <a class="code" href="interface_p_o_i.html#adccc1e600d247ec2e4a8a5bb241ed719">userData</a>, <a class="code" href="interface_p_o_i.html#a0ee15b163f9aea00a479cfc65cc34091">videoURL</a>, <a class="code" href="interface_p_o_i.html#a0b6bb6f1128c8cf4af2edd5fd47940fe">details</a>, <a class="code" href="interface_p_o_i.html#af6c6d3845244e4d0608a3782be8dd077">imageURL</a>, <a class="code" href="interface_p_o_i.html#a22b3633a4bf768953ce7865cefa5430d">detailsTextLength</a>;
+<a name="l00017"></a>00017 
+<a name="l00018"></a><a class="code" href="_p_o_i_8m.html#a0d51da6bcac35dfe8a548f6600e4cc68">00018</a> <span class="preprocessor">#define MLogString(s,...) \</span>
+<a name="l00019"></a>00019 <span class="preprocessor">[MLog logFile:(char *)__FUNCTION__ lineNumber:__LINE__ \</span>
+<a name="l00020"></a>00020 <span class="preprocessor">format:(s),##__VA_ARGS__]</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span>
+<a name="l00022"></a><a class="code" href="interface_p_o_i.html#aee6d78e0d5b6e4b317658b60357d5c18">00022</a> - (id) initWithPrimaryKey:(NSInteger) pk {
+<a name="l00023"></a>00023         
+<a name="l00024"></a>00024         [<span class="keyword">super</span> init];
+<a name="l00025"></a>00025         <a class="code" href="interface_p_o_i.html#a5bfdf0412280b12e34c4fb6e2e1a2db9">pid</a> = pk;
+<a name="l00026"></a>00026         <a class="code" href="interface_p_o_i.html#adccc1e600d247ec2e4a8a5bb241ed719">userData</a> = nil;
+<a name="l00027"></a>00027         [<span class="keyword">self</span> setDistance:9999999];
+<a name="l00028"></a>00028         
+<a name="l00029"></a>00029         <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00030"></a>00030 }
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="interface_p_o_i.html#a73115928aaa3772b6e482351d445494a">00032</a> - (void)setData:(NSString *)t latitude :(<span class="keywordtype">double</span>)lat longitude:(<span class="keywordtype">double</span>) lon soundURL:(NSString *) _soundURL {
+<a name="l00033"></a>00033         <a class="code" href="interface_p_o_i.html#af441df0d8c3d29174ca644414856d497">latitude</a> = lat;
+<a name="l00034"></a>00034         <a class="code" href="interface_p_o_i.html#a11947092f2cf76ac7b5ecd2678a376da">longitude</a> = lon;
+<a name="l00035"></a>00035         <span class="keyword">self</span>.title = t;
+<a name="l00036"></a>00036         <span class="keyword">self</span>.soundURL = _soundURL;
+<a name="l00037"></a>00037         
+<a name="l00038"></a>00038         CLLocationCoordinate2D location;
+<a name="l00039"></a>00039         
+<a name="l00040"></a>00040         location.latitude = lat;
+<a name="l00041"></a>00041         location.longitude = lon;
+<a name="l00042"></a>00042         <a class="code" href="interface_p_o_i.html#a63afb07b66c43a26aa58ab7759c4f473">coordinate</a> = location;
+<a name="l00043"></a>00043 }
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="interface_p_o_i.html#a2795a2a1abea75196a40f4af9c8f8819">00045</a> -(void)<a class="code" href="interface_p_o_i.html#a2795a2a1abea75196a40f4af9c8f8819">initCoordinate</a> {
+<a name="l00046"></a>00046         CLLocationCoordinate2D location;
+<a name="l00047"></a>00047         
+<a name="l00048"></a>00048         location.latitude = [<span class="keyword">self</span> <a class="code" href="interface_p_o_i.html#af441df0d8c3d29174ca644414856d497">latitude</a>];
+<a name="l00049"></a>00049         location.longitude = [<span class="keyword">self</span> <a class="code" href="interface_p_o_i.html#a11947092f2cf76ac7b5ecd2678a376da">longitude</a>];
+<a name="l00050"></a>00050         <a class="code" href="interface_p_o_i.html#a63afb07b66c43a26aa58ab7759c4f473">coordinate</a> = location;
+<a name="l00051"></a>00051 }
+<a name="l00052"></a>00052 
+<a name="l00053"></a><a class="code" href="interface_p_o_i.html#a30959e0dbc986b8eb13751f937f48e71">00053</a> - (void)<a class="code" href="interface_p_o_i.html#a30959e0dbc986b8eb13751f937f48e71">playSound</a> {
+<a name="l00054"></a>00054         <span class="comment">// Globalen Soundcontroller auf lokale Sounddaten setzen</span>
+<a name="l00055"></a>00055         [<span class="keyword">self</span>.appDelegate.soundController destroyStreamer];
+<a name="l00056"></a>00056         [<span class="keyword">self</span>.appDelegate.soundController setUrl:self.soundURL];
+<a name="l00057"></a>00057         [<span class="keyword">self</span>.appDelegate.soundController createStreamer];
+<a name="l00058"></a>00058         [<span class="keyword">self</span>.appDelegate.soundController startStream];
+<a name="l00059"></a>00059 }
+<a name="l00060"></a>00060 
+<a name="l00061"></a><a class="code" href="interface_p_o_i.html#aa569ca00c6e3ab1176a5279bbd986255">00061</a> - (void)<a class="code" href="interface_p_o_i.html#aa569ca00c6e3ab1176a5279bbd986255">stopSound</a> {
+<a name="l00062"></a>00062         [<span class="keyword">self</span>.appDelegate.soundController stopStream];
+<a name="l00063"></a>00063 }
+<a name="l00064"></a>00064 
+<a name="l00065"></a><a class="code" href="interface_p_o_i.html#a11d6d0525235d6c73f1b8e325bd0a2b4">00065</a> - (NSString *)<a class="code" href="interface_p_o_i.html#a11d6d0525235d6c73f1b8e325bd0a2b4">getLatitude</a> {
+<a name="l00066"></a>00066         <span class="keywordflow">return</span> [[NSString alloc] initWithFormat:@&quot;%f&quot;, latitude];
+<a name="l00067"></a>00067 }
+<a name="l00068"></a>00068 
+<a name="l00069"></a><a class="code" href="interface_p_o_i.html#abc66c92ee38bb7431e259d9b7dd0dde5">00069</a> - (NSString *)<a class="code" href="interface_p_o_i.html#abc66c92ee38bb7431e259d9b7dd0dde5">getLongitude</a> {
+<a name="l00070"></a>00070         <span class="keywordflow">return</span> [[NSString alloc] initWithFormat:@&quot;%f&quot;, longitude];
+<a name="l00071"></a>00071 }
+<a name="l00077"></a>00077 - (BOOL)isEqual:(<a class="code" href="interface_p_o_i.html">POI</a> *)poi {
+<a name="l00078"></a>00078         
+<a name="l00079"></a>00079         <span class="comment">//MLogString(@&quot;Check %@&quot;, poi);</span>
+<a name="l00080"></a>00080         <span class="keywordflow">if</span>([poi isMemberOfClass:[<a class="code" href="interface_p_o_i.html">POI</a> <span class="keyword">class</span>]]) {
+<a name="l00081"></a>00081                 <span class="keywordflow">if</span>([<span class="keyword">self</span> <a class="code" href="interface_p_o_i.html#a5bfdf0412280b12e34c4fb6e2e1a2db9">pid</a>] == [poi <a class="code" href="interface_p_o_i.html#a5bfdf0412280b12e34c4fb6e2e1a2db9">pid</a>]) {
+<a name="l00082"></a>00082                         <span class="keywordflow">return</span> YES;
+<a name="l00083"></a>00083                 } <span class="keywordflow">else</span> {
+<a name="l00084"></a>00084                         <span class="keywordflow">return</span> NO;
+<a name="l00085"></a>00085                 }               
+<a name="l00086"></a>00086         }
+<a name="l00087"></a>00087                 
+<a name="l00088"></a>00088         <span class="keywordflow">return</span> NO;
+<a name="l00089"></a>00089 }
+<a name="l00090"></a>00090 
+<a name="l00091"></a><a class="code" href="interface_p_o_i.html#a40163280cbdbb8ec60a6a00fcd6babbe">00091</a> - (CGContextRef)drawPOI:(CGContextRef)context {
+<a name="l00092"></a>00092         
+<a name="l00093"></a>00093         <span class="keywordtype">int</span> circleSize = 10;
+<a name="l00094"></a>00094         <span class="keywordtype">int</span> fontSize = (int)(circleSize);
+<a name="l00095"></a>00095         
+<a name="l00096"></a>00096         NSString *c_pid = [[NSString alloc] initWithFormat:@&quot;%hi&quot;,self.pid];
+<a name="l00097"></a>00097         
+<a name="l00098"></a>00098         CGContextSaveGState(context);
+<a name="l00099"></a>00099         CGContextSetRGBFillColor(context, 0.06,0.31,0.55,1);
+<a name="l00100"></a>00100         
+<a name="l00101"></a>00101         CGContextDrawPath(context,kCGPathStroke); 
+<a name="l00102"></a>00102         CGContextAddArc(context, circleSize + 2, circleSize + 2, circleSize, 0, 2*M_PI, 0);
+<a name="l00103"></a>00103         CGContextFillPath(context);
+<a name="l00104"></a>00104         
+<a name="l00105"></a>00105         <span class="keywordtype">int</span> textPosX = (int)(circleSize - fontSize/6);
+<a name="l00106"></a>00106         <span class="keywordtype">int</span> textPosY = circleSize + fontSize/2;
+<a name="l00107"></a>00107         
+<a name="l00108"></a>00108         <span class="keywordflow">if</span>(c_pid.length == 2) {
+<a name="l00109"></a>00109                 textPosX = (circleSize - fontSize/3);
+<a name="l00110"></a>00110         }
+<a name="l00111"></a>00111         
+<a name="l00112"></a>00112         CGContextSelectFont(context, <span class="stringliteral">&quot;Helvetica&quot;</span>, fontSize,  kCGEncodingMacRoman);
+<a name="l00113"></a>00113         CGFloat white[] = {1.0, 1.0, 1.0, 1.0};
+<a name="l00114"></a>00114         CGContextSetFillColor(context, white);
+<a name="l00115"></a>00115         CGContextSetTextMatrix (context, CGAffineTransformMake(1, 0, 0, -1, 0, 0));
+<a name="l00116"></a>00116         CGContextShowTextAtPoint(context, textPosX, textPosY, [c_pid UTF8String], c_pid.length);
+<a name="l00117"></a>00117         CGContextRestoreGState(context);
+<a name="l00118"></a>00118         
+<a name="l00119"></a>00119         <span class="keywordflow">return</span> context;
+<a name="l00120"></a>00120 }
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122 - (void) dealloc {
+<a name="l00123"></a>00123         [title release];
+<a name="l00124"></a>00124         [soundURL release];
+<a name="l00125"></a>00125         [<span class="keyword">super</span> dealloc];
+<a name="l00126"></a>00126 }
+<a name="l00127"></a>00127 <span class="keyword">@end</span>
+<a name="l00128"></a>00128 
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:32 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: Classes/SoundCityAppDelegate.m Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<h1>Classes/SoundCityAppDelegate.m</h1><a href="_sound_city_app_delegate_8m.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">//  SoundCityAppDelegate.m</span>
+<a name="l00003"></a>00003 <span class="comment">//  SoundCity</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//  Created by administrator on 09.10.09.</span>
+<a name="l00006"></a>00006 <span class="comment">//  Copyright init ag 2009. All rights reserved.</span>
+<a name="l00007"></a>00007 <span class="comment">//</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#import &quot;<a class="code" href="_app_settings_8h.html">AppSettings.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#import &quot;<a class="code" href="_sound_city_app_delegate_8h.html">SoundCityAppDelegate.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#import &quot;<a class="code" href="_p_o_i_8h.html">POI.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#import &quot;<a class="code" href="_g_p_s_point_8h.html">GPSPoint.h</a>&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#import &quot;<a class="code" href="_database_controller_8h.html">DatabaseController.h</a>&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#import &quot;<a class="code" href="_x_m_l_parser_8h.html">XMLParser.h</a>&quot;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#import &quot;<a class="code" href="_m_log_8h.html">MLog.h</a>&quot;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#import &quot;<a class="code" href="_sound_controller_8h.html">SoundController.h</a>&quot;</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="keyword">@implementation </span><a class="code" href="interface_sound_city_app_delegate.html">SoundCityAppDelegate</a>
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="keyword">@synthesize</span> <a class="code" href="interface_sound_city_app_delegate.html#a69c920faf02b68581fdc0543ff0e56a1">window</a>, <a class="code" href="interface_sound_city_app_delegate.html#aae84b25a8186a168c98ad9584e31e332">tabBarController</a>, <a class="code" href="interface_sound_city_app_delegate.html#a692eabf939d719d6fa61205327df9a67">databaseController</a>, <a class="code" href="interface_sound_city_app_delegate.html#a0edc5a15f6188d5a6a80e6f636690642">gpspoints</a>, <a class="code" href="interface_sound_city_app_delegate.html#a0e22551289b704c129fd5268ff45c8ad">settings</a>, <a class="code" href="interface_sound_city_app_delegate.html#a05e1eebd4d2b5cefeb4237ac3c94500b">soundController</a>, <a class="code" href="interface_sound_city_app_delegate.html#aeac7ef371e675b53b754f6d9d02d183d">routes</a>, <a class="code" href="interface_sound_city_app_delegate.html#a10dee28d622e01c6acae7df512172b72">currentRoute</a>, <a class="code" href="interface_sound_city_app_delegate.html#a35c584d369e69d0e25a8f62d713b3747">routeChanged</a>, <a class="code" href="interface_sound_city_app_delegate.html#a0e22551289b704c129fd5268ff45c8ad">settings</a>, <a class="code" href="interface_sound_city_app_delegate.html#a076c894032a8dd5ceec3cd7161071863">hasInternetConnection</a>;
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="_sound_city_app_delegate_8m.html#a0d51da6bcac35dfe8a548f6600e4cc68">00022</a> <span class="preprocessor">#define MLogString(s,...) \</span>
+<a name="l00023"></a>00023 <span class="preprocessor">[MLog logFile:(char *)__FUNCTION__ lineNumber:__LINE__ \</span>
+<a name="l00024"></a>00024 <span class="preprocessor">format:(s),##__VA_ARGS__]</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span>
+<a name="l00026"></a>00026 - (void)applicationDidFinishLaunching:(UIApplication *)application {
+<a name="l00027"></a>00027         
+<a name="l00028"></a>00028         <span class="keyword">self</span>.settings = [<a class="code" href="interface_app_settings.html">AppSettings</a> <a class="code" href="interface_app_settings.html#aeeaa42128ecb6a3f1642481a8f628760">sharedAppSettings</a>];
+<a name="l00029"></a>00029         
+<a name="l00030"></a>00030         <span class="keyword">self</span>.soundController = [[<a class="code" href="interface_sound_controller.html">SoundController</a> alloc] init];
+<a name="l00031"></a>00031         <span class="keyword">self</span>.routes = [[NSMutableArray alloc] init];
+<a name="l00032"></a>00032         <span class="keyword">self</span>.routeChanged = NO;
+<a name="l00033"></a>00033         <span class="keyword">self</span>.hasInternetConnection = NO;
+<a name="l00034"></a>00034         
+<a name="l00035"></a>00035         <span class="comment">// PrÃ¼fen der Internetverbindung</span>
+<a name="l00036"></a>00036         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];
+<a name="l00037"></a>00037         <a class="code" href="interface_sound_city_app_delegate.html#ab7e88e1a16d0c057c86cef12fc6fcb93">hostReach</a> = [[Reachability reachabilityWithHostName: @&quot;www.apple.com&quot;] retain];
+<a name="l00038"></a>00038         [hostReach startNotifer];
+<a name="l00039"></a>00039         
+<a name="l00040"></a>00040         <span class="comment">//POIs werden aus einer SQL Datenbank gelesen, Alternative dazu ist, diese aus einer XML Datei zu parsen, welche im Netz hÃ¤ngt</span>
+<a name="l00041"></a>00041         
+<a name="l00042"></a>00042         <span class="keyword">self</span>.databaseController = [[<a class="code" href="interface_database_controller.html">DatabaseController</a> alloc] init];
+<a name="l00043"></a>00043         
+<a name="l00044"></a>00044         <span class="keyword">self</span>.databaseController.databaseName = <span class="stringliteral">@&quot;POI_3.sql&quot;</span>;
+<a name="l00045"></a>00045         [<span class="keyword">self</span>.databaseController openDatabase];
+<a name="l00046"></a>00046         [<span class="keyword">self</span>.databaseController checkAndCreateDatabase];
+<a name="l00047"></a>00047         
+<a name="l00048"></a>00048         [<span class="keyword">self</span> readGPSPointsFromDatabase];
+<a name="l00049"></a>00049         <span class="comment">//[self readPOIFromDatabase];</span>
+<a name="l00050"></a>00050         
+<a name="l00051"></a>00051         <span class="comment">// XML Datei Parser</span>
+<a name="l00052"></a>00052         <span class="comment">//BOOL success = [self loadXML];</span>
+<a name="l00053"></a>00053         
+<a name="l00054"></a>00054         <span class="comment">// Add the tab bar controller&apos;s current view as a subview of the window</span>
+<a name="l00055"></a>00055     [window addSubview:tabBarController.view];
+<a name="l00056"></a>00056         
+<a name="l00057"></a>00057         CGRect cgRect =[[UIScreen mainScreen] bounds];
+<a name="l00058"></a>00058         <a class="code" href="interface_sound_city_app_delegate.html#ae8ac0a409e5e027419977730dfb7fa76">loadingView</a> = [[<a class="code" href="interface_loading_view.html">LoadingView</a> alloc] initWithFrame:cgRect];
+<a name="l00059"></a>00059         [loadingView setHidden:YES];
+<a name="l00060"></a>00060         [loadingView addLoadingSpinner];
+<a name="l00061"></a>00061         [window addSubview:loadingView];
+<a name="l00062"></a>00062 }
+<a name="l00063"></a>00063 
+<a name="l00067"></a>00067 - (void) reachabilityChanged: (NSNotification* )note
+<a name="l00068"></a>00068 {
+<a name="l00069"></a>00069         
+<a name="l00070"></a>00070         Reachability* curReach = [note object];
+<a name="l00071"></a>00071         NSParameterAssert([curReach isKindOfClass: [Reachability <span class="keyword">class</span>]]);
+<a name="l00072"></a>00072         NetworkStatus netStatus = [curReach currentReachabilityStatus];
+<a name="l00073"></a>00073     
+<a name="l00074"></a>00074         <span class="keywordflow">switch</span> (netStatus)
+<a name="l00075"></a>00075     {
+<a name="l00076"></a>00076         <span class="keywordflow">case</span> NotReachable:
+<a name="l00077"></a>00077         {
+<a name="l00078"></a>00078             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@&quot;Keine Internetverbindung verfÃ¼gbar!&quot; delegate:self cancelButtonTitle:@&quot;OK&quot; otherButtonTitles:nil]; 
+<a name="l00079"></a>00079                         [alert show]; 
+<a name="l00080"></a>00080                         [alert release];
+<a name="l00081"></a>00081                         
+<a name="l00082"></a>00082                         <span class="keyword">self</span>.hasInternetConnection = NO;
+<a name="l00083"></a>00083                         
+<a name="l00084"></a>00084                         <span class="keywordflow">if</span>(<a class="code" href="interface_sound_city_app_delegate.html#a05e1eebd4d2b5cefeb4237ac3c94500b">soundController</a>.<a class="code" href="interface_sound_controller.html#a1fc59135a0c0376ae7cb7847f6265db7">soundstate</a> == <a class="code" href="_sound_controller_8h.html#ab33ae7c1e36d49fe3cd18638b320bda0">PLAYING</a> || <a class="code" href="interface_sound_city_app_delegate.html#a05e1eebd4d2b5cefeb4237ac3c94500b">soundController</a>.<a class="code" href="interface_sound_controller.html#a1fc59135a0c0376ae7cb7847f6265db7">soundstate</a> == <a class="code" href="_sound_controller_8h.html#a1d5c100e06cc793ef496c4a5f6922945">WAITING</a>) {
+<a name="l00085"></a>00085                                 [soundController stopStream];
+<a name="l00086"></a>00086                         }
+<a name="l00087"></a>00087             <span class="keywordflow">break</span>;
+<a name="l00088"></a>00088         }
+<a name="l00089"></a>00089                         
+<a name="l00090"></a>00090                 <span class="keywordflow">case</span> ReachableViaWWAN:
+<a name="l00091"></a>00091         {
+<a name="l00092"></a>00092             <span class="keyword">self</span>.hasInternetConnection = YES;
+<a name="l00093"></a>00093             <span class="keywordflow">break</span>;
+<a name="l00094"></a>00094         }
+<a name="l00095"></a>00095         <span class="keywordflow">case</span> ReachableViaWiFi:
+<a name="l00096"></a>00096         {
+<a name="l00097"></a>00097                         <span class="keyword">self</span>.hasInternetConnection = YES;
+<a name="l00098"></a>00098             <span class="keywordflow">break</span>;
+<a name="l00099"></a>00099                 }
+<a name="l00100"></a>00100     }
+<a name="l00101"></a>00101 }
+<a name="l00102"></a>00102 
+<a name="l00103"></a><a class="code" href="interface_sound_city_app_delegate.html#ab52c63a7c4dcb1303a96f4acd3f4db0f">00103</a> - (void) <a class="code" href="interface_sound_city_app_delegate.html#ab52c63a7c4dcb1303a96f4acd3f4db0f">reloadXML</a> {
+<a name="l00104"></a>00104         
+<a name="l00105"></a>00105         [<a class="code" href="interface_sound_city_app_delegate.html#ae8ac0a409e5e027419977730dfb7fa76">loadingView</a> setHidden:NO];
+<a name="l00106"></a>00106         <a class="code" href="interface_sound_city_app_delegate.html#aeac7ef371e675b53b754f6d9d02d183d">routes</a> = [[NSMutableArray alloc] init];
+<a name="l00107"></a>00107         
+<a name="l00108"></a>00108         NSNumber *success = [[NSNumber alloc] initWithBool:[<span class="keyword">self</span> <a class="code" href="interface_sound_city_app_delegate.html#a7aa1b9b78348047311af130f2714596f">loadXML</a>]];
+<a name="l00109"></a>00109         
+<a name="l00110"></a>00110         NSDictionary *d = [NSDictionary dictionaryWithObject:success forKey:@&quot;loadingStatus&quot;];
+<a name="l00111"></a>00111         
+<a name="l00112"></a>00112         <span class="keywordflow">if</span>([success boolValue] == YES) {
+<a name="l00113"></a>00113                 [<span class="keyword">self</span> setRouteChanged:YES];
+<a name="l00114"></a>00114         }
+<a name="l00115"></a>00115         
+<a name="l00116"></a>00116         [<a class="code" href="interface_sound_city_app_delegate.html#ae8ac0a409e5e027419977730dfb7fa76">loadingView</a> setHidden:YES];
+<a name="l00117"></a>00117         
+<a name="l00118"></a>00118         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+<a name="l00119"></a>00119         [nc postNotificationName:@&quot;XMLReloaded&quot; object:self userInfo:d];
+<a name="l00120"></a>00120 }
+<a name="l00121"></a>00121 
+<a name="l00122"></a><a class="code" href="interface_sound_city_app_delegate.html#a7aa1b9b78348047311af130f2714596f">00122</a> - (BOOL) <a class="code" href="interface_sound_city_app_delegate.html#a7aa1b9b78348047311af130f2714596f">loadXML</a> {
+<a name="l00123"></a>00123         
+<a name="l00124"></a>00124         
+<a name="l00125"></a>00125         
+<a name="l00126"></a>00126         NSURL *url = [[NSURL alloc] initWithString:@&quot;http://testarea.m5t.de/routes.xml&quot;];
+<a name="l00127"></a>00127         NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+<a name="l00128"></a>00128         
+<a name="l00129"></a>00129         <span class="comment">//Initialize the delegate.</span>
+<a name="l00130"></a>00130         <a class="code" href="interface_x_m_l_parser.html">XMLParser</a> *parser = [[<a class="code" href="interface_x_m_l_parser.html">XMLParser</a> alloc] initXMLParser];
+<a name="l00131"></a>00131         
+<a name="l00132"></a>00132         <span class="comment">//Set delegate</span>
+<a name="l00133"></a>00133         [xmlParser setDelegate:parser];
+<a name="l00134"></a>00134         
+<a name="l00135"></a>00135         <span class="comment">//Start parsing the XML file.</span>
+<a name="l00136"></a>00136         BOOL success = [xmlParser parse];
+<a name="l00137"></a>00137         
+<a name="l00138"></a>00138         <span class="keywordflow">if</span>(success)
+<a name="l00139"></a>00139                 NSLog(<span class="stringliteral">@&quot;No Errors&quot;</span>);
+<a name="l00140"></a>00140         <span class="keywordflow">else</span>
+<a name="l00141"></a>00141                 NSLog(<span class="stringliteral">@&quot;Error Error Error!!!&quot;</span>);
+<a name="l00142"></a>00142         
+<a name="l00143"></a>00143         NSLog(<span class="stringliteral">@&quot;Number of Routes... %hi&quot;</span>, [<a class="code" href="interface_sound_city_app_delegate.html#aeac7ef371e675b53b754f6d9d02d183d">routes</a> count]);
+<a name="l00144"></a>00144         
+<a name="l00145"></a>00145         <span class="keywordflow">return</span> success;
+<a name="l00146"></a>00146 }
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150 -(void) readPOIFromDatabase {
+<a name="l00151"></a>00151         sqlite3 *database;
+<a name="l00152"></a>00152         NSLog(<span class="stringliteral">@&quot;Read POIS from Database...&quot;</span>);
+<a name="l00153"></a>00153         
+<a name="l00154"></a>00154         <span class="comment">//pois = [[NSMutableArray alloc] init];</span>
+<a name="l00155"></a>00155         
+<a name="l00156"></a>00156         <span class="keywordflow">if</span>(sqlite3_open([<a class="code" href="interface_sound_city_app_delegate.html#a692eabf939d719d6fa61205327df9a67">databaseController</a>.<a class="code" href="interface_database_controller.html#aa593318b53fcf8cbe5b550ec7b00a6d6">databasePath</a> UTF8String], &amp;database) == SQLITE_OK) {
+<a name="l00157"></a>00157                 <span class="keyword">const</span> <span class="keywordtype">char</span> *sqlStatement = <span class="stringliteral">&quot;select * from poi&quot;</span>;
+<a name="l00158"></a>00158                 sqlite3_stmt *compiledStatement;
+<a name="l00159"></a>00159                 
+<a name="l00160"></a>00160                 <span class="keywordflow">if</span>(sqlite3_prepare_v2(database, sqlStatement, -1, &amp;compiledStatement, NULL) == SQLITE_OK) {
+<a name="l00161"></a>00161                         <span class="keywordflow">while</span>(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+<a name="l00162"></a>00162                                 
+<a name="l00163"></a>00163                                 NSNumberFormatter *formatter =[[NSNumberFormatter alloc] init];
+<a name="l00164"></a>00164                                 [formatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+<a name="l00165"></a>00165                                 [formatter setGeneratesDecimalNumbers:YES];
+<a name="l00166"></a>00166                                 
+<a name="l00167"></a>00167                                 NSInteger primaryKey = sqlite3_column_int(compiledStatement, 0);
+<a name="l00168"></a>00168                                 
+<a name="l00169"></a>00169                                 NSString *pName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
+<a name="l00170"></a>00170                                 
+<a name="l00171"></a>00171                                 <span class="keywordtype">double</span> latitudeDN = [[formatter numberFromString:[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 2)]] doubleValue];
+<a name="l00172"></a>00172                                 <span class="keywordtype">double</span> longitudeDN = [[formatter numberFromString:[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 3)]] doubleValue];                              
+<a name="l00173"></a>00173                                 
+<a name="l00174"></a>00174                                 NSString *pSoundURL = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 4)];
+<a name="l00175"></a>00175                                 
+<a name="l00176"></a>00176                                 <a class="code" href="interface_p_o_i.html">POI</a> *poi = [[<a class="code" href="interface_p_o_i.html">POI</a> alloc] initWithPrimaryKey:primaryKey];
+<a name="l00177"></a>00177                                 [poi setData:pName latitude:latitudeDN longitude:longitudeDN soundURL:pSoundURL];
+<a name="l00178"></a>00178                                 
+<a name="l00179"></a>00179                                 <span class="comment">//[pois addObject:poi];</span>
+<a name="l00180"></a>00180                                 [poi release];
+<a name="l00181"></a>00181                                 
+<a name="l00182"></a>00182                         }
+<a name="l00183"></a>00183                         
+<a name="l00184"></a>00184                         <span class="comment">//NSLog(@&quot;#Objekte %i&quot;,[pois count]);   </span>
+<a name="l00185"></a>00185                         
+<a name="l00186"></a>00186                         
+<a name="l00187"></a>00187                 }
+<a name="l00188"></a>00188                 
+<a name="l00189"></a>00189                 sqlite3_finalize(compiledStatement);
+<a name="l00190"></a>00190         }
+<a name="l00191"></a>00191         
+<a name="l00192"></a>00192         sqlite3_close(database);
+<a name="l00193"></a>00193 }
+<a name="l00194"></a>00194 
+<a name="l00195"></a><a class="code" href="interface_sound_city_app_delegate.html#ac8941fa34f517a66ec3db85d928ba0a0">00195</a> -(void) <a class="code" href="interface_sound_city_app_delegate.html#ac8941fa34f517a66ec3db85d928ba0a0">readGPSPointsFromDatabase</a> {
+<a name="l00196"></a>00196         sqlite3 *database;
+<a name="l00197"></a>00197         NSLog(<span class="stringliteral">@&quot;Read GPS Points...&quot;</span>);
+<a name="l00198"></a>00198         
+<a name="l00199"></a>00199         <a class="code" href="interface_sound_city_app_delegate.html#a0edc5a15f6188d5a6a80e6f636690642">gpspoints</a> = [[NSMutableArray alloc] init];
+<a name="l00200"></a>00200         
+<a name="l00201"></a>00201         <span class="keywordflow">if</span>(sqlite3_open([<a class="code" href="interface_sound_city_app_delegate.html#a692eabf939d719d6fa61205327df9a67">databaseController</a>.<a class="code" href="interface_database_controller.html#aa593318b53fcf8cbe5b550ec7b00a6d6">databasePath</a> UTF8String], &amp;database) == SQLITE_OK) {
+<a name="l00202"></a>00202                 <span class="keyword">const</span> <span class="keywordtype">char</span> *sqlStatement = <span class="stringliteral">&quot;select * from GPS_dummy_points&quot;</span>;
+<a name="l00203"></a>00203                 sqlite3_stmt *compiledStatement;
+<a name="l00204"></a>00204                 
+<a name="l00205"></a>00205                 <span class="keywordflow">if</span>(sqlite3_prepare_v2(database, sqlStatement, -1, &amp;compiledStatement, NULL) == SQLITE_OK) {
+<a name="l00206"></a>00206                         <span class="keywordflow">while</span>(sqlite3_step(compiledStatement) == SQLITE_ROW) {
+<a name="l00207"></a>00207                                 
+<a name="l00208"></a>00208                                 NSNumberFormatter *formatter =[[NSNumberFormatter alloc] init];
+<a name="l00209"></a>00209                                 [formatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+<a name="l00210"></a>00210                                 <span class="comment">//[formatter setGeneratesDecimalNumbers:YES];</span>
+<a name="l00211"></a>00211                                 
+<a name="l00212"></a>00212                                 NSInteger primaryKey = sqlite3_column_int(compiledStatement, 0);
+<a name="l00213"></a>00213                                 
+<a name="l00214"></a>00214                                 NSString *pName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 1)];
+<a name="l00215"></a>00215                                 
+<a name="l00216"></a>00216                                 <span class="keywordtype">double</span> latitudeDN = [[formatter numberFromString:[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 2)]] doubleValue];       
+<a name="l00217"></a>00217                                 <span class="keywordtype">double</span> longitudeDN = [[formatter numberFromString:[NSString stringWithUTF8String:(char *)sqlite3_column_text(compiledStatement, 3)]] doubleValue];                              
+<a name="l00218"></a>00218                                 
+<a name="l00219"></a>00219                                 <span class="comment">//NSLog(@&quot;latitude %@, %f %s&quot;,latitudeDN, [latitudeDN doubleValue], sqlite3_column_text(compiledStatement, 2));</span>
+<a name="l00220"></a>00220                                 
+<a name="l00221"></a>00221                                 <a class="code" href="interface_g_p_s_point.html">GPSPoint</a> *gpspoint = [[<a class="code" href="interface_g_p_s_point.html">GPSPoint</a> alloc] initWithPrimaryKey:primaryKey];
+<a name="l00222"></a>00222                                 
+<a name="l00223"></a>00223                                 [gpspoint setData:pName latitude:latitudeDN longitude:longitudeDN];
+<a name="l00224"></a>00224                                 [<a class="code" href="interface_sound_city_app_delegate.html#a0edc5a15f6188d5a6a80e6f636690642">gpspoints</a> addObject:gpspoint];
+<a name="l00225"></a>00225                                 [gpspoint release];
+<a name="l00226"></a>00226                         }
+<a name="l00227"></a>00227                         
+<a name="l00228"></a>00228                         <span class="comment">//NSLog(@&quot;#Objekte %i&quot;,[gpspoints count]);      </span>
+<a name="l00229"></a>00229                         
+<a name="l00230"></a>00230                         
+<a name="l00231"></a>00231                 }
+<a name="l00232"></a>00232                 
+<a name="l00233"></a>00233                 sqlite3_finalize(compiledStatement);
+<a name="l00234"></a>00234         }
+<a name="l00235"></a>00235         
+<a name="l00236"></a>00236         sqlite3_close(database);
+<a name="l00237"></a>00237 }
+<a name="l00238"></a>00238 
+<a name="l00239"></a>00239 <span class="comment">/*</span>
+<a name="l00240"></a>00240 <span class="comment">// Optional UITabBarControllerDelegate method</span>
+<a name="l00241"></a>00241 <span class="comment">- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {</span>
+<a name="l00242"></a>00242 <span class="comment">}</span>
+<a name="l00243"></a>00243 <span class="comment">*/</span>
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245 <span class="comment">/*</span>
+<a name="l00246"></a>00246 <span class="comment">// Optional UITabBarControllerDelegate method</span>
+<a name="l00247"></a>00247 <span class="comment">- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {</span>
+<a name="l00248"></a>00248 <span class="comment">}</span>
+<a name="l00249"></a>00249 <span class="comment">*/</span>
+<a name="l00250"></a>00250 
+<a name="l00251"></a>00251 
+<a name="l00252"></a>00252 - (void)dealloc {
+<a name="l00253"></a>00253         [gpspoints release];
+<a name="l00254"></a>00254         [tabBarController release];
+<a name="l00255"></a>00255     [window release];
+<a name="l00256"></a>00256     [<span class="keyword">super</span> dealloc];
+<a name="l00257"></a>00257 }
+<a name="l00258"></a>00258 
+<a name="l00259"></a>00259 <span class="keyword">@end</span>
+<a name="l00260"></a>00260 
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:32 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

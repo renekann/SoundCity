@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: Classes/GPSCalculator.m Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<h1>Classes/GPSCalculator.m</h1><a href="_g_p_s_calculator_8m.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">//  DistanceCalculator.m</span>
+<a name="l00003"></a>00003 <span class="comment">//  SoundCity</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//  Created by administrator on 14.10.09.</span>
+<a name="l00006"></a>00006 <span class="comment">//  Copyright 2009 init ag. All rights reserved.</span>
+<a name="l00007"></a>00007 <span class="comment">//</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#import &quot;<a class="code" href="_app_settings_8h.html">AppSettings.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#import &quot;<a class="code" href="_g_p_s_calculator_8h.html">GPSCalculator.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#import &quot;<a class="code" href="_p_o_i_8h.html">POI.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#import &quot;<a class="code" href="_g_p_s_point_8h.html">GPSPoint.h</a>&quot;</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 <span class="keyword">@implementation </span><a class="code" href="interface_g_p_s_calculator.html">GPSCalculator</a>
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="keyword">@synthesize</span> <a class="code" href="interface_g_p_s_calculator.html#abe4f902d1cb7d075967dc769d0b15133">locationManager</a>, <a class="code" href="interface_g_p_s_calculator.html#a0afb0a146e7dc7b16a6a51dc3eb69fc3">delegate</a>, <a class="code" href="interface_g_p_s_calculator.html#adb62c6bc9c85129145d61bd272ed8ec4">nearestPOI</a>, <a class="code" href="interface_g_p_s_calculator.html#a16945732145e0f6c1541b57c7a9bf50e">settings</a>, <a class="code" href="interface_g_p_s_calculator.html#ad35926f5862c782550e8fb53c72d9ce7">nearestPOIList</a>, <a class="code" href="interface_g_p_s_calculator.html#a437060e217fe7ab21e7738a19c2c9238">gpsStatus</a>, <a class="code" href="interface_g_p_s_calculator.html#ae9268fe3bb4bfc41efa35f108fe346a0">currentLocation</a>;
+<a name="l00017"></a>00017 <span class="keyword">static</span> <a class="code" href="interface_g_p_s_calculator.html">GPSCalculator</a> *sharedAppGPSCalcClass = nil;
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019 - (id) init {
+<a name="l00020"></a>00020         <a class="code" href="interface_g_p_s_calculator.html#a16945732145e0f6c1541b57c7a9bf50e">settings</a> = [<a class="code" href="interface_app_settings.html">AppSettings</a> <a class="code" href="interface_app_settings.html#aeeaa42128ecb6a3f1642481a8f628760">sharedAppSettings</a>];
+<a name="l00021"></a>00021         
+<a name="l00022"></a>00022         <a class="code" href="interface_g_p_s_calculator.html#ad35926f5862c782550e8fb53c72d9ce7">nearestPOIList</a> = [[NSMutableArray alloc] init];
+<a name="l00023"></a>00023         <a class="code" href="interface_g_p_s_calculator.html#a437060e217fe7ab21e7738a19c2c9238">gpsStatus</a> = [[NSString alloc] initWithString:@&quot;Suche...&quot;];
+<a name="l00024"></a>00024         
+<a name="l00025"></a>00025     <span class="keyword">self</span> = [<span class="keyword">super</span> init];
+<a name="l00026"></a>00026     <span class="keywordflow">if</span> (<span class="keyword">self</span> != nil) {
+<a name="l00027"></a>00027         <span class="keyword">self</span>.locationManager = [[[CLLocationManager alloc] init] autorelease];
+<a name="l00028"></a>00028         <span class="keyword">self</span>.locationManager.delegate = <span class="keyword">self</span>; <span class="comment">// send loc updates to myself</span>
+<a name="l00029"></a>00029                 [<span class="keyword">self</span>.locationManager setDistanceFilter:kCLDistanceFilterNone];
+<a name="l00030"></a>00030                 [<span class="keyword">self</span>.locationManager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032         }
+<a name="l00033"></a>00033         
+<a name="l00034"></a>00034         
+<a name="l00035"></a>00035     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00036"></a>00036 }
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="interface_g_p_s_calculator.html#ace4b565a8dca496da97ca7e890226136">00038</a> - (void)<a class="code" href="interface_g_p_s_calculator.html#abe4f902d1cb7d075967dc769d0b15133">locationManager</a>:(CLLocationManager *)manager
+<a name="l00039"></a>00039     didUpdateToLocation:(CLLocation *)newLocation
+<a name="l00040"></a>00040            fromLocation:(CLLocation *)oldLocation
+<a name="l00041"></a>00041 {
+<a name="l00042"></a>00042     NSLog(<span class="stringliteral">@&quot;Location: %@&quot;</span>, [newLocation description]);
+<a name="l00043"></a>00043         
+<a name="l00044"></a>00044         <span class="keyword">self</span>.currentLocation = newLocation;
+<a name="l00045"></a>00045         
+<a name="l00046"></a>00046         <span class="comment">// roughly an accuracy of 120 meters, we can adjust this.</span>
+<a name="l00047"></a>00047         <span class="keywordflow">if</span> (newLocation.horizontalAccuracy &gt; 0.0f &amp;&amp; newLocation.horizontalAccuracy &lt; 120.0f) {
+<a name="l00048"></a>00048                 <span class="keyword">self</span>.gpsStatus = <span class="stringliteral">@&quot;Verbunden&quot;</span>;
+<a name="l00049"></a>00049                 [<a class="code" href="interface_g_p_s_calculator.html#a0afb0a146e7dc7b16a6a51dc3eb69fc3">delegate</a> locationUpdate:newLocation];
+<a name="l00050"></a>00050         }
+<a name="l00051"></a>00051 }
+<a name="l00052"></a>00052 
+<a name="l00053"></a><a class="code" href="interface_g_p_s_calculator.html#a172bfe3f489df71bd558a074770caf71">00053</a> - (void)<a class="code" href="interface_g_p_s_calculator.html#abe4f902d1cb7d075967dc769d0b15133">locationManager</a>:(CLLocationManager *)manager
+<a name="l00054"></a>00054            didFailWithError:(NSError *)error
+<a name="l00055"></a>00055 {
+<a name="l00056"></a>00056         NSLog(<span class="stringliteral">@&quot;Error: %@&quot;</span>, [error description]);
+<a name="l00057"></a>00057         [<a class="code" href="interface_g_p_s_calculator.html#a0afb0a146e7dc7b16a6a51dc3eb69fc3">delegate</a> locationError:error];
+<a name="l00058"></a>00058 }
+<a name="l00059"></a>00059 
+<a name="l00067"></a><a class="code" href="interface_g_p_s_calculator.html#a406a446181f898802d323447150b0f67">00067</a> - (BOOL)nearestPOIExists:(NSMutableArray *) pois gpspoint:(<a class="code" href="interface_g_p_s_point.html">GPSPoint</a> *)gpspoint {
+<a name="l00068"></a>00068         
+<a name="l00069"></a>00069         <span class="comment">//NSLog(@&quot;GPSCalculator %f | %f&quot;, gpspoint.coordinate.longitude, gpspoint.coordinate.latitude);</span>
+<a name="l00070"></a>00070         <span class="comment">//NSLog(@&quot;Current Epsilon %hi&quot;, settings.epsilon);</span>
+<a name="l00071"></a>00071         
+<a name="l00072"></a>00072         CLLocation *startingLocation = [[[CLLocation alloc] initWithLatitude: gpspoint.coordinate.latitude longitude:gpspoint.coordinate.longitude] autorelease]; 
+<a name="l00073"></a>00073         CLLocationDistance distance;
+<a name="l00074"></a>00074         
+<a name="l00075"></a>00075         <span class="keywordtype">double</span> nearestDistance = -1;
+<a name="l00076"></a>00076         BOOL foundNearestPOI = NO;
+<a name="l00077"></a>00077         
+<a name="l00078"></a>00078         [<a class="code" href="interface_g_p_s_calculator.html#ad35926f5862c782550e8fb53c72d9ce7">nearestPOIList</a> removeAllObjects];
+<a name="l00079"></a>00079         
+<a name="l00080"></a>00080         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> x = 0; x &lt; [pois count]; x++) {
+<a name="l00081"></a>00081                 <a class="code" href="interface_p_o_i.html">POI</a> *poi = [pois objectAtIndex:x];
+<a name="l00082"></a>00082                 
+<a name="l00083"></a>00083                 CLLocation *poiLocation = [[CLLocation alloc] initWithLatitude: poi.coordinate.latitude longitude:poi.coordinate.longitude]; 
+<a name="l00084"></a>00084                         
+<a name="l00085"></a>00085                 distance = [startingLocation getDistanceFrom:poiLocation];
+<a name="l00086"></a>00086                         
+<a name="l00087"></a>00087                 <span class="keywordflow">if</span>((distance &lt; nearestDistance || nearestDistance == -1) &amp;&amp; distance &lt;= <a class="code" href="interface_g_p_s_calculator.html#a16945732145e0f6c1541b57c7a9bf50e">settings</a>.<a class="code" href="interface_app_settings.html#a6519c7f0aa9a539c7bddc016b4b7b019">epsilon</a>) {
+<a name="l00088"></a>00088                         nearestDistance = distance;
+<a name="l00089"></a>00089                         
+<a name="l00090"></a>00090                         [poi setDistance:nearestDistance];
+<a name="l00091"></a>00091                         
+<a name="l00092"></a>00092                         <a class="code" href="interface_g_p_s_calculator.html#adb62c6bc9c85129145d61bd272ed8ec4">nearestPOI</a> = poi;
+<a name="l00093"></a>00093                         foundNearestPOI = YES;
+<a name="l00094"></a>00094                         
+<a name="l00095"></a>00095                         [<a class="code" href="interface_g_p_s_calculator.html#ad35926f5862c782550e8fb53c72d9ce7">nearestPOIList</a> addObject:poi];
+<a name="l00096"></a>00096                         
+<a name="l00097"></a>00097                         NSLog(<span class="stringliteral">@&quot;[GPSCalculator] -&gt; calculateDistance() | %@ | Distance: %f | %@&quot;</span>, [poi title], distance, poi);
+<a name="l00098"></a>00098                 }
+<a name="l00099"></a>00099         }
+<a name="l00100"></a>00100         
+<a name="l00101"></a>00101         <span class="comment">// Sortieren des Arrays mit den gefundenen POIs</span>
+<a name="l00102"></a>00102         <span class="keywordflow">if</span>(<span class="keyword">self</span>.<a class="code" href="interface_g_p_s_calculator.html#ad35926f5862c782550e8fb53c72d9ce7">nearestPOIList</a>.count &gt; 1) {
+<a name="l00103"></a>00103                 
+<a name="l00104"></a>00104                 NSSortDescriptor *sortDescriptor;
+<a name="l00105"></a>00105                 sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@&quot;distance&quot; ascending:YES] autorelease];
+<a name="l00106"></a>00106                 
+<a name="l00107"></a>00107                 NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+<a name="l00108"></a>00108                 <span class="comment">//NSMutableArray *sortedArray = [[NSMutableArray alloc] init];</span>
+<a name="l00109"></a>00109                 
+<a name="l00110"></a>00110                 [<span class="keyword">self</span> setNearestPOIList:[<span class="keyword">self</span>.nearestPOIList sortedArrayUsingDescriptors:sortDescriptors]];
+<a name="l00111"></a>00111                 <span class="comment">//[self.nearestPOIList sortUsingSelector:@selector(compareDistances:)];</span>
+<a name="l00112"></a>00112                 
+<a name="l00113"></a>00113                 <span class="comment">//nearestPOIList = sortedArray;</span>
+<a name="l00114"></a>00114                 
+<a name="l00115"></a>00115                 NSLog(<span class="stringliteral">@&quot;Sorted POIs %@&quot;</span>, <a class="code" href="interface_g_p_s_calculator.html#ad35926f5862c782550e8fb53c72d9ce7">nearestPOIList</a>);
+<a name="l00116"></a>00116                 
+<a name="l00117"></a>00117                 <span class="comment">//[sortDescriptors release];</span>
+<a name="l00118"></a>00118                 <span class="comment">//[sortedArray release];</span>
+<a name="l00119"></a>00119         }
+<a name="l00120"></a>00120         
+<a name="l00121"></a>00121         <span class="keywordflow">return</span> foundNearestPOI;
+<a name="l00122"></a>00122 }
+<a name="l00123"></a>00123 
+<a name="l00124"></a><a class="code" href="interface_g_p_s_calculator.html#a76b80925729654bc60faecb2a93e1877">00124</a> + (<a class="code" href="interface_g_p_s_calculator.html">GPSCalculator</a>*)<a class="code" href="interface_g_p_s_calculator.html#a76b80925729654bc60faecb2a93e1877">sharedAppGPSCalc</a>
+<a name="l00125"></a>00125 {
+<a name="l00126"></a>00126     <span class="keywordflow">if</span> (sharedAppGPSCalcClass == nil) {
+<a name="l00127"></a>00127         sharedAppGPSCalcClass = [[<span class="keyword">super</span> allocWithZone:NULL] init];
+<a name="l00128"></a>00128     }
+<a name="l00129"></a>00129     <span class="keywordflow">return</span> sharedAppGPSCalcClass;
+<a name="l00130"></a>00130 }
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132 + (id)allocWithZone:(NSZone *)zone
+<a name="l00133"></a>00133 {
+<a name="l00134"></a>00134     <span class="keywordflow">return</span> [[<span class="keyword">self</span> sharedAppGPSCalc] retain];
+<a name="l00135"></a>00135 }
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138 - (id)copyWithZone:(NSZone *)zone
+<a name="l00139"></a>00139 {
+<a name="l00140"></a>00140     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00141"></a>00141 }
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143 - (id)retain
+<a name="l00144"></a>00144 {
+<a name="l00145"></a>00145     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00146"></a>00146 }
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148 - (NSUInteger)retainCount
+<a name="l00149"></a>00149 {
+<a name="l00150"></a>00150     <span class="keywordflow">return</span> NSUIntegerMax;  <span class="comment">//denotes an object that cannot be released</span>
+<a name="l00151"></a>00151 }
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153 - (void)release
+<a name="l00154"></a>00154 {
+<a name="l00155"></a>00155     <span class="comment">//do nothing</span>
+<a name="l00156"></a>00156 }
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158 - (id)autorelease
+<a name="l00159"></a>00159 {
+<a name="l00160"></a>00160     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00161"></a>00161 }
+<a name="l00162"></a>00162 
+<a name="l00163"></a>00163 - (void)dealloc {
+<a name="l00164"></a>00164     [locationManager release];
+<a name="l00165"></a>00165         [nearestPOIList release];
+<a name="l00166"></a>00166         [nearestPOI release];
+<a name="l00167"></a>00167     [<span class="keyword">super</span> dealloc];
+<a name="l00168"></a>00168 }
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171 <span class="keyword">@end</span>
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:32 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

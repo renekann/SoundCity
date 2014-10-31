@@ -1,0 +1,123 @@
+\hypertarget{interface_sound_controller}{
+\subsection{SoundController Klassenreferenz}
+\label{interface_sound_controller}\index{SoundController@{SoundController}}
+}
+
+
+{\ttfamily \#import $<$SoundController.h$>$}\subsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_sound_controller_a8f28bc622fc0b8aae6d7303dfb05aa6e}{startStream}
+\item 
+(void) -\/ \hyperlink{interface_sound_controller_aff4b12f990cd30515c83f12942f957f3}{stopStream}
+\item 
+(void) -\/ \hyperlink{interface_sound_controller_ae9f575ccb48dda60213d90afb965f13c}{destroyStreamer}
+\item 
+(void) -\/ \hyperlink{interface_sound_controller_a013cdcefe5418a9bcd7efbefb7f954a9}{createStreamer}
+\end{DoxyCompactItemize}
+\subsubsection*{Geschützte Attribute}
+\begin{DoxyCompactItemize}
+\item 
+NSTimer $\ast$ \hyperlink{interface_sound_controller_a9a7042c00cd9fbe5fdc18719360d0b89}{progressUpdateTimer}
+\end{DoxyCompactItemize}
+\subsubsection*{Propertys}
+\begin{DoxyCompactItemize}
+\item 
+NSString $\ast$ \hyperlink{interface_sound_controller_a0cbc2733aa7a4a4d8aa8d41831ecfe75}{url}
+\item 
+NSString $\ast$ \hyperlink{interface_sound_controller_a1fc59135a0c0376ae7cb7847f6265db7}{soundstate}
+\item 
+AudioStreamer $\ast$ \hyperlink{interface_sound_controller_a87f7a4b2a4565b68491091dd6a4df1be}{streamer}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Ausführliche Beschreibung}
+
+
+Definiert in Zeile 18 der Datei SoundController.h.
+
+\subsubsection{Dokumentation der Elementfunktionen}
+\hypertarget{interface_sound_controller_a013cdcefe5418a9bcd7efbefb7f954a9}{
+\index{SoundController@{SoundController}!createStreamer@{createStreamer}}
+\index{createStreamer@{createStreamer}!SoundController@{SoundController}}
+\paragraph[{createStreamer}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) createStreamer }\hfill}
+\label{interface_sound_controller_a013cdcefe5418a9bcd7efbefb7f954a9}
+
+
+progressUpdateTimer = \mbox{[}NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:(updateProgress:) userInfo:nil repeats:YES\mbox{]};
+
+Definiert in Zeile 72 der Datei SoundController.m.
+
+Benutzt destroyStreamer und streamer.\hypertarget{interface_sound_controller_ae9f575ccb48dda60213d90afb965f13c}{
+\index{SoundController@{SoundController}!destroyStreamer@{destroyStreamer}}
+\index{destroyStreamer@{destroyStreamer}!SoundController@{SoundController}}
+\paragraph[{destroyStreamer}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) destroyStreamer }\hfill}
+\label{interface_sound_controller_ae9f575ccb48dda60213d90afb965f13c}
+
+
+\mbox{[}\mbox{[}NSNotificationCenter defaultCenter\mbox{]} removeObserver:self name:ASStatusChangedNotification object:streamer\mbox{]}; \mbox{[}progressUpdateTimer invalidate\mbox{]}; progressUpdateTimer = nil;
+
+Definiert in Zeile 48 der Datei SoundController.m.
+
+Benutzt streamer.
+
+Wird benutzt von createStreamer.\hypertarget{interface_sound_controller_a8f28bc622fc0b8aae6d7303dfb05aa6e}{
+\index{SoundController@{SoundController}!startStream@{startStream}}
+\index{startStream@{startStream}!SoundController@{SoundController}}
+\paragraph[{startStream}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) startStream }\hfill}
+\label{interface_sound_controller_a8f28bc622fc0b8aae6d7303dfb05aa6e}
+
+
+Definiert in Zeile 29 der Datei SoundController.m.
+
+Benutzt streamer.\hypertarget{interface_sound_controller_aff4b12f990cd30515c83f12942f957f3}{
+\index{SoundController@{SoundController}!stopStream@{stopStream}}
+\index{stopStream@{stopStream}!SoundController@{SoundController}}
+\paragraph[{stopStream}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) stopStream }\hfill}
+\label{interface_sound_controller_aff4b12f990cd30515c83f12942f957f3}
+
+
+Definiert in Zeile 33 der Datei SoundController.m.
+
+Benutzt streamer.
+
+\subsubsection{Dokumentation der Datenelemente}
+\hypertarget{interface_sound_controller_a9a7042c00cd9fbe5fdc18719360d0b89}{
+\index{SoundController@{SoundController}!progressUpdateTimer@{progressUpdateTimer}}
+\index{progressUpdateTimer@{progressUpdateTimer}!SoundController@{SoundController}}
+\paragraph[{progressUpdateTimer}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSTimer$\ast$) {\bf progressUpdateTimer}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_sound_controller_a9a7042c00cd9fbe5fdc18719360d0b89}
+
+
+Definiert in Zeile 20 der Datei SoundController.h.
+
+\subsubsection{Dokumentation der Propertys}
+\hypertarget{interface_sound_controller_a1fc59135a0c0376ae7cb7847f6265db7}{
+\index{SoundController@{SoundController}!soundstate@{soundstate}}
+\index{soundstate@{soundstate}!SoundController@{SoundController}}
+\paragraph[{soundstate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSString $\ast$) soundstate\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_controller_a1fc59135a0c0376ae7cb7847f6265db7}
+
+
+Definiert in Zeile 22 der Datei SoundController.h.\hypertarget{interface_sound_controller_a87f7a4b2a4565b68491091dd6a4df1be}{
+\index{SoundController@{SoundController}!streamer@{streamer}}
+\index{streamer@{streamer}!SoundController@{SoundController}}
+\paragraph[{streamer}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (AudioStreamer $\ast$) streamer\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_controller_a87f7a4b2a4565b68491091dd6a4df1be}
+
+
+Definiert in Zeile 19 der Datei SoundController.h.
+
+Wird benutzt von createStreamer, destroyStreamer, startStream und stopStream.\hypertarget{interface_sound_controller_a0cbc2733aa7a4a4d8aa8d41831ecfe75}{
+\index{SoundController@{SoundController}!url@{url}}
+\index{url@{url}!SoundController@{SoundController}}
+\paragraph[{url}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSString $\ast$) url\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_controller_a0cbc2733aa7a4a4d8aa8d41831ecfe75}
+
+
+Definiert in Zeile 21 der Datei SoundController.h.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_sound_controller_8h}{SoundController.h}\item 
+\hyperlink{_sound_controller_8m}{SoundController.m}\end{DoxyCompactItemize}

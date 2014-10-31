@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: POIDetailsViewController.m Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<h1>POIDetailsViewController.m</h1><a href="_p_o_i_details_view_controller_8m.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">//  POIDetailsViewController.m</span>
+<a name="l00003"></a>00003 <span class="comment">//  SoundCity</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//  Created by administrator on 12.10.09.</span>
+<a name="l00006"></a>00006 <span class="comment">//  Copyright 2009 init ag. All rights reserved.</span>
+<a name="l00007"></a>00007 <span class="comment">//</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#import &quot;<a class="code" href="_p_o_i_details_view_controller_8h.html">POIDetailsViewController.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#import &quot;<a class="code" href="_p_o_i_8h.html">POI.h</a>&quot;</span>;
+<a name="l00011"></a>00011 <span class="preprocessor">#import &quot;<a class="code" href="_sound_controller_8h.html">SoundController.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#import &quot;<a class="code" href="_video_player_8h.html">VideoPlayer.h</a>&quot;</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 <span class="keyword">@implementation </span><a class="code" href="interface_p_o_i_details_view_controller.html">POIDetailsViewController</a>
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="keyword">@synthesize</span> <a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>, <a class="code" href="interface_p_o_i_details_view_controller.html#aa7b02f858154ff80725c355aad693658">settings</a>, <a class="code" href="interface_p_o_i_details_view_controller.html#ad31edb83a1fd1d6f6af800f293a25334">sectionArray</a>, <a class="code" href="interface_p_o_i_details_view_controller.html#a7652ae673a08d785ae1699559b39344b">contentArray</a>, <a class="code" href="interface_p_o_i_details_view_controller.html#a5b670e066edf54f1f94ff6c521aafad1">footerView</a>, <a class="code" href="interface_p_o_i_details_view_controller.html#ac1d9379646041b896d3d66f4ccacdd16">videoPlayer</a>, <a class="code" href="interface_p_o_i_details_view_controller.html#a35c04f7920916d5236c5d076580600a8">buttonSound</a>;
+<a name="l00017"></a>00017 
+<a name="l00021"></a>00021 -(void)playSound {
+<a name="l00022"></a>00022         
+<a name="l00023"></a>00023         <span class="keywordflow">if</span>(<a class="code" href="interface_p_o_i_details_view_controller.html#a399b6acaa417e7921abf51b70de6fd22">appDelegate</a>.<a class="code" href="interface_sound_city_app_delegate.html#a076c894032a8dd5ceec3cd7161071863">hasInternetConnection</a> == NO) {
+<a name="l00024"></a>00024                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@&quot;Keine Internetverbindung&quot; message:@&quot;Bitte aktivieren Sie Ihre Internetverbindung, um den Audiostream wiederzugeben&quot; delegate:self cancelButtonTitle:@&quot;OK&quot; otherButtonTitles:nil]; 
+<a name="l00025"></a>00025                 [alert show]; 
+<a name="l00026"></a>00026                 [alert release];
+<a name="l00027"></a>00027         } <span class="keywordflow">else</span> {
+<a name="l00028"></a>00028                 <span class="keywordflow">if</span>(<a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>.<a class="code" href="interface_p_o_i.html#a9551f023faddf40afad4e8b9f5d87c77">appDelegate</a>.<a class="code" href="interface_sound_city_app_delegate.html#a05e1eebd4d2b5cefeb4237ac3c94500b">soundController</a>.<a class="code" href="interface_sound_controller.html#a1fc59135a0c0376ae7cb7847f6265db7">soundstate</a> == <span class="stringliteral">@&quot;PLAYING&quot;</span>) {
+<a name="l00029"></a>00029                         [<span class="keyword">self</span>.poi stopSound];
+<a name="l00030"></a>00030                         [buttonSound setTitle:@&quot;Audio abspielen&quot; forState:UIControlStateNormal];
+<a name="l00031"></a>00031                         
+<a name="l00032"></a>00032                         NSDictionary *d = [NSDictionary dictionaryWithObject:STOPPED forKey:@&quot;audioStatus&quot;];
+<a name="l00033"></a>00033                         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+<a name="l00034"></a>00034                         [nc postNotificationName:@&quot;POIChangedAudioState&quot; object:self userInfo:d];
+<a name="l00035"></a>00035                         
+<a name="l00036"></a>00036                 } <span class="keywordflow">else</span> {
+<a name="l00037"></a>00037                         [<span class="keyword">self</span>.poi playSound];
+<a name="l00038"></a>00038                         [buttonSound setTitle:@&quot;Audio stoppen&quot; forState:UIControlStateNormal];
+<a name="l00039"></a>00039                         
+<a name="l00040"></a>00040                         NSDictionary *d = [NSDictionary dictionaryWithObject:PLAYING forKey:@&quot;audioStatus&quot;];
+<a name="l00041"></a>00041                         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+<a name="l00042"></a>00042                         [nc postNotificationName:@&quot;POIChangedAudioState&quot; object:self userInfo:d];
+<a name="l00043"></a>00043                 }
+<a name="l00044"></a>00044         }
+<a name="l00045"></a>00045 }
+<a name="l00046"></a>00046 
+<a name="l00050"></a>00050 -(void)playVideo {
+<a name="l00051"></a>00051         
+<a name="l00052"></a>00052         <span class="keywordflow">if</span>(<a class="code" href="interface_p_o_i_details_view_controller.html#a399b6acaa417e7921abf51b70de6fd22">appDelegate</a>.<a class="code" href="interface_sound_city_app_delegate.html#a076c894032a8dd5ceec3cd7161071863">hasInternetConnection</a> == NO) {
+<a name="l00053"></a>00053                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@&quot;Keine Internetverbindung&quot; message:@&quot;Bitte aktivieren Sie Ihre Internetverbindung, um den Audiostream wiederzugeben&quot; delegate:self cancelButtonTitle:@&quot;OK&quot; otherButtonTitles:nil]; 
+<a name="l00054"></a>00054                 [alert show]; 
+<a name="l00055"></a>00055                 [alert release];
+<a name="l00056"></a>00056         } <span class="keywordflow">else</span> {
+<a name="l00057"></a>00057                 [<span class="keyword">self</span>.videoPlayer setVideoURL:poi.videoURL];
+<a name="l00058"></a>00058                 [<span class="keyword">self</span>.videoPlayer play];
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060         }
+<a name="l00061"></a>00061 }
+<a name="l00062"></a>00062 
+<a name="l00068"></a>00068 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+<a name="l00069"></a>00069         <span class="keywordflow">return</span> 2;
+<a name="l00070"></a>00070 }
+<a name="l00071"></a>00071 
+<a name="l00078"></a>00078 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+<a name="l00079"></a>00079         
+<a name="l00080"></a>00080         NSString *sectionHeader = nil;
+<a name="l00081"></a>00081         
+<a name="l00082"></a>00082         <span class="keywordflow">if</span>(section == 0) {
+<a name="l00083"></a>00083                 sectionHeader = <span class="stringliteral">@&quot;Informationen zum POI&quot;</span>;
+<a name="l00084"></a>00084         }
+<a name="l00085"></a>00085         
+<a name="l00086"></a>00086         <span class="keywordflow">if</span>(section == 1) {
+<a name="l00087"></a>00087                 sectionHeader = <span class="stringliteral">@&quot;Beschreibung&quot;</span>;
+<a name="l00088"></a>00088         }
+<a name="l00089"></a>00089         
+<a name="l00090"></a>00090         <span class="keywordflow">return</span> sectionHeader;
+<a name="l00091"></a>00091 }
+<a name="l00092"></a>00092 
+<a name="l00099"></a>00099 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+<a name="l00100"></a>00100         <span class="comment">/*</span>
+<a name="l00101"></a>00101 <span class="comment">        if(footerView == nil &amp;&amp; poi.details != nil) {</span>
+<a name="l00102"></a>00102 <span class="comment">                NSLog(@&quot;Footer&quot;);</span>
+<a name="l00103"></a>00103 <span class="comment">                footerView = [[UIView alloc] init];</span>
+<a name="l00104"></a>00104 <span class="comment">                </span>
+<a name="l00105"></a>00105 <span class="comment">                // Add the label</span>
+<a name="l00106"></a>00106 <span class="comment">                UILabel*    footerLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, poi.detailsTextLength)];</span>
+<a name="l00107"></a>00107 <span class="comment">                footerLabel.backgroundColor = [UIColor clearColor];</span>
+<a name="l00108"></a>00108 <span class="comment">                footerLabel.opaque = NO;</span>
+<a name="l00109"></a>00109 <span class="comment">                footerLabel.text = poi.details;</span>
+<a name="l00110"></a>00110 <span class="comment">                footerLabel.textColor = [UIColor blackColor];</span>
+<a name="l00111"></a>00111 <span class="comment">                footerLabel.font = [UIFont systemFontOfSize:11];</span>
+<a name="l00112"></a>00112 <span class="comment">                footerLabel.numberOfLines = 0;</span>
+<a name="l00113"></a>00113 <span class="comment">                footerLabel.lineBreakMode = UILineBreakModeWordWrap;</span>
+<a name="l00114"></a>00114 <span class="comment">                [footerLabel sizeToFit];</span>
+<a name="l00115"></a>00115 <span class="comment">                [footerView addSubview: footerLabel];</span>
+<a name="l00116"></a>00116 <span class="comment">                </span>
+<a name="l00117"></a>00117 <span class="comment">                [footerLabel release];  </span>
+<a name="l00118"></a>00118 <span class="comment">        }</span>
+<a name="l00119"></a>00119 <span class="comment">        */</span>
+<a name="l00120"></a>00120         <span class="comment">/*</span>
+<a name="l00121"></a>00121 <span class="comment">        UIFont *font = [[UIFont alloc] init];</span>
+<a name="l00122"></a>00122 <span class="comment">        [font setFontName:@&quot;Arial&quot;];</span>
+<a name="l00123"></a>00123 <span class="comment">        CGSize suggestedSize = [poi.details sizeWithFont:font constrainedToSize:CGSizeMake(250.0, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];</span>
+<a name="l00124"></a>00124 <span class="comment">        </span>
+<a name="l00125"></a>00125 <span class="comment">        //float height = [self calculateHeightOfTextFromWidth:poi.details :font :250 :UILineBreakModeWordWrap];</span>
+<a name="l00126"></a>00126 <span class="comment">        NSLog(@&quot;HÃ¶he des Detailtextes %f&quot;, suggestedSize.height);</span>
+<a name="l00127"></a>00127 <span class="comment">         */</span>
+<a name="l00128"></a>00128         <span class="keywordflow">return</span> nil;
+<a name="l00129"></a>00129 }
+<a name="l00130"></a>00130 
+<a name="l00134"></a>00134 - (void) loadImage{
+<a name="l00135"></a>00135         
+<a name="l00136"></a>00136         <span class="keywordflow">if</span>(<a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>.<a class="code" href="interface_p_o_i.html#af6c6d3845244e4d0608a3782be8dd077">imageURL</a> != nil) {
+<a name="l00137"></a>00137                 NSString *imageURL = <a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>.<a class="code" href="interface_p_o_i.html#af6c6d3845244e4d0608a3782be8dd077">imageURL</a>;
+<a name="l00138"></a>00138                 NSLog(<span class="stringliteral">@&quot;Image URL: %@&quot;</span>, imageURL);
+<a name="l00139"></a>00139                 
+<a name="l00140"></a>00140                 UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString:imageURL]]];
+<a name="l00141"></a>00141                 <span class="keywordflow">if</span>(image){
+<a name="l00142"></a>00142                         CGRect frame = CGRectMake(0, 0, 200, 200);
+<a name="l00143"></a>00143                         
+<a name="l00144"></a>00144                         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+<a name="l00145"></a>00145                         [imageView setImage:image];
+<a name="l00146"></a>00146                         [imageView setClipsToBounds:YES];
+<a name="l00147"></a>00147                         imageView.contentMode = UIViewContentModeCenter;
+<a name="l00148"></a>00148                         
+<a name="l00149"></a>00149                         <span class="keyword">self</span>.tableView.tableHeaderView = imageView;
+<a name="l00150"></a>00150                         
+<a name="l00151"></a>00151                         [imageView release];
+<a name="l00152"></a>00152                 }
+<a name="l00153"></a>00153         }
+<a name="l00154"></a>00154 }
+<a name="l00155"></a>00155 
+<a name="l00162"></a>00162 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+<a name="l00163"></a>00163         
+<a name="l00164"></a>00164         <span class="keywordflow">if</span>(section == 0) {
+<a name="l00165"></a>00165                 <span class="keywordflow">return</span> 4;
+<a name="l00166"></a>00166         }
+<a name="l00167"></a>00167         
+<a name="l00168"></a>00168         <span class="keywordflow">return</span> 1;
+<a name="l00169"></a>00169 }
+<a name="l00170"></a>00170 
+<a name="l00177"></a>00177 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+<a name="l00178"></a>00178 {
+<a name="l00179"></a>00179         <span class="keywordflow">switch</span>(indexPath.section) {
+<a name="l00180"></a>00180                 <span class="keywordflow">case</span> 1:
+<a name="l00181"></a>00181                         
+<a name="l00182"></a>00182                         <span class="keywordflow">switch</span>(indexPath.row) {
+<a name="l00183"></a>00183                                 <span class="keywordflow">case</span> 0:
+<a name="l00184"></a>00184                                         <span class="keywordflow">if</span>(<a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>.<a class="code" href="interface_p_o_i.html#a22b3633a4bf768953ce7865cefa5430d">detailsTextLength</a> &gt; 0) { 
+<a name="l00185"></a>00185                                                 <span class="keywordflow">return</span> <a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>.<a class="code" href="interface_p_o_i.html#a22b3633a4bf768953ce7865cefa5430d">detailsTextLength</a> + 20;
+<a name="l00186"></a>00186                                         } <span class="keywordflow">else</span> {
+<a name="l00187"></a>00187                                                 <span class="keywordflow">return</span> 40;      
+<a name="l00188"></a>00188                                         }
+<a name="l00189"></a>00189                                         <span class="keywordflow">break</span>;
+<a name="l00190"></a>00190                         }
+<a name="l00191"></a>00191                         
+<a name="l00192"></a>00192                         <span class="keywordflow">break</span>;
+<a name="l00193"></a>00193         }
+<a name="l00194"></a>00194         
+<a name="l00195"></a>00195         <span class="keywordflow">return</span> 40;
+<a name="l00196"></a>00196 }
+<a name="l00197"></a>00197 
+<a name="l00204"></a>00204 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+<a name="l00205"></a>00205         
+<a name="l00206"></a>00206         
+<a name="l00207"></a>00207         <span class="keyword">static</span> NSString *identity = <span class="stringliteral">@&quot;MainCell&quot;</span>;
+<a name="l00208"></a>00208         
+<a name="l00209"></a>00209          UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identity];
+<a name="l00210"></a>00210         
+<a name="l00211"></a>00211         <span class="keywordflow">if</span>(cell == nil)
+<a name="l00212"></a>00212         {
+<a name="l00213"></a>00213                 cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identity] autorelease];
+<a name="l00214"></a>00214                 
+<a name="l00215"></a>00215                 <span class="keywordflow">if</span>(indexPath.section == 0) {
+<a name="l00216"></a>00216                         
+<a name="l00217"></a>00217                         <span class="keywordflow">switch</span>(indexPath.row) {
+<a name="l00218"></a>00218                                 <span class="keywordflow">case</span> 0:
+<a name="l00219"></a>00219                                         [cell.textLabel setText:@&quot;ID&quot;];
+<a name="l00220"></a>00220                                         [cell.detailTextLabel setText:[[NSString alloc] initWithFormat: @&quot;%hi&quot;, poi.pid]];
+<a name="l00221"></a>00221                                         <span class="keywordflow">break</span>;
+<a name="l00222"></a>00222                                 <span class="keywordflow">case</span> 1:
+<a name="l00223"></a>00223                                         [cell.textLabel setText:@&quot;Name:&quot;];
+<a name="l00224"></a>00224                                         [cell.detailTextLabel setText:[[NSString alloc] initWithFormat: @&quot;%@&quot;, poi.title]];
+<a name="l00225"></a>00225                                         <span class="keywordflow">break</span>;
+<a name="l00226"></a>00226                                 <span class="keywordflow">case</span> 2:
+<a name="l00227"></a>00227                                         [cell.textLabel setText:@&quot;Sound:&quot;];
+<a name="l00228"></a>00228                                         
+<a name="l00229"></a>00229                                         <a class="code" href="interface_p_o_i_details_view_controller.html#a35c04f7920916d5236c5d076580600a8">buttonSound</a> = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+<a name="l00230"></a>00230                                         
+<a name="l00231"></a>00231                                         <span class="comment">// Button soll so groÃ sein wie Tabellenzelle</span>
+<a name="l00232"></a>00232                                         [buttonSound setFrame:CGRectMake(140, 6, 150, 25)];
+<a name="l00233"></a>00233                                         
+<a name="l00234"></a>00234                                         <span class="comment">// Button formatieren</span>
+<a name="l00235"></a>00235                                         [buttonSound setTitle:@&quot;Audio abspielen&quot; forState:UIControlStateNormal];
+<a name="l00236"></a>00236                                         [buttonSound.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
+<a name="l00237"></a>00237                                         [buttonSound setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+<a name="l00238"></a>00238                                         [buttonSound addTarget:self action:@selector(playSound) forControlEvents:UIControlEventTouchUpInside];
+<a name="l00239"></a>00239                                         
+<a name="l00240"></a>00240                                         [cell.contentView addSubview: buttonSound];
+<a name="l00241"></a>00241                                         
+<a name="l00242"></a>00242                                         <span class="keywordflow">break</span>;
+<a name="l00243"></a>00243                                 <span class="keywordflow">case</span> 3:
+<a name="l00244"></a>00244                                         [cell.textLabel setText:@&quot;Video:&quot;];
+<a name="l00245"></a>00245                                         
+<a name="l00246"></a>00246                                         <span class="keywordflow">if</span>(<a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>.<a class="code" href="interface_p_o_i.html#a0ee15b163f9aea00a479cfc65cc34091">videoURL</a> != nil) {
+<a name="l00247"></a>00247                                                 UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+<a name="l00248"></a>00248                                                 
+<a name="l00249"></a>00249                                                 <span class="comment">// Button soll so groÃ sein wie Tabellenzelle</span>
+<a name="l00250"></a>00250                                                 [button setFrame:CGRectMake(140, 6, 150, 25)];
+<a name="l00251"></a>00251                                                  
+<a name="l00252"></a>00252                                                 <span class="comment">// Button formatieren</span>
+<a name="l00253"></a>00253                                                 [button setTitle:@&quot;Video abspielen&quot; forState:UIControlStateNormal];
+<a name="l00254"></a>00254                                                 [button.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
+<a name="l00255"></a>00255                                                 [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+<a name="l00256"></a>00256                                                 [button addTarget:self action:@selector(playVideo) forControlEvents:UIControlEventTouchUpInside];
+<a name="l00257"></a>00257                                                 
+<a name="l00258"></a>00258                                                 [cell.contentView addSubview: button];
+<a name="l00259"></a>00259                                         } <span class="keywordflow">else</span> {
+<a name="l00260"></a>00260                                                 [cell.detailTextLabel setText:@&quot;Kein Video vorhanden&quot;];
+<a name="l00261"></a>00261                                         }
+<a name="l00262"></a>00262                                         
+<a name="l00263"></a>00263                                         <span class="keywordflow">break</span>;
+<a name="l00264"></a>00264                         }
+<a name="l00265"></a>00265                 }
+<a name="l00266"></a>00266                 
+<a name="l00267"></a>00267                 <span class="keywordflow">if</span>(indexPath.section == 1) {
+<a name="l00268"></a>00268                         
+<a name="l00269"></a>00269                         <span class="keywordflow">if</span>(indexPath.row == 0) {
+<a name="l00270"></a>00270                                 
+<a name="l00271"></a>00271                                         UILabel *detailsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280, poi.detailsTextLength)];
+<a name="l00272"></a>00272                                         detailsLabel.backgroundColor = [UIColor clearColor];
+<a name="l00273"></a>00273                                         detailsLabel.opaque = NO;
+<a name="l00274"></a>00274                                         detailsLabel.textColor = [UIColor blackColor];
+<a name="l00275"></a>00275                                         detailsLabel.font = [UIFont systemFontOfSize:13];
+<a name="l00276"></a>00276                                         detailsLabel.numberOfLines = 0;
+<a name="l00277"></a>00277                                         detailsLabel.lineBreakMode = UILineBreakModeWordWrap;
+<a name="l00278"></a>00278                                         
+<a name="l00279"></a>00279                                         <span class="keywordflow">if</span>(<a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>.<a class="code" href="interface_p_o_i.html#a0b6bb6f1128c8cf4af2edd5fd47940fe">details</a> != nil) {
+<a name="l00280"></a>00280                                                 detailsLabel.text = <a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>.<a class="code" href="interface_p_o_i.html#a0b6bb6f1128c8cf4af2edd5fd47940fe">details</a>;
+<a name="l00281"></a>00281                                         } <span class="keywordflow">else</span> {
+<a name="l00282"></a>00282                                                 detailsLabel.text = <span class="stringliteral">@&quot;Keine Beschreibung vorhanden&quot;</span>;
+<a name="l00283"></a>00283                                         }
+<a name="l00284"></a>00284                                         
+<a name="l00285"></a>00285                                         [detailsLabel sizeToFit];
+<a name="l00286"></a>00286                                 
+<a name="l00287"></a>00287                                         [cell.contentView addSubview: detailsLabel];
+<a name="l00288"></a>00288                                         
+<a name="l00289"></a>00289                                         [detailsLabel release];
+<a name="l00290"></a>00290                         }
+<a name="l00291"></a>00291                 }
+<a name="l00292"></a>00292         }
+<a name="l00293"></a>00293         
+<a name="l00294"></a>00294         <span class="keywordflow">return</span> cell;
+<a name="l00295"></a>00295 }
+<a name="l00296"></a>00296 
+<a name="l00303"></a>00303 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+<a name="l00304"></a>00304         <span class="comment">//return poi.detailsTextLength;</span>
+<a name="l00305"></a>00305         
+<a name="l00306"></a>00306         <span class="keywordflow">return</span> 50;
+<a name="l00307"></a>00307 }
+<a name="l00308"></a>00308 
+<a name="l00309"></a><a class="code" href="interface_p_o_i_details_view_controller.html#a2c795e3ef76b754c8ff16f6334189472">00309</a> - (void) <a class="code" href="interface_p_o_i_details_view_controller.html#a2c795e3ef76b754c8ff16f6334189472">reloadTable</a> {
+<a name="l00310"></a>00310         [<span class="keyword">self</span>.tableView reloadData];
+<a name="l00311"></a>00311 }
+<a name="l00312"></a>00312 
+<a name="l00313"></a>00313 <span class="comment">/*</span>
+<a name="l00314"></a>00314 <span class="comment"> // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.</span>
+<a name="l00315"></a>00315 <span class="comment">- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {</span>
+<a name="l00316"></a>00316 <span class="comment">    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {</span>
+<a name="l00317"></a>00317 <span class="comment">        // Custom initialization</span>
+<a name="l00318"></a>00318 <span class="comment">    }</span>
+<a name="l00319"></a>00319 <span class="comment">    return self;</span>
+<a name="l00320"></a>00320 <span class="comment">}</span>
+<a name="l00321"></a>00321 <span class="comment">*/</span>
+<a name="l00322"></a>00322 
+<a name="l00323"></a>00323 
+<a name="l00324"></a>00324 <span class="comment">// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.</span>
+<a name="l00325"></a>00325 - (void)viewDidLoad {
+<a name="l00326"></a>00326         <a class="code" href="interface_p_o_i_details_view_controller.html#a399b6acaa417e7921abf51b70de6fd22">appDelegate</a> = (<a class="code" href="interface_sound_city_app_delegate.html">SoundCityAppDelegate</a> *)[[UIApplication sharedApplication] delegate];
+<a name="l00327"></a>00327         
+<a name="l00328"></a>00328         <span class="comment">// Singleton der AppSettings auf MapViewController laden</span>
+<a name="l00329"></a>00329         <a class="code" href="interface_p_o_i_details_view_controller.html#aa7b02f858154ff80725c355aad693658">settings</a> = [<a class="code" href="interface_app_settings.html">AppSettings</a> <a class="code" href="interface_app_settings.html#aeeaa42128ecb6a3f1642481a8f628760">sharedAppSettings</a>];
+<a name="l00330"></a>00330         
+<a name="l00331"></a>00331         <a class="code" href="interface_p_o_i_details_view_controller.html#ac1d9379646041b896d3d66f4ccacdd16">videoPlayer</a> = [[<a class="code" href="interface_video_player.html">VideoPlayer</a> alloc] init];
+<a name="l00332"></a>00332         
+<a name="l00333"></a>00333         [<span class="keyword">self</span> loadImage];
+<a name="l00334"></a>00334         
+<a name="l00335"></a>00335         <span class="keywordflow">if</span>(<a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>.<a class="code" href="interface_p_o_i.html#a0b6bb6f1128c8cf4af2edd5fd47940fe">details</a> != nil) {
+<a name="l00336"></a>00336                 CGSize aSize = [poi.details sizeWithFont:[UIFont systemFontOfSize:13]  
+<a name="l00337"></a>00337                                                 constrainedToSize:CGSizeMake(280, FLT_MAX)  
+<a name="l00338"></a>00338                                                 lineBreakMode:UILineBreakModeTailTruncation];
+<a name="l00339"></a>00339                 
+<a name="l00340"></a>00340                 [poi setDetailsTextLength:(int)aSize.height];
+<a name="l00341"></a>00341                 NSLog(<span class="stringliteral">@&quot;Text lÃ¤mge %hi&quot;</span>, <a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a>.<a class="code" href="interface_p_o_i.html#a22b3633a4bf768953ce7865cefa5430d">detailsTextLength</a>);
+<a name="l00342"></a>00342         }
+<a name="l00343"></a>00343         
+<a name="l00344"></a>00344         
+<a name="l00345"></a>00345         
+<a name="l00346"></a>00346         [<span class="keyword">self</span>.navigationController setToolbarHidden:YES animated:YES];
+<a name="l00347"></a>00347         [<span class="keyword">super</span> viewDidLoad];
+<a name="l00348"></a>00348 }
+<a name="l00349"></a>00349 
+<a name="l00350"></a>00350 
+<a name="l00351"></a>00351 - (void)viewWillDisappear:(BOOL)animated {
+<a name="l00352"></a>00352         
+<a name="l00353"></a>00353         <span class="comment">//NSLog(@&quot;[POIDetailsViewController] - viewWillDisappear&quot;);</span>
+<a name="l00354"></a>00354         
+<a name="l00355"></a>00355         <span class="comment">// Beim Verlassen der Detailansicht wird der aktuelle Stream gestoppt, auÃer der User kommt aus der Kartenansicht</span>
+<a name="l00356"></a>00356         <span class="keywordflow">if</span>(<a class="code" href="interface_p_o_i_details_view_controller.html#a399b6acaa417e7921abf51b70de6fd22">appDelegate</a>.<a class="code" href="interface_sound_city_app_delegate.html#aae84b25a8186a168c98ad9584e31e332">tabBarController</a>.selectedIndex != 1) {
+<a name="l00357"></a>00357                 [<span class="keyword">self</span>.poi stopSound];
+<a name="l00358"></a>00358         }
+<a name="l00359"></a>00359 }
+<a name="l00360"></a>00360 
+<a name="l00361"></a>00361 <span class="comment">/*</span>
+<a name="l00362"></a>00362 <span class="comment">// Override to allow orientations other than the default portrait orientation.</span>
+<a name="l00363"></a>00363 <span class="comment">- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {</span>
+<a name="l00364"></a>00364 <span class="comment">    // Return YES for supported orientations</span>
+<a name="l00365"></a>00365 <span class="comment">    return (interfaceOrientation == UIInterfaceOrientationPortrait);</span>
+<a name="l00366"></a>00366 <span class="comment">}</span>
+<a name="l00367"></a>00367 <span class="comment">*/</span>
+<a name="l00368"></a>00368 
+<a name="l00369"></a>00369 - (void)didReceiveMemoryWarning {
+<a name="l00370"></a>00370         <span class="comment">// Releases the view if it doesn&apos;t have a superview.</span>
+<a name="l00371"></a>00371     [<span class="keyword">super</span> didReceiveMemoryWarning];
+<a name="l00372"></a>00372         
+<a name="l00373"></a>00373         <span class="comment">// Release any cached data, images, etc that aren&apos;t in use.</span>
+<a name="l00374"></a>00374 }
+<a name="l00375"></a>00375 
+<a name="l00376"></a>00376 - (void)viewDidUnload {
+<a name="l00377"></a>00377         <span class="comment">// Release any retained subviews of the main view.</span>
+<a name="l00378"></a>00378         <span class="comment">// e.g. self.myOutlet = nil;</span>
+<a name="l00379"></a>00379 }
+<a name="l00380"></a>00380 
+<a name="l00381"></a>00381 
+<a name="l00382"></a>00382 - (void)dealloc {
+<a name="l00383"></a>00383         [videoPlayer release];
+<a name="l00384"></a>00384         [poi release];
+<a name="l00385"></a>00385         [<span class="keyword">super</span> dealloc];
+<a name="l00386"></a>00386 }
+<a name="l00387"></a>00387 
+<a name="l00388"></a>00388 
+<a name="l00389"></a>00389 <span class="keyword">@end</span>
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:32 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

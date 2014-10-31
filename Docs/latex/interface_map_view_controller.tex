@@ -1,0 +1,341 @@
+\hypertarget{interface_map_view_controller}{
+\subsection{MapViewController Klassenreferenz}
+\label{interface_map_view_controller}\index{MapViewController@{MapViewController}}
+}
+
+
+{\ttfamily \#import $<$MapViewController.h$>$}
+
+Abgeleitet von \hyperlink{protocol_g_p_s_calculator_delegate-p}{GPSCalculatorDelegate-\/p}.\subsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_map_view_controller_ad3cf36d9e97a1a448f3cedb9a6d74d52}{locationUpdate:}
+\item 
+(void) -\/ \hyperlink{interface_map_view_controller_a76ee053461c5c2b8e7f1eb1a28e8d65b}{locationError:}
+\item 
+(void) -\/ \hyperlink{interface_map_view_controller_a95b915b0cb182a6117a9ee23f5b2ede8}{setGPSPoint}
+\item 
+(void) -\/ \hyperlink{interface_map_view_controller_a4c6506cd8c42f8da285f1c3a153a2d14}{showMarks:}
+\item 
+(void) -\/ \hyperlink{interface_map_view_controller_a41ee7e4c7e55bce32dccb93d128dc988}{showCurrentPOIInMap}
+\item 
+(BOOL) -\/ \hyperlink{interface_map_view_controller_aa06b8c96774de56d356c67bafb964ced}{poiWasVisited:}
+\item 
+(void) -\/ \hyperlink{interface_map_view_controller_ab13448226549116f45240b806aa00290}{initMapWithRoute}
+\item 
+(void) -\/ \hyperlink{interface_map_view_controller_a518a53d75a01058fcbb9f32362504103}{fitMapToRegion}
+\item 
+(void) -\/ \hyperlink{interface_map_view_controller_a9210c6dd6212d6c463f1ab56ca84b8b7}{playAudioOfPOI}
+\end{DoxyCompactItemize}
+\subsubsection*{Geschützte Attribute}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_sound_city_app_delegate}{SoundCityAppDelegate} $\ast$ \hyperlink{interface_map_view_controller_a12d413910165fe7fd177ea75502be782}{appDelegate}
+\item 
+NSMutableDictionary $\ast$ \hyperlink{interface_map_view_controller_a9ea754eff3429ea0a98887f0bcb43eb8}{\_\-routeViews}
+\item 
+IBOutlet MKMapView $\ast$ \hyperlink{interface_map_view_controller_a5ae4cd29d4b84d9ed48341a58a2c0f4b}{mapView}
+\end{DoxyCompactItemize}
+\subsubsection*{Propertys}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_p_o_i_details_view_controller}{POIDetailsViewController} $\ast$ \hyperlink{interface_map_view_controller_a306718a79bf2bf4553b90226aad82a1a}{poiDetailsView}
+\item 
+\hyperlink{interface_p_o_i_list_view_controller}{POIListViewController} $\ast$ \hyperlink{interface_map_view_controller_a29e38febc1e20365e2a84a25e84cea30}{poiListView}
+\item 
+UIBarButtonItem $\ast$ \hyperlink{interface_map_view_controller_a054673874ec0329457346065af298c0b}{buttonMap}
+\item 
+int \hyperlink{interface_map_view_controller_a8b5fb733f6bd00dd08f1cf90808f4420}{currentGPSPointPos}
+\item 
+\hyperlink{interface_g_p_s_point}{GPSPoint} $\ast$ \hyperlink{interface_map_view_controller_a623b304bb044927ee00052aeb5c18100}{currentGPSPoint}
+\item 
+\hyperlink{interface_g_p_s_calculator}{GPSCalculator} $\ast$ \hyperlink{interface_map_view_controller_a8da7a737d0d98fc23afd9e6dbf766026}{gpsCalc}
+\item 
+UILabel $\ast$ \hyperlink{interface_map_view_controller_ad0402524f486125ee10dff142c7b3ffd}{gpsStatus}
+\item 
+UIBarButtonItem $\ast$ \hyperlink{interface_map_view_controller_a64d3497885159ef092e213a71a5a7e42}{gpsStatusBarButton}
+\item 
+BOOL \hyperlink{interface_map_view_controller_ac4ce9dd86dc3db11a6573ae2bccfecc6}{foundPOI}
+\item 
+\hyperlink{interface_p_o_i}{POI} $\ast$ \hyperlink{interface_map_view_controller_a9c11e3ae9fc617f0c978ef3cf9f3e867}{currentPOI}
+\item 
+NSMutableArray $\ast$ \hyperlink{interface_map_view_controller_aa20f046169a89b035199e22efae744d2}{currentPOIList}
+\item 
+NSMutableArray $\ast$ \hyperlink{interface_map_view_controller_aa496b5d41e4cd44cd9c910b980667dc1}{visitedPois}
+\item 
+UIBarButtonItem $\ast$ \hyperlink{interface_map_view_controller_add41cd6cc9df20dd9a3bb3663913395a}{btnPause}
+\item 
+UIBarButtonItem $\ast$ \hyperlink{interface_map_view_controller_a3af316be6b8a063567aaf1720dede525}{btnPlay}
+\item 
+\hyperlink{interface_app_settings}{AppSettings} $\ast$ \hyperlink{interface_map_view_controller_a318f1f10cedf2e27f4ba6db3de2558b9}{settings}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Ausführliche Beschreibung}
+
+
+Definiert in Zeile 20 der Datei MapViewController.h.
+
+\subsubsection{Dokumentation der Elementfunktionen}
+\hypertarget{interface_map_view_controller_a518a53d75a01058fcbb9f32362504103}{
+\index{MapViewController@{MapViewController}!fitMapToRegion@{fitMapToRegion}}
+\index{fitMapToRegion@{fitMapToRegion}!MapViewController@{MapViewController}}
+\paragraph[{fitMapToRegion}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) fitMapToRegion }\hfill}
+\label{interface_map_view_controller_a518a53d75a01058fcbb9f32362504103}
+Setzt die Karte auf den voreingestellten Auschnitt, so dass alle POIs zu sehen sind \begin{Desc}
+\item[\hyperlink{todo__todo000001}{Noch zu erledigen}]: -\/ Ausschnitt so anpassen, dass \hyperlink{interface_route}{Route} auch in den Ausschnitt passt \end{Desc}
+
+
+Definiert in Zeile 544 der Datei MapViewController.m.
+
+Benutzt GPSPoint::coordinate, currentGPSPoint und mapView.
+
+Wird benutzt von showMarks:.\hypertarget{interface_map_view_controller_ab13448226549116f45240b806aa00290}{
+\index{MapViewController@{MapViewController}!initMapWithRoute@{initMapWithRoute}}
+\index{initMapWithRoute@{initMapWithRoute}!MapViewController@{MapViewController}}
+\paragraph[{initMapWithRoute}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) initMapWithRoute }\hfill}
+\label{interface_map_view_controller_ab13448226549116f45240b806aa00290}
+Methode wirde immer aufgerufen, wenn eine \hyperlink{interface_route}{Route} aus der Routenliste des zweiten Tabs ausgewÃ¤hlt wurde Es werden dann die \hyperlink{interface_route}{Route}, der aktuelle GPS Punkt und die POIs gezeichnet AuÃerdem werden vorher alle Annotations von der Karte entfernt Die Methode wird nur ausgefÃ¼hrt, wenn eine aktuelle \hyperlink{interface_route}{Route} ausgewÃ¤hlt und auch ein Wechsel der \hyperlink{interface_route}{Route} ausgefÃ¼hrt wurde Aufgerufen wird die Methode bei viewWillAppear und viewDidLoad 
+
+Definiert in Zeile 140 der Datei MapViewController.m.
+
+Benutzt appDelegate, SoundCityAppDelegate::currentRoute, mapView, SoundCityAppDelegate::routeChanged, setGPSPoint und showMarks:.\hypertarget{interface_map_view_controller_a76ee053461c5c2b8e7f1eb1a28e8d65b}{
+\index{MapViewController@{MapViewController}!locationError:@{locationError:}}
+\index{locationError:@{locationError:}!MapViewController@{MapViewController}}
+\paragraph[{locationError:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) locationError: (NSError $\ast$) {\em error}}\hfill}
+\label{interface_map_view_controller_a76ee053461c5c2b8e7f1eb1a28e8d65b}
+
+
+Erneute Implementation von \hyperlink{protocol_g_p_s_calculator_delegate-p_a890f58f3468025f475f8bb7d9aa33332}{$<$GPSCalculatorDelegate$>$}.
+
+Definiert in Zeile 741 der Datei MapViewController.m.
+
+Benutzt gpsStatus.\hypertarget{interface_map_view_controller_ad3cf36d9e97a1a448f3cedb9a6d74d52}{
+\index{MapViewController@{MapViewController}!locationUpdate:@{locationUpdate:}}
+\index{locationUpdate:@{locationUpdate:}!MapViewController@{MapViewController}}
+\paragraph[{locationUpdate:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) locationUpdate: (CLLocation $\ast$) {\em location}}\hfill}
+\label{interface_map_view_controller_ad3cf36d9e97a1a448f3cedb9a6d74d52}
+Aktuelle Position anhand des LocationManagers aus dem Objekt GPSCalc 
+
+Erneute Implementation von \hyperlink{protocol_g_p_s_calculator_delegate-p_a0adb149b836a8e03a11ea255a5f01a31}{$<$GPSCalculatorDelegate$>$}.
+
+Definiert in Zeile 732 der Datei MapViewController.m.
+
+Benutzt GPSPoint::coordinate, currentGPSPoint, setGPSPoint, settings und AppSettings::useGPS.\hypertarget{interface_map_view_controller_a9210c6dd6212d6c463f1ab56ca84b8b7}{
+\index{MapViewController@{MapViewController}!playAudioOfPOI@{playAudioOfPOI}}
+\index{playAudioOfPOI@{playAudioOfPOI}!MapViewController@{MapViewController}}
+\paragraph[{playAudioOfPOI}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) playAudioOfPOI }\hfill}
+\label{interface_map_view_controller_a9210c6dd6212d6c463f1ab56ca84b8b7}
+Audiostream abspielen, wenn \hyperlink{interface_p_o_i}{POI} gefunden wird. Dies darf nur geschehen, wenn auch in den Settings die Funktion eingeschaltet ist 
+
+Definiert in Zeile 516 der Datei MapViewController.m.
+
+Benutzt foundPOI, AppSettings::playAudioAutomatic und settings.
+
+Wird benutzt von setGPSPoint.\hypertarget{interface_map_view_controller_aa06b8c96774de56d356c67bafb964ced}{
+\index{MapViewController@{MapViewController}!poiWasVisited:@{poiWasVisited:}}
+\index{poiWasVisited:@{poiWasVisited:}!MapViewController@{MapViewController}}
+\paragraph[{poiWasVisited:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (BOOL) poiWasVisited: ({\bf POI} $\ast$) {\em poi}}\hfill}
+\label{interface_map_view_controller_aa06b8c96774de56d356c67bafb964ced}
+PrÃ¼fen, ob poi in Array visitedPois ist, wenn nicht, NO zurÃ¼ckgeben wenn poi bereits besucht wurde, YES zurÃ¼ckgeben 
+\begin{DoxyParams}{Parameter}
+\item[{\em poi}]zu prÃ¼fender Punkt \end{DoxyParams}
+
+
+Definiert in Zeile 502 der Datei MapViewController.m.
+
+Benutzt visitedPois.
+
+Wird benutzt von setGPSPoint.\hypertarget{interface_map_view_controller_a95b915b0cb182a6117a9ee23f5b2ede8}{
+\index{MapViewController@{MapViewController}!setGPSPoint@{setGPSPoint}}
+\index{setGPSPoint@{setGPSPoint}!MapViewController@{MapViewController}}
+\paragraph[{setGPSPoint}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) setGPSPoint }\hfill}
+\label{interface_map_view_controller_a95b915b0cb182a6117a9ee23f5b2ede8}
+Zeichnet den aktuellen GPSPunkt currentGPSPoint auf die Karte und initiert Abstandsberechnungen zu allen vorhandenen POIs, wird kein \hyperlink{interface_p_o_i}{POI} gefunden, wird currentPOI auf nil gesetzt, sonst enthÃ¤lt diese Variable den nÃ¤chsten \hyperlink{interface_p_o_i}{POI}. Weiterhin wird geprÃ¼ft, ob der aktuelle currentPOI dem neu berechneten ist, so dass z.B. der Stream nicht neue gestartet wird. Werden mehr als 1 \hyperlink{interface_p_o_i}{POI} in nÃ¤herer Umgebung gefunden, wird erst der aktuelle zuende gestreamt und dann mit dem nÃ¤chsten weiter gearbeitet (vorausgesetzt, diese befindet sich noch in der NÃ¤he). Diese kann vom Nutzer Ã¼bersprungen werden, indem er einen Button \char`\"{}Zum nÃ¤chsten POI springen\char`\"{} anklickt 
+
+Definiert in Zeile 313 der Datei MapViewController.m.
+
+Benutzt appDelegate, currentGPSPoint, currentGPSPointPos, currentPOI, currentPOIList, SoundCityAppDelegate::currentRoute, foundPOI, gpsCalc, SoundCityAppDelegate::gpspoints, gpsStatus, POI::isEqual:, mapView, MLogString, GPSCalculator::nearestPOI, GPSCalculator::nearestPOIExists:gpspoint:, playAudioOfPOI, Route::pois, poiWasVisited:, settings, showCurrentPOIInMap, AppSettings::showVisitedPOIsAgain, POI::title, AppSettings::useGPS und visitedPois.
+
+Wird benutzt von initMapWithRoute und locationUpdate:.\hypertarget{interface_map_view_controller_a41ee7e4c7e55bce32dccb93d128dc988}{
+\index{MapViewController@{MapViewController}!showCurrentPOIInMap@{showCurrentPOIInMap}}
+\index{showCurrentPOIInMap@{showCurrentPOIInMap}!MapViewController@{MapViewController}}
+\paragraph[{showCurrentPOIInMap}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) showCurrentPOIInMap }\hfill}
+\label{interface_map_view_controller_a41ee7e4c7e55bce32dccb93d128dc988}
+Ãffnet das Infofenster der aktuellen Annotation auf der Karte 
+
+Definiert in Zeile 530 der Datei MapViewController.m.
+
+Benutzt currentPOI und mapView.
+
+Wird benutzt von setGPSPoint und showMarks:.\hypertarget{interface_map_view_controller_a4c6506cd8c42f8da285f1c3a153a2d14}{
+\index{MapViewController@{MapViewController}!showMarks:@{showMarks:}}
+\index{showMarks:@{showMarks:}!MapViewController@{MapViewController}}
+\paragraph[{showMarks:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) showMarks: (NSArray $\ast$) {\em marks}}\hfill}
+\label{interface_map_view_controller_a4c6506cd8c42f8da285f1c3a153a2d14}
+
+
+Definiert in Zeile 186 der Datei MapViewController.m.
+
+Benutzt currentPOI, fitMapToRegion, mapView und showCurrentPOIInMap.
+
+Wird benutzt von initMapWithRoute.
+
+\subsubsection{Dokumentation der Datenelemente}
+\hypertarget{interface_map_view_controller_a9ea754eff3429ea0a98887f0bcb43eb8}{
+\index{MapViewController@{MapViewController}!\_\-routeViews@{\_\-routeViews}}
+\index{\_\-routeViews@{\_\-routeViews}!MapViewController@{MapViewController}}
+\paragraph[{\_\-routeViews}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSMutableDictionary$\ast$) {\bf \_\-routeViews}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a9ea754eff3429ea0a98887f0bcb43eb8}
+
+
+Definiert in Zeile 30 der Datei MapViewController.h.\hypertarget{interface_map_view_controller_a12d413910165fe7fd177ea75502be782}{
+\index{MapViewController@{MapViewController}!appDelegate@{appDelegate}}
+\index{appDelegate@{appDelegate}!MapViewController@{MapViewController}}
+\paragraph[{appDelegate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf SoundCityAppDelegate}$\ast$) {\bf appDelegate}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a12d413910165fe7fd177ea75502be782}
+
+
+Definiert in Zeile 21 der Datei MapViewController.h.
+
+Wird benutzt von initMapWithRoute und setGPSPoint.\hypertarget{interface_map_view_controller_a5ae4cd29d4b84d9ed48341a58a2c0f4b}{
+\index{MapViewController@{MapViewController}!mapView@{mapView}}
+\index{mapView@{mapView}!MapViewController@{MapViewController}}
+\paragraph[{mapView}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBOutlet MKMapView$\ast$) {\bf mapView}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a5ae4cd29d4b84d9ed48341a58a2c0f4b}
+
+
+Definiert in Zeile 35 der Datei MapViewController.h.
+
+Wird benutzt von fitMapToRegion, initMapWithRoute, setGPSPoint, showCurrentPOIInMap und showMarks:.
+
+\subsubsection{Dokumentation der Propertys}
+\hypertarget{interface_map_view_controller_add41cd6cc9df20dd9a3bb3663913395a}{
+\index{MapViewController@{MapViewController}!btnPause@{btnPause}}
+\index{btnPause@{btnPause}!MapViewController@{MapViewController}}
+\paragraph[{btnPause}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (UIBarButtonItem $\ast$) btnPause\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_map_view_controller_add41cd6cc9df20dd9a3bb3663913395a}
+
+
+Definiert in Zeile 48 der Datei MapViewController.h.\hypertarget{interface_map_view_controller_a3af316be6b8a063567aaf1720dede525}{
+\index{MapViewController@{MapViewController}!btnPlay@{btnPlay}}
+\index{btnPlay@{btnPlay}!MapViewController@{MapViewController}}
+\paragraph[{btnPlay}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (UIBarButtonItem $\ast$) btnPlay\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a3af316be6b8a063567aaf1720dede525}
+
+
+Definiert in Zeile 49 der Datei MapViewController.h.\hypertarget{interface_map_view_controller_a054673874ec0329457346065af298c0b}{
+\index{MapViewController@{MapViewController}!buttonMap@{buttonMap}}
+\index{buttonMap@{buttonMap}!MapViewController@{MapViewController}}
+\paragraph[{buttonMap}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (UIBarButtonItem $\ast$) buttonMap\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a054673874ec0329457346065af298c0b}
+
+
+Definiert in Zeile 38 der Datei MapViewController.h.\hypertarget{interface_map_view_controller_a623b304bb044927ee00052aeb5c18100}{
+\index{MapViewController@{MapViewController}!currentGPSPoint@{currentGPSPoint}}
+\index{currentGPSPoint@{currentGPSPoint}!MapViewController@{MapViewController}}
+\paragraph[{currentGPSPoint}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf GPSPoint} $\ast$) currentGPSPoint\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a623b304bb044927ee00052aeb5c18100}
+
+
+Definiert in Zeile 26 der Datei MapViewController.h.
+
+Wird benutzt von fitMapToRegion, locationUpdate: und setGPSPoint.\hypertarget{interface_map_view_controller_a8b5fb733f6bd00dd08f1cf90808f4420}{
+\index{MapViewController@{MapViewController}!currentGPSPointPos@{currentGPSPointPos}}
+\index{currentGPSPointPos@{currentGPSPointPos}!MapViewController@{MapViewController}}
+\paragraph[{currentGPSPointPos}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (int) currentGPSPointPos\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, assign\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a8b5fb733f6bd00dd08f1cf90808f4420}
+
+
+Definiert in Zeile 25 der Datei MapViewController.h.
+
+Wird benutzt von setGPSPoint.\hypertarget{interface_map_view_controller_a9c11e3ae9fc617f0c978ef3cf9f3e867}{
+\index{MapViewController@{MapViewController}!currentPOI@{currentPOI}}
+\index{currentPOI@{currentPOI}!MapViewController@{MapViewController}}
+\paragraph[{currentPOI}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf POI} $\ast$) currentPOI\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, copy\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a9c11e3ae9fc617f0c978ef3cf9f3e867}
+
+
+Definiert in Zeile 44 der Datei MapViewController.h.
+
+Wird benutzt von setGPSPoint, showCurrentPOIInMap und showMarks:.\hypertarget{interface_map_view_controller_aa20f046169a89b035199e22efae744d2}{
+\index{MapViewController@{MapViewController}!currentPOIList@{currentPOIList}}
+\index{currentPOIList@{currentPOIList}!MapViewController@{MapViewController}}
+\paragraph[{currentPOIList}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSMutableArray $\ast$) currentPOIList\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, copy\mbox{]}}}\hfill}
+\label{interface_map_view_controller_aa20f046169a89b035199e22efae744d2}
+
+
+Definiert in Zeile 45 der Datei MapViewController.h.
+
+Wird benutzt von setGPSPoint.\hypertarget{interface_map_view_controller_ac4ce9dd86dc3db11a6573ae2bccfecc6}{
+\index{MapViewController@{MapViewController}!foundPOI@{foundPOI}}
+\index{foundPOI@{foundPOI}!MapViewController@{MapViewController}}
+\paragraph[{foundPOI}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (BOOL) foundPOI\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, assign\mbox{]}}}\hfill}
+\label{interface_map_view_controller_ac4ce9dd86dc3db11a6573ae2bccfecc6}
+
+
+Definiert in Zeile 43 der Datei MapViewController.h.
+
+Wird benutzt von playAudioOfPOI und setGPSPoint.\hypertarget{interface_map_view_controller_a8da7a737d0d98fc23afd9e6dbf766026}{
+\index{MapViewController@{MapViewController}!gpsCalc@{gpsCalc}}
+\index{gpsCalc@{gpsCalc}!MapViewController@{MapViewController}}
+\paragraph[{gpsCalc}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf GPSCalculator} $\ast$) gpsCalc\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a8da7a737d0d98fc23afd9e6dbf766026}
+
+
+Definiert in Zeile 33 der Datei MapViewController.h.
+
+Wird benutzt von setGPSPoint.\hypertarget{interface_map_view_controller_ad0402524f486125ee10dff142c7b3ffd}{
+\index{MapViewController@{MapViewController}!gpsStatus@{gpsStatus}}
+\index{gpsStatus@{gpsStatus}!MapViewController@{MapViewController}}
+\paragraph[{gpsStatus}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (UILabel $\ast$) gpsStatus\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_map_view_controller_ad0402524f486125ee10dff142c7b3ffd}
+
+
+Definiert in Zeile 36 der Datei MapViewController.h.
+
+Wird benutzt von locationError: und setGPSPoint.\hypertarget{interface_map_view_controller_a64d3497885159ef092e213a71a5a7e42}{
+\index{MapViewController@{MapViewController}!gpsStatusBarButton@{gpsStatusBarButton}}
+\index{gpsStatusBarButton@{gpsStatusBarButton}!MapViewController@{MapViewController}}
+\paragraph[{gpsStatusBarButton}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (UIBarButtonItem $\ast$) gpsStatusBarButton\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a64d3497885159ef092e213a71a5a7e42}
+
+
+Definiert in Zeile 37 der Datei MapViewController.h.\hypertarget{interface_map_view_controller_a306718a79bf2bf4553b90226aad82a1a}{
+\index{MapViewController@{MapViewController}!poiDetailsView@{poiDetailsView}}
+\index{poiDetailsView@{poiDetailsView}!MapViewController@{MapViewController}}
+\paragraph[{poiDetailsView}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf POIDetailsViewController} $\ast$) poiDetailsView\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a306718a79bf2bf4553b90226aad82a1a}
+
+
+Definiert in Zeile 22 der Datei MapViewController.h.\hypertarget{interface_map_view_controller_a29e38febc1e20365e2a84a25e84cea30}{
+\index{MapViewController@{MapViewController}!poiListView@{poiListView}}
+\index{poiListView@{poiListView}!MapViewController@{MapViewController}}
+\paragraph[{poiListView}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf POIListViewController} $\ast$) poiListView\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a29e38febc1e20365e2a84a25e84cea30}
+
+
+Definiert in Zeile 23 der Datei MapViewController.h.\hypertarget{interface_map_view_controller_a318f1f10cedf2e27f4ba6db3de2558b9}{
+\index{MapViewController@{MapViewController}!settings@{settings}}
+\index{settings@{settings}!MapViewController@{MapViewController}}
+\paragraph[{settings}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf AppSettings} $\ast$) settings\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_map_view_controller_a318f1f10cedf2e27f4ba6db3de2558b9}
+
+
+Definiert in Zeile 40 der Datei MapViewController.h.
+
+Wird benutzt von locationUpdate:, playAudioOfPOI und setGPSPoint.\hypertarget{interface_map_view_controller_aa496b5d41e4cd44cd9c910b980667dc1}{
+\index{MapViewController@{MapViewController}!visitedPois@{visitedPois}}
+\index{visitedPois@{visitedPois}!MapViewController@{MapViewController}}
+\paragraph[{visitedPois}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSMutableArray $\ast$) visitedPois\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, copy\mbox{]}}}\hfill}
+\label{interface_map_view_controller_aa496b5d41e4cd44cd9c910b980667dc1}
+
+
+Definiert in Zeile 27 der Datei MapViewController.h.
+
+Wird benutzt von poiWasVisited: und setGPSPoint.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:\begin{DoxyCompactItemize}
+\item 
+Classes/\hyperlink{_map_view_controller_8h}{MapViewController.h}\item 
+Classes/\hyperlink{_map_view_controller_8m}{MapViewController.m}\end{DoxyCompactItemize}

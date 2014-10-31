@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: RoutesViewController.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<h1>RoutesViewController.h</h1><a href="_routes_view_controller_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">//  RoutesViewController.h</span>
+<a name="l00003"></a>00003 <span class="comment">//  SoundCity</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//  Created by administrator on 16.10.09.</span>
+<a name="l00006"></a>00006 <span class="comment">//  Copyright 2009 init ag. All rights reserved.</span>
+<a name="l00007"></a>00007 <span class="comment">//</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#import &lt;UIKit/UIKit.h&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#import &quot;<a class="code" href="_app_settings_8h.html">AppSettings.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#import &quot;<a class="code" href="_sound_city_app_delegate_8h.html">SoundCityAppDelegate.h</a>&quot;</span>;
+<a name="l00012"></a>00012 <span class="preprocessor">#import &quot;<a class="code" href="_route_8h.html">Route.h</a>&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#import &quot;<a class="code" href="_p_o_i_details_view_controller_8h.html">POIDetailsViewController.h</a>&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#import &quot;<a class="code" href="_p_o_i_list_view_controller_8h.html">POIListViewController.h</a>&quot;</span>;
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="interface_routes_view_controller.html">00016</a> <span class="keyword">@interface </span><a class="code" href="interface_routes_view_controller.html">RoutesViewController</a> : UITableViewController {
+<a name="l00017"></a><a class="code" href="interface_routes_view_controller.html#a573fe62b035ab38208564db3f8d7ba1a">00017</a>         <a class="code" href="interface_app_settings.html">AppSettings</a> *<a class="code" href="interface_routes_view_controller.html#a573fe62b035ab38208564db3f8d7ba1a">settings</a>;
+<a name="l00018"></a><a class="code" href="interface_routes_view_controller.html#ab71ce4b8a535bca29bb855d0613b875a">00018</a>         <a class="code" href="interface_sound_city_app_delegate.html">SoundCityAppDelegate</a> *<a class="code" href="interface_routes_view_controller.html#ab71ce4b8a535bca29bb855d0613b875a">appDelegate</a>;
+<a name="l00019"></a><a class="code" href="interface_routes_view_controller.html#a9a4b642d1d81169b4286b0cdf6fd88ac">00019</a>         <a class="code" href="interface_p_o_i_details_view_controller.html">POIDetailsViewController</a> *<a class="code" href="interface_routes_view_controller.html#a9a4b642d1d81169b4286b0cdf6fd88ac">poiDetailsView</a>;       
+<a name="l00020"></a><a class="code" href="interface_routes_view_controller.html#aaa85ec4bf6eacc92d4d5bcbf70e74f14">00020</a>         <a class="code" href="interface_p_o_i_list_view_controller.html">POIListViewController</a> *<a class="code" href="interface_routes_view_controller.html#aaa85ec4bf6eacc92d4d5bcbf70e74f14">poiListView</a>;
+<a name="l00021"></a>00021         
+<a name="l00022"></a><a class="code" href="interface_routes_view_controller.html#a761d44bec7a4c60f9b5fd12d18333686">00022</a>         IBOutlet UISearchBar *<a class="code" href="interface_routes_view_controller.html#a761d44bec7a4c60f9b5fd12d18333686">searchBar</a>;
+<a name="l00023"></a>00023         
+<a name="l00024"></a><a class="code" href="interface_routes_view_controller.html#a1d43ad17a11334015dcc2050ffbdeb62">00024</a>         BOOL <a class="code" href="interface_routes_view_controller.html#a1d43ad17a11334015dcc2050ffbdeb62">searching</a>;
+<a name="l00025"></a><a class="code" href="interface_routes_view_controller.html#ac3ac2ed389ab41c8983af66e03ce7fc3">00025</a>         BOOL <a class="code" href="interface_routes_view_controller.html#ac3ac2ed389ab41c8983af66e03ce7fc3">letUserSelectRow</a>;
+<a name="l00026"></a>00026 }
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 @property (nonatomic, retain) <a class="code" href="interface_p_o_i_details_view_controller.html">POIDetailsViewController</a> *poiDetailsView;
+<a name="l00029"></a>00029 @property (nonatomic, retain) <a class="code" href="interface_p_o_i_list_view_controller.html">POIListViewController</a> *poiListView;
+<a name="l00030"></a>00030 @property (nonatomic, retain) <a class="code" href="interface_app_settings.html">AppSettings</a> *settings;
+<a name="l00031"></a><a class="code" href="interface_routes_view_controller.html#a04efbef6eaed2968767455ff481ee713">00031</a> @property (nonatomic, retain) UISearchBar *searchBar;
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 - (<span class="keywordtype">void</span>) searchTableView;
+<a name="l00034"></a>00034 - (<span class="keywordtype">void</span>) doneSearching_Clicked:(<span class="keywordtype">id</span>)sender;
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 @end
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:32 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

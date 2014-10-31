@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: POIListViewController.m Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<h1>POIListViewController.m</h1><a href="_p_o_i_list_view_controller_8m.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">//  POIListViewController.m</span>
+<a name="l00003"></a>00003 <span class="comment">//  SoundCity</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//  Created by administrator on 12.10.09.</span>
+<a name="l00006"></a>00006 <span class="comment">//  Copyright 2009 init ag. All rights reserved.</span>
+<a name="l00007"></a>00007 <span class="comment">//</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#import &quot;<a class="code" href="_p_o_i_list_view_controller_8h.html">POIListViewController.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#import &quot;<a class="code" href="_sound_city_app_delegate_8h.html">SoundCityAppDelegate.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#import &quot;<a class="code" href="_p_o_i_8h.html">POI.h</a>&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">@implementation </span><a class="code" href="interface_p_o_i_list_view_controller.html">POIListViewController</a>
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="keyword">@synthesize</span> <a class="code" href="interface_p_o_i_list_view_controller.html#a59f9a24f115734414dccd160f9ed2856">poiDetailsView</a>, <a class="code" href="interface_p_o_i_list_view_controller.html#aa0bee7280ba1b0c3f904da878c120922">route</a>;
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+<a name="l00018"></a>00018     <span class="keywordflow">return</span> 1;
+<a name="l00019"></a>00019 }
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+<a name="l00023"></a>00023         <span class="keywordflow">return</span> <a class="code" href="interface_p_o_i_list_view_controller.html#aa0bee7280ba1b0c3f904da878c120922">route</a>.<a class="code" href="interface_route.html#a0e0471c4dc01c66a7e412e390bce7571">pois</a>.count;
+<a name="l00024"></a>00024 }
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {        
+<a name="l00028"></a>00028         <span class="keyword">static</span> NSString *CellIdentifier = <span class="stringliteral">@&quot;Cell&quot;</span>;
+<a name="l00029"></a>00029     
+<a name="l00030"></a>00030     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+<a name="l00031"></a>00031     <span class="keywordflow">if</span> (cell == nil) {
+<a name="l00032"></a>00032         cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+<a name="l00033"></a>00033     }
+<a name="l00034"></a>00034         
+<a name="l00035"></a>00035     <span class="comment">// Set up the cell</span>
+<a name="l00036"></a>00036     <span class="comment">//SoundCityAppDelegate *appDelegate = (SoundCityAppDelegate *)[[UIApplication sharedApplication] delegate];</span>
+<a name="l00037"></a>00037         <a class="code" href="interface_p_o_i.html">POI</a> *poi = (<a class="code" href="interface_p_o_i.html">POI</a> *)[<a class="code" href="interface_p_o_i_list_view_controller.html#aa0bee7280ba1b0c3f904da878c120922">route</a>.<a class="code" href="interface_route.html#a0e0471c4dc01c66a7e412e390bce7571">pois</a> objectAtIndex:indexPath.row];
+<a name="l00038"></a>00038         
+<a name="l00039"></a>00039         cell.text = poi.<a class="code" href="interface_p_o_i.html#ae9808e7121230ffff42a799a6dec00e8">title</a>;
+<a name="l00040"></a>00040         <span class="comment">//Set the accessory type.</span>
+<a name="l00041"></a>00041         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+<a name="l00042"></a>00042     
+<a name="l00043"></a>00043         <span class="keywordflow">return</span> cell;
+<a name="l00044"></a>00044 }
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+<a name="l00047"></a>00047     <span class="comment">// Navigation logic -- create and push a new view controller</span>
+<a name="l00048"></a>00048         
+<a name="l00049"></a>00049         <a class="code" href="interface_p_o_i.html">POI</a> *poi = (<a class="code" href="interface_p_o_i.html">POI</a> *)[<a class="code" href="interface_p_o_i_list_view_controller.html#aa0bee7280ba1b0c3f904da878c120922">route</a>.<a class="code" href="interface_route.html#a0e0471c4dc01c66a7e412e390bce7571">pois</a> objectAtIndex:indexPath.row];
+<a name="l00050"></a>00050         
+<a name="l00051"></a>00051         <a class="code" href="interface_p_o_i_list_view_controller.html#a59f9a24f115734414dccd160f9ed2856">poiDetailsView</a> = nil;
+<a name="l00052"></a>00052         <a class="code" href="interface_p_o_i_list_view_controller.html#a59f9a24f115734414dccd160f9ed2856">poiDetailsView</a> = [[<a class="code" href="interface_p_o_i_details_view_controller.html">POIDetailsViewController</a> alloc] initWithNibName:<span class="stringliteral">@&quot;POIDetailsViewController&quot;</span> bundle:nil];
+<a name="l00053"></a>00053         <a class="code" href="interface_p_o_i_list_view_controller.html#a59f9a24f115734414dccd160f9ed2856">poiDetailsView</a>.<a class="code" href="interface_p_o_i_details_view_controller.html#a9891551c8855e8c76c160fbc32d6c99e">poi</a> = poi;
+<a name="l00054"></a>00054         
+<a name="l00055"></a>00055         <span class="comment">// Setup the animation</span>
+<a name="l00056"></a>00056         [<span class="keyword">self</span>.navigationController pushViewController:<span class="keyword">self</span>.poiDetailsView animated:YES];
+<a name="l00057"></a>00057         
+<a name="l00058"></a>00058         [<a class="code" href="interface_p_o_i_list_view_controller.html#a59f9a24f115734414dccd160f9ed2856">poiDetailsView</a> release];
+<a name="l00059"></a>00059 }
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 <span class="comment">/*</span>
+<a name="l00062"></a>00062 <span class="comment"> // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.</span>
+<a name="l00063"></a>00063 <span class="comment">- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {</span>
+<a name="l00064"></a>00064 <span class="comment">    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {</span>
+<a name="l00065"></a>00065 <span class="comment">        // Custom initialization</span>
+<a name="l00066"></a>00066 <span class="comment">    }</span>
+<a name="l00067"></a>00067 <span class="comment">    return self;</span>
+<a name="l00068"></a>00068 <span class="comment">}</span>
+<a name="l00069"></a>00069 <span class="comment">*/</span>
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 <span class="comment">// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.</span>
+<a name="l00072"></a>00072 - (void)viewDidLoad {
+<a name="l00073"></a>00073    
+<a name="l00074"></a>00074         <a class="code" href="interface_p_o_i_list_view_controller.html#a67217b9852223442adee7e4b4f194b71">appDelegate</a> = (<a class="code" href="interface_sound_city_app_delegate.html">SoundCityAppDelegate</a> *)[[UIApplication sharedApplication] delegate];
+<a name="l00075"></a>00075         
+<a name="l00076"></a>00076         [<span class="keyword">self</span>.navigationController setToolbarHidden:YES animated:YES];
+<a name="l00077"></a>00077         [<span class="keyword">self</span>.navigationController setNavigationBarHidden:NO animated:YES];
+<a name="l00078"></a>00078         
+<a name="l00079"></a>00079         <span class="comment">// Button &quot;Karte&quot; hinzfÃ¼gen</span>
+<a name="l00080"></a>00080         UIBarButtonItem *btnShowPOIsInMap = [[UIBarButtonItem alloc] initWithTitle:@&quot;Kartensicht&quot;
+<a name="l00081"></a>00081                                                                                                                                                            style:UIBarButtonItemStylePlain 
+<a name="l00082"></a>00082                                                                                                                                                           target:self
+<a name="l00083"></a>00083                                                                                                                                                           action:@selector(showPOIsInMap)];
+<a name="l00084"></a>00084         
+<a name="l00085"></a>00085         <span class="keyword">self</span>.navigationItem.rightBarButtonItem = btnShowPOIsInMap;
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087         <span class="keyword">self</span>.title = <span class="stringliteral">@&quot;POI Liste&quot;</span>;
+<a name="l00088"></a>00088         
+<a name="l00089"></a>00089         [<span class="keyword">super</span> viewDidLoad];
+<a name="l00090"></a>00090 }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092 - (void)showPOIsInMap {
+<a name="l00093"></a>00093         [appDelegate setRouteChanged:YES];
+<a name="l00094"></a>00094         [appDelegate setCurrentRoute:route];
+<a name="l00095"></a>00095         [appDelegate.tabBarController setSelectedIndex:1]; 
+<a name="l00096"></a>00096 }
+<a name="l00097"></a>00097 <span class="comment">/*</span>
+<a name="l00098"></a>00098 <span class="comment">// Override to allow orientations other than the default portrait orientation.</span>
+<a name="l00099"></a>00099 <span class="comment">- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {</span>
+<a name="l00100"></a>00100 <span class="comment">    // Return YES for supported orientations</span>
+<a name="l00101"></a>00101 <span class="comment">    return (interfaceOrientation == UIInterfaceOrientationPortrait);</span>
+<a name="l00102"></a>00102 <span class="comment">}</span>
+<a name="l00103"></a>00103 <span class="comment">*/</span>
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105 - (void)didReceiveMemoryWarning {
+<a name="l00106"></a>00106         <span class="comment">// Releases the view if it doesn&apos;t have a superview.</span>
+<a name="l00107"></a>00107     [<span class="keyword">super</span> didReceiveMemoryWarning];
+<a name="l00108"></a>00108         
+<a name="l00109"></a>00109         <span class="comment">// Release any cached data, images, etc that aren&apos;t in use.</span>
+<a name="l00110"></a>00110 }
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 - (void)viewDidUnload {
+<a name="l00113"></a>00113         <span class="comment">// Release any retained subviews of the main view.</span>
+<a name="l00114"></a>00114         <span class="comment">// e.g. self.myOutlet = nil;</span>
+<a name="l00115"></a>00115 }
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 - (void)dealloc {
+<a name="l00119"></a>00119     [<span class="keyword">super</span> dealloc];
+<a name="l00120"></a>00120 }
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123 <span class="keyword">@end</span>
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:32 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

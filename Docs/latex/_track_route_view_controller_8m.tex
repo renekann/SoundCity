@@ -1,0 +1,98 @@
+\hypertarget{_track_route_view_controller_8m}{
+\subsection{Classes/TrackRouteViewController.m-\/Dateireferenz}
+\label{_track_route_view_controller_8m}\index{Classes/TrackRouteViewController.m@{Classes/TrackRouteViewController.m}}
+}
+{\ttfamily \#import \char`\"{}AppSettings.h\char`\"{}}\par
+{\ttfamily \#import \char`\"{}TrackRouteViewController.h\char`\"{}}\par
+{\ttfamily \#import $<$MapKit/MapKit.h$>$}\par
+{\ttfamily \#import \char`\"{}CSRouteAnnotation.h\char`\"{}}\par
+{\ttfamily \#import \char`\"{}CSRouteView.h\char`\"{}}\par
+{\ttfamily \#import \char`\"{}CSImageAnnotationView.h\char`\"{}}\par
+{\ttfamily \#import \char`\"{}CSMapAnnotation.h\char`\"{}}\par
+{\ttfamily \#import \char`\"{}MLog.h\char`\"{}}\par
+{\ttfamily \#import \char`\"{}RoutePoint.h\char`\"{}}\par
+\subsubsection*{Makrodefinitionen}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_track_route_view_controller_8m_a0d51da6bcac35dfe8a548f6600e4cc68}{MLogString}(s,...)
+\end{DoxyCompactItemize}
+\subsubsection*{Variablen}
+\begin{DoxyCompactItemize}
+\item 
+NSString $\ast$const \hyperlink{_track_route_view_controller_8m_a9a943d5972310cf2e524cf997043ab18}{TRACKING} = @\char`\"{}Currently Tracking\char`\"{}
+\item 
+NSString $\ast$const \hyperlink{_track_route_view_controller_8m_a3e41c415cc15340d7a053e53cfd9e471}{NOT\_\-TRACKING} = @\char`\"{}Tracking not started yet\char`\"{}
+\item 
+NSString $\ast$const \hyperlink{_track_route_view_controller_8m_a991ed006484c6b6d4f4666cca41f98cf}{ROUTE\_\-TRACKED} = @\char`\"{}A route was tracked and is ready for saving\char`\"{}
+\item 
+NSString $\ast$const \hyperlink{_track_route_view_controller_8m_abc46dd103895b916af43118c7f9acaeb}{BUTTON\_\-LABEL\_\-START\_\-TRACKING} = @\char`\"{}Route tracken\char`\"{}
+\item 
+NSString $\ast$const \hyperlink{_track_route_view_controller_8m_a53fab82fc9fb1548571cf861bc30c2b4}{BUTTON\_\-LABEL\_\-STOP\_\-TRACKING} = @\char`\"{}Tracking stoppen\char`\"{}
+\item 
+NSString $\ast$const \hyperlink{_track_route_view_controller_8m_a1513f207aaab0b50c78f2f6da30e765c}{BUTTON\_\-LABEL\_\-WAITING\_\-FOR\_\-USER} = @\char`\"{}Warte auf Bearbeitung...\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Makro-\/Dokumentation}
+\hypertarget{_track_route_view_controller_8m_a0d51da6bcac35dfe8a548f6600e4cc68}{
+\index{TrackRouteViewController.m@{TrackRouteViewController.m}!MLogString@{MLogString}}
+\index{MLogString@{MLogString}!TrackRouteViewController.m@{TrackRouteViewController.m}}
+\paragraph[{MLogString}]{\setlength{\rightskip}{0pt plus 5cm}\#define MLogString(s, \/   {\em ...})}\hfill}
+\label{_track_route_view_controller_8m_a0d51da6bcac35dfe8a548f6600e4cc68}
+{\bfseries Wert:}
+\begin{DoxyCode}
+[MLog logFile:(char *)__FUNCTION__ lineNumber:__LINE__ \
+format:(s),##__VA_ARGS__]
+\end{DoxyCode}
+
+
+Definiert in Zeile 31 der Datei TrackRouteViewController.m.
+
+\subsubsection{Variablen-\/Dokumentation}
+\hypertarget{_track_route_view_controller_8m_abc46dd103895b916af43118c7f9acaeb}{
+\index{TrackRouteViewController.m@{TrackRouteViewController.m}!BUTTON\_\-LABEL\_\-START\_\-TRACKING@{BUTTON\_\-LABEL\_\-START\_\-TRACKING}}
+\index{BUTTON\_\-LABEL\_\-START\_\-TRACKING@{BUTTON\_\-LABEL\_\-START\_\-TRACKING}!TrackRouteViewController.m@{TrackRouteViewController.m}}
+\paragraph[{BUTTON\_\-LABEL\_\-START\_\-TRACKING}]{\setlength{\rightskip}{0pt plus 5cm}NSString$\ast$ const {\bf BUTTON\_\-LABEL\_\-START\_\-TRACKING} = @\char`\"{}Route tracken\char`\"{}}\hfill}
+\label{_track_route_view_controller_8m_abc46dd103895b916af43118c7f9acaeb}
+
+
+Definiert in Zeile 23 der Datei TrackRouteViewController.m.\hypertarget{_track_route_view_controller_8m_a53fab82fc9fb1548571cf861bc30c2b4}{
+\index{TrackRouteViewController.m@{TrackRouteViewController.m}!BUTTON\_\-LABEL\_\-STOP\_\-TRACKING@{BUTTON\_\-LABEL\_\-STOP\_\-TRACKING}}
+\index{BUTTON\_\-LABEL\_\-STOP\_\-TRACKING@{BUTTON\_\-LABEL\_\-STOP\_\-TRACKING}!TrackRouteViewController.m@{TrackRouteViewController.m}}
+\paragraph[{BUTTON\_\-LABEL\_\-STOP\_\-TRACKING}]{\setlength{\rightskip}{0pt plus 5cm}NSString$\ast$ const {\bf BUTTON\_\-LABEL\_\-STOP\_\-TRACKING} = @\char`\"{}Tracking stoppen\char`\"{}}\hfill}
+\label{_track_route_view_controller_8m_a53fab82fc9fb1548571cf861bc30c2b4}
+
+
+Definiert in Zeile 24 der Datei TrackRouteViewController.m.\hypertarget{_track_route_view_controller_8m_a1513f207aaab0b50c78f2f6da30e765c}{
+\index{TrackRouteViewController.m@{TrackRouteViewController.m}!BUTTON\_\-LABEL\_\-WAITING\_\-FOR\_\-USER@{BUTTON\_\-LABEL\_\-WAITING\_\-FOR\_\-USER}}
+\index{BUTTON\_\-LABEL\_\-WAITING\_\-FOR\_\-USER@{BUTTON\_\-LABEL\_\-WAITING\_\-FOR\_\-USER}!TrackRouteViewController.m@{TrackRouteViewController.m}}
+\paragraph[{BUTTON\_\-LABEL\_\-WAITING\_\-FOR\_\-USER}]{\setlength{\rightskip}{0pt plus 5cm}NSString$\ast$ const {\bf BUTTON\_\-LABEL\_\-WAITING\_\-FOR\_\-USER} = @\char`\"{}Warte auf Bearbeitung...\char`\"{}}\hfill}
+\label{_track_route_view_controller_8m_a1513f207aaab0b50c78f2f6da30e765c}
+
+
+Definiert in Zeile 25 der Datei TrackRouteViewController.m.\hypertarget{_track_route_view_controller_8m_a3e41c415cc15340d7a053e53cfd9e471}{
+\index{TrackRouteViewController.m@{TrackRouteViewController.m}!NOT\_\-TRACKING@{NOT\_\-TRACKING}}
+\index{NOT\_\-TRACKING@{NOT\_\-TRACKING}!TrackRouteViewController.m@{TrackRouteViewController.m}}
+\paragraph[{NOT\_\-TRACKING}]{\setlength{\rightskip}{0pt plus 5cm}NSString$\ast$ const {\bf NOT\_\-TRACKING} = @\char`\"{}Tracking not started yet\char`\"{}}\hfill}
+\label{_track_route_view_controller_8m_a3e41c415cc15340d7a053e53cfd9e471}
+
+
+Definiert in Zeile 20 der Datei TrackRouteViewController.m.
+
+Wird benutzt von TrackRouteViewController::handleTrackingButton:.\hypertarget{_track_route_view_controller_8m_a991ed006484c6b6d4f4666cca41f98cf}{
+\index{TrackRouteViewController.m@{TrackRouteViewController.m}!ROUTE\_\-TRACKED@{ROUTE\_\-TRACKED}}
+\index{ROUTE\_\-TRACKED@{ROUTE\_\-TRACKED}!TrackRouteViewController.m@{TrackRouteViewController.m}}
+\paragraph[{ROUTE\_\-TRACKED}]{\setlength{\rightskip}{0pt plus 5cm}NSString$\ast$ const {\bf ROUTE\_\-TRACKED} = @\char`\"{}A route was tracked and is ready for saving\char`\"{}}\hfill}
+\label{_track_route_view_controller_8m_a991ed006484c6b6d4f4666cca41f98cf}
+
+
+Definiert in Zeile 21 der Datei TrackRouteViewController.m.\hypertarget{_track_route_view_controller_8m_a9a943d5972310cf2e524cf997043ab18}{
+\index{TrackRouteViewController.m@{TrackRouteViewController.m}!TRACKING@{TRACKING}}
+\index{TRACKING@{TRACKING}!TrackRouteViewController.m@{TrackRouteViewController.m}}
+\paragraph[{TRACKING}]{\setlength{\rightskip}{0pt plus 5cm}NSString$\ast$ const {\bf TRACKING} = @\char`\"{}Currently Tracking\char`\"{}}\hfill}
+\label{_track_route_view_controller_8m_a9a943d5972310cf2e524cf997043ab18}
+
+
+Definiert in Zeile 19 der Datei TrackRouteViewController.m.
+
+Wird benutzt von TrackRouteViewController::handleTrackingButton:.

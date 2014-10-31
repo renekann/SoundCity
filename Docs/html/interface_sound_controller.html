@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: SoundController Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Auflistung&nbsp;der&nbsp;Klassen</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>SoundController Klassenreferenz</h1><!-- doxytag: class="SoundController" -->
+<p><code>#import &lt;<a class="el" href="_sound_controller_8h_source.html">SoundController.h</a>&gt;</code></p>
+
+<p><a href="class_sound_controller-members.html">Aufstellung aller Elemente</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_sound_controller.html#a8f28bc622fc0b8aae6d7303dfb05aa6e">startStream</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_sound_controller.html#aff4b12f990cd30515c83f12942f957f3">stopStream</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_sound_controller.html#ae9f575ccb48dda60213d90afb965f13c">destroyStreamer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_sound_controller.html#a013cdcefe5418a9bcd7efbefb7f954a9">createStreamer</a></td></tr>
+<tr><td colspan="2"><h2>Geschützte Attribute</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSTimer *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_sound_controller.html#a9a7042c00cd9fbe5fdc18719360d0b89">progressUpdateTimer</a></td></tr>
+<tr><td colspan="2"><h2>Propertys</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_sound_controller.html#a0cbc2733aa7a4a4d8aa8d41831ecfe75">url</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_sound_controller.html#a1fc59135a0c0376ae7cb7847f6265db7">soundstate</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">AudioStreamer *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_sound_controller.html#a87f7a4b2a4565b68491091dd6a4df1be">streamer</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+
+<p>Definiert in Zeile <a class="el" href="_sound_controller_8h_source.html#l00018">18</a> der Datei <a class="el" href="_sound_controller_8h_source.html">SoundController.h</a>.</p>
+<hr/><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a013cdcefe5418a9bcd7efbefb7f954a9"></a><!-- doxytag: member="SoundController::createStreamer" ref="a013cdcefe5418a9bcd7efbefb7f954a9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) createStreamer </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><p>progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:(updateProgress:) userInfo:nil repeats:YES];</p>
+</p>
+
+<p>Definiert in Zeile <a class="el" href="_sound_controller_8m_source.html#l00072">72</a> der Datei <a class="el" href="_sound_controller_8m_source.html">SoundController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_sound_controller_8m_source.html#l00048">destroyStreamer</a> und <a class="el" href="_sound_controller_8h_source.html#l00019">streamer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9f575ccb48dda60213d90afb965f13c"></a><!-- doxytag: member="SoundController::destroyStreamer" ref="ae9f575ccb48dda60213d90afb965f13c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) destroyStreamer </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><p>[[NSNotificationCenter defaultCenter] removeObserver:self name:ASStatusChangedNotification object:streamer]; [progressUpdateTimer invalidate]; progressUpdateTimer = nil;</p>
+</p>
+
+<p>Definiert in Zeile <a class="el" href="_sound_controller_8m_source.html#l00048">48</a> der Datei <a class="el" href="_sound_controller_8m_source.html">SoundController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_sound_controller_8h_source.html#l00019">streamer</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_sound_controller_8m_source.html#l00072">createStreamer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f28bc622fc0b8aae6d7303dfb05aa6e"></a><!-- doxytag: member="SoundController::startStream" ref="a8f28bc622fc0b8aae6d7303dfb05aa6e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) startStream </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_sound_controller_8m_source.html#l00029">29</a> der Datei <a class="el" href="_sound_controller_8m_source.html">SoundController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_sound_controller_8h_source.html#l00019">streamer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aff4b12f990cd30515c83f12942f957f3"></a><!-- doxytag: member="SoundController::stopStream" ref="aff4b12f990cd30515c83f12942f957f3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) stopStream </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_sound_controller_8m_source.html#l00033">33</a> der Datei <a class="el" href="_sound_controller_8m_source.html">SoundController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_sound_controller_8h_source.html#l00019">streamer</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Dokumentation der Datenelemente</h2>
+<a class="anchor" id="a9a7042c00cd9fbe5fdc18719360d0b89"></a><!-- doxytag: member="SoundController::progressUpdateTimer" ref="a9a7042c00cd9fbe5fdc18719360d0b89" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSTimer*) <a class="el" href="interface_sound_controller.html#a9a7042c00cd9fbe5fdc18719360d0b89">progressUpdateTimer</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_sound_controller_8h_source.html#l00020">20</a> der Datei <a class="el" href="_sound_controller_8h_source.html">SoundController.h</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Dokumentation der Propertys</h2>
+<a class="anchor" id="a1fc59135a0c0376ae7cb7847f6265db7"></a><!-- doxytag: member="SoundController::soundstate" ref="a1fc59135a0c0376ae7cb7847f6265db7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) soundstate<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_sound_controller_8h_source.html#l00022">22</a> der Datei <a class="el" href="_sound_controller_8h_source.html">SoundController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87f7a4b2a4565b68491091dd6a4df1be"></a><!-- doxytag: member="SoundController::streamer" ref="a87f7a4b2a4565b68491091dd6a4df1be" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (AudioStreamer *) streamer<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_sound_controller_8h_source.html#l00019">19</a> der Datei <a class="el" href="_sound_controller_8h_source.html">SoundController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_sound_controller_8m_source.html#l00072">createStreamer</a>, <a class="el" href="_sound_controller_8m_source.html#l00048">destroyStreamer</a>, <a class="el" href="_sound_controller_8m_source.html#l00029">startStream</a> und <a class="el" href="_sound_controller_8m_source.html#l00033">stopStream</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0cbc2733aa7a4a4d8aa8d41831ecfe75"></a><!-- doxytag: member="SoundController::url" ref="a0cbc2733aa7a4a4d8aa8d41831ecfe75" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) url<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_sound_controller_8h_source.html#l00021">21</a> der Datei <a class="el" href="_sound_controller_8h_source.html">SoundController.h</a>.</p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li><a class="el" href="_sound_controller_8h_source.html">SoundController.h</a></li>
+<li><a class="el" href="_sound_controller_8m_source.html">SoundController.m</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:33 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

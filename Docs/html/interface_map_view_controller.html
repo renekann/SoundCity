@@ -1,0 +1,597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: MapViewController Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Auflistung&nbsp;der&nbsp;Klassen</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>MapViewController Klassenreferenz</h1><!-- doxytag: class="MapViewController" --><!-- doxytag: inherits="GPSCalculatorDelegate-p" -->
+<p><code>#import &lt;<a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>&gt;</code></p>
+
+<p>Abgeleitet von <a class="el" href="protocol_g_p_s_calculator_delegate-p.html">GPSCalculatorDelegate-p</a>.</p>
+
+<p><a href="class_map_view_controller-members.html">Aufstellung aller Elemente</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_map_view_controller.html#ad3cf36d9e97a1a448f3cedb9a6d74d52">locationUpdate:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_map_view_controller.html#a76ee053461c5c2b8e7f1eb1a28e8d65b">locationError:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_map_view_controller.html#a95b915b0cb182a6117a9ee23f5b2ede8">setGPSPoint</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_map_view_controller.html#a4c6506cd8c42f8da285f1c3a153a2d14">showMarks:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_map_view_controller.html#a41ee7e4c7e55bce32dccb93d128dc988">showCurrentPOIInMap</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(BOOL)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_map_view_controller.html#aa06b8c96774de56d356c67bafb964ced">poiWasVisited:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_map_view_controller.html#ab13448226549116f45240b806aa00290">initMapWithRoute</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_map_view_controller.html#a518a53d75a01058fcbb9f32362504103">fitMapToRegion</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_map_view_controller.html#a9210c6dd6212d6c463f1ab56ca84b8b7">playAudioOfPOI</a></td></tr>
+<tr><td colspan="2"><h2>Geschützte Attribute</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_sound_city_app_delegate.html">SoundCityAppDelegate</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a12d413910165fe7fd177ea75502be782">appDelegate</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSMutableDictionary *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a9ea754eff3429ea0a98887f0bcb43eb8">_routeViews</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">IBOutlet MKMapView *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a5ae4cd29d4b84d9ed48341a58a2c0f4b">mapView</a></td></tr>
+<tr><td colspan="2"><h2>Propertys</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_p_o_i_details_view_controller.html">POIDetailsViewController</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a306718a79bf2bf4553b90226aad82a1a">poiDetailsView</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_p_o_i_list_view_controller.html">POIListViewController</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a29e38febc1e20365e2a84a25e84cea30">poiListView</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">UIBarButtonItem *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a054673874ec0329457346065af298c0b">buttonMap</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a8b5fb733f6bd00dd08f1cf90808f4420">currentGPSPointPos</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_g_p_s_point.html">GPSPoint</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a623b304bb044927ee00052aeb5c18100">currentGPSPoint</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_g_p_s_calculator.html">GPSCalculator</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a8da7a737d0d98fc23afd9e6dbf766026">gpsCalc</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">UILabel *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#ad0402524f486125ee10dff142c7b3ffd">gpsStatus</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">UIBarButtonItem *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a64d3497885159ef092e213a71a5a7e42">gpsStatusBarButton</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#ac4ce9dd86dc3db11a6573ae2bccfecc6">foundPOI</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_p_o_i.html">POI</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a9c11e3ae9fc617f0c978ef3cf9f3e867">currentPOI</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSMutableArray *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#aa20f046169a89b035199e22efae744d2">currentPOIList</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSMutableArray *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#aa496b5d41e4cd44cd9c910b980667dc1">visitedPois</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">UIBarButtonItem *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#add41cd6cc9df20dd9a3bb3663913395a">btnPause</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">UIBarButtonItem *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a3af316be6b8a063567aaf1720dede525">btnPlay</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_app_settings.html">AppSettings</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_map_view_controller.html#a318f1f10cedf2e27f4ba6db3de2558b9">settings</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00020">20</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+<hr/><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a518a53d75a01058fcbb9f32362504103"></a><!-- doxytag: member="MapViewController::fitMapToRegion" ref="a518a53d75a01058fcbb9f32362504103" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) fitMapToRegion </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Setzt die Karte auf den voreingestellten Auschnitt, so dass alle POIs zu sehen sind </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Noch zu erledigen:</a></b></dt><dd>: - Ausschnitt so anpassen, dass <a class="el" href="interface_route.html">Route</a> auch in den Ausschnitt passt </dd></dl>
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8m_source.html#l00544">544</a> der Datei <a class="el" href="_map_view_controller_8m_source.html">MapViewController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_g_p_s_point_8h_source.html#l00013">GPSPoint::coordinate</a>, <a class="el" href="_map_view_controller_8h_source.html#l00026">currentGPSPoint</a> und <a class="el" href="_map_view_controller_8h_source.html#l00035">mapView</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00186">showMarks:</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab13448226549116f45240b806aa00290"></a><!-- doxytag: member="MapViewController::initMapWithRoute" ref="ab13448226549116f45240b806aa00290" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) initMapWithRoute </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Methode wirde immer aufgerufen, wenn eine <a class="el" href="interface_route.html">Route</a> aus der Routenliste des zweiten Tabs ausgewÃ¤hlt wurde Es werden dann die <a class="el" href="interface_route.html">Route</a>, der aktuelle GPS Punkt und die POIs gezeichnet AuÃerdem werden vorher alle Annotations von der Karte entfernt Die Methode wird nur ausgefÃ¼hrt, wenn eine aktuelle <a class="el" href="interface_route.html">Route</a> ausgewÃ¤hlt und auch ein Wechsel der <a class="el" href="interface_route.html">Route</a> ausgefÃ¼hrt wurde Aufgerufen wird die Methode bei viewWillAppear und viewDidLoad </p>
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8m_source.html#l00140">140</a> der Datei <a class="el" href="_map_view_controller_8m_source.html">MapViewController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_map_view_controller_8h_source.html#l00021">appDelegate</a>, <a class="el" href="_sound_city_app_delegate_8h_source.html#l00030">SoundCityAppDelegate::currentRoute</a>, <a class="el" href="_map_view_controller_8h_source.html#l00035">mapView</a>, <a class="el" href="_sound_city_app_delegate_8h_source.html#l00031">SoundCityAppDelegate::routeChanged</a>, <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a> und <a class="el" href="_map_view_controller_8m_source.html#l00186">showMarks:</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a76ee053461c5c2b8e7f1eb1a28e8d65b"></a><!-- doxytag: member="MapViewController::locationError:" ref="a76ee053461c5c2b8e7f1eb1a28e8d65b" args="(NSError *error)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) locationError: </td>
+          <td></td>
+          <td class="paramtype">(NSError *)&nbsp;</td>
+          <td class="paramname"> <em>error</em></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Erneute Implementation von <a class="el" href="protocol_g_p_s_calculator_delegate-p.html#a890f58f3468025f475f8bb7d9aa33332">&lt;GPSCalculatorDelegate&gt;</a>.</p>
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8m_source.html#l00741">741</a> der Datei <a class="el" href="_map_view_controller_8m_source.html">MapViewController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_map_view_controller_8h_source.html#l00036">gpsStatus</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3cf36d9e97a1a448f3cedb9a6d74d52"></a><!-- doxytag: member="MapViewController::locationUpdate:" ref="ad3cf36d9e97a1a448f3cedb9a6d74d52" args="(CLLocation *location)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) locationUpdate: </td>
+          <td></td>
+          <td class="paramtype">(CLLocation *)&nbsp;</td>
+          <td class="paramname"> <em>location</em></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Aktuelle Position anhand des LocationManagers aus dem Objekt GPSCalc </p>
+
+<p>Erneute Implementation von <a class="el" href="protocol_g_p_s_calculator_delegate-p.html#a0adb149b836a8e03a11ea255a5f01a31">&lt;GPSCalculatorDelegate&gt;</a>.</p>
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8m_source.html#l00732">732</a> der Datei <a class="el" href="_map_view_controller_8m_source.html">MapViewController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_g_p_s_point_8h_source.html#l00013">GPSPoint::coordinate</a>, <a class="el" href="_map_view_controller_8h_source.html#l00026">currentGPSPoint</a>, <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>, <a class="el" href="_map_view_controller_8h_source.html#l00040">settings</a> und <a class="el" href="_app_settings_8h_source.html#l00015">AppSettings::useGPS</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9210c6dd6212d6c463f1ab56ca84b8b7"></a><!-- doxytag: member="MapViewController::playAudioOfPOI" ref="a9210c6dd6212d6c463f1ab56ca84b8b7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) playAudioOfPOI </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Audiostream abspielen, wenn <a class="el" href="interface_p_o_i.html">POI</a> gefunden wird. Dies darf nur geschehen, wenn auch in den Settings die Funktion eingeschaltet ist </p>
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8m_source.html#l00516">516</a> der Datei <a class="el" href="_map_view_controller_8m_source.html">MapViewController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_map_view_controller_8h_source.html#l00043">foundPOI</a>, <a class="el" href="_app_settings_8h_source.html#l00013">AppSettings::playAudioAutomatic</a> und <a class="el" href="_map_view_controller_8h_source.html#l00040">settings</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa06b8c96774de56d356c67bafb964ced"></a><!-- doxytag: member="MapViewController::poiWasVisited:" ref="aa06b8c96774de56d356c67bafb964ced" args="(POI *poi)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) poiWasVisited: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_p_o_i.html">POI</a> *)&nbsp;</td>
+          <td class="paramname"> <em>poi</em></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>PrÃ¼fen, ob poi in Array visitedPois ist, wenn nicht, NO zurÃ¼ckgeben wenn poi bereits besucht wurde, YES zurÃ¼ckgeben </p>
+<dl><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>poi</em>&nbsp;</td><td>zu prÃ¼fender Punkt </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8m_source.html#l00502">502</a> der Datei <a class="el" href="_map_view_controller_8m_source.html">MapViewController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_map_view_controller_8h_source.html#l00027">visitedPois</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a95b915b0cb182a6117a9ee23f5b2ede8"></a><!-- doxytag: member="MapViewController::setGPSPoint" ref="a95b915b0cb182a6117a9ee23f5b2ede8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setGPSPoint </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Zeichnet den aktuellen GPSPunkt currentGPSPoint auf die Karte und initiert Abstandsberechnungen zu allen vorhandenen POIs, wird kein <a class="el" href="interface_p_o_i.html">POI</a> gefunden, wird currentPOI auf nil gesetzt, sonst enthÃ¤lt diese Variable den nÃ¤chsten <a class="el" href="interface_p_o_i.html">POI</a>. Weiterhin wird geprÃ¼ft, ob der aktuelle currentPOI dem neu berechneten ist, so dass z.B. der Stream nicht neue gestartet wird. Werden mehr als 1 <a class="el" href="interface_p_o_i.html">POI</a> in nÃ¤herer Umgebung gefunden, wird erst der aktuelle zuende gestreamt und dann mit dem nÃ¤chsten weiter gearbeitet (vorausgesetzt, diese befindet sich noch in der NÃ¤he). Diese kann vom Nutzer Ã¼bersprungen werden, indem er einen Button "Zum nÃ¤chsten POI springen" anklickt </p>
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8m_source.html#l00313">313</a> der Datei <a class="el" href="_map_view_controller_8m_source.html">MapViewController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_map_view_controller_8h_source.html#l00021">appDelegate</a>, <a class="el" href="_map_view_controller_8h_source.html#l00026">currentGPSPoint</a>, <a class="el" href="_map_view_controller_8h_source.html#l00025">currentGPSPointPos</a>, <a class="el" href="_map_view_controller_8h_source.html#l00044">currentPOI</a>, <a class="el" href="_map_view_controller_8h_source.html#l00045">currentPOIList</a>, <a class="el" href="_sound_city_app_delegate_8h_source.html#l00030">SoundCityAppDelegate::currentRoute</a>, <a class="el" href="_map_view_controller_8h_source.html#l00043">foundPOI</a>, <a class="el" href="_map_view_controller_8h_source.html#l00033">gpsCalc</a>, <a class="el" href="_sound_city_app_delegate_8h_source.html#l00028">SoundCityAppDelegate::gpspoints</a>, <a class="el" href="_map_view_controller_8h_source.html#l00036">gpsStatus</a>, <a class="el" href="interface_p_o_i.html#ae12986cb3bc704b2665f777d0ded8ed9">POI::isEqual:</a>, <a class="el" href="_map_view_controller_8h_source.html#l00035">mapView</a>, <a class="el" href="_map_view_controller_8m_source.html#l00026">MLogString</a>, <a class="el" href="_g_p_s_calculator_8h_source.html#l00024">GPSCalculator::nearestPOI</a>, <a class="el" href="_g_p_s_calculator_8m_source.html#l00067">GPSCalculator::nearestPOIExists:gpspoint:</a>, <a class="el" href="_map_view_controller_8m_source.html#l00516">playAudioOfPOI</a>, <a class="el" href="_route_8h_source.html#l00017">Route::pois</a>, <a class="el" href="_map_view_controller_8m_source.html#l00502">poiWasVisited:</a>, <a class="el" href="_map_view_controller_8h_source.html#l00040">settings</a>, <a class="el" href="_map_view_controller_8m_source.html#l00530">showCurrentPOIInMap</a>, <a class="el" href="_app_settings_8h_source.html#l00014">AppSettings::showVisitedPOIsAgain</a>, <a class="el" href="_p_o_i_8h_source.html#l00018">POI::title</a>, <a class="el" href="_app_settings_8h_source.html#l00015">AppSettings::useGPS</a> und <a class="el" href="_map_view_controller_8h_source.html#l00027">visitedPois</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00140">initMapWithRoute</a> und <a class="el" href="_map_view_controller_8m_source.html#l00732">locationUpdate:</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a41ee7e4c7e55bce32dccb93d128dc988"></a><!-- doxytag: member="MapViewController::showCurrentPOIInMap" ref="a41ee7e4c7e55bce32dccb93d128dc988" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) showCurrentPOIInMap </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Ãffnet das Infofenster der aktuellen Annotation auf der Karte </p>
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8m_source.html#l00530">530</a> der Datei <a class="el" href="_map_view_controller_8m_source.html">MapViewController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_map_view_controller_8h_source.html#l00044">currentPOI</a> und <a class="el" href="_map_view_controller_8h_source.html#l00035">mapView</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a> und <a class="el" href="_map_view_controller_8m_source.html#l00186">showMarks:</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c6506cd8c42f8da285f1c3a153a2d14"></a><!-- doxytag: member="MapViewController::showMarks:" ref="a4c6506cd8c42f8da285f1c3a153a2d14" args="(NSArray *marks)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) showMarks: </td>
+          <td></td>
+          <td class="paramtype">(NSArray *)&nbsp;</td>
+          <td class="paramname"> <em>marks</em></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8m_source.html#l00186">186</a> der Datei <a class="el" href="_map_view_controller_8m_source.html">MapViewController.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_map_view_controller_8h_source.html#l00044">currentPOI</a>, <a class="el" href="_map_view_controller_8m_source.html#l00544">fitMapToRegion</a>, <a class="el" href="_map_view_controller_8h_source.html#l00035">mapView</a> und <a class="el" href="_map_view_controller_8m_source.html#l00530">showCurrentPOIInMap</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00140">initMapWithRoute</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Dokumentation der Datenelemente</h2>
+<a class="anchor" id="a9ea754eff3429ea0a98887f0bcb43eb8"></a><!-- doxytag: member="MapViewController::_routeViews" ref="a9ea754eff3429ea0a98887f0bcb43eb8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSMutableDictionary*) <a class="el" href="interface_map_view_controller.html#a9ea754eff3429ea0a98887f0bcb43eb8">_routeViews</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00030">30</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a12d413910165fe7fd177ea75502be782"></a><!-- doxytag: member="MapViewController::appDelegate" ref="a12d413910165fe7fd177ea75502be782" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_sound_city_app_delegate.html">SoundCityAppDelegate</a>*) <a class="el" href="interface_map_view_controller.html#a12d413910165fe7fd177ea75502be782">appDelegate</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00021">21</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00140">initMapWithRoute</a> und <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5ae4cd29d4b84d9ed48341a58a2c0f4b"></a><!-- doxytag: member="MapViewController::mapView" ref="a5ae4cd29d4b84d9ed48341a58a2c0f4b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (IBOutlet MKMapView*) <a class="el" href="interface_map_view_controller.html#a5ae4cd29d4b84d9ed48341a58a2c0f4b">mapView</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00035">35</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00544">fitMapToRegion</a>, <a class="el" href="_map_view_controller_8m_source.html#l00140">initMapWithRoute</a>, <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>, <a class="el" href="_map_view_controller_8m_source.html#l00530">showCurrentPOIInMap</a> und <a class="el" href="_map_view_controller_8m_source.html#l00186">showMarks:</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Dokumentation der Propertys</h2>
+<a class="anchor" id="add41cd6cc9df20dd9a3bb3663913395a"></a><!-- doxytag: member="MapViewController::btnPause" ref="add41cd6cc9df20dd9a3bb3663913395a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIBarButtonItem *) btnPause<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00048">48</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3af316be6b8a063567aaf1720dede525"></a><!-- doxytag: member="MapViewController::btnPlay" ref="a3af316be6b8a063567aaf1720dede525" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIBarButtonItem *) btnPlay<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00049">49</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a054673874ec0329457346065af298c0b"></a><!-- doxytag: member="MapViewController::buttonMap" ref="a054673874ec0329457346065af298c0b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIBarButtonItem *) buttonMap<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00038">38</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a623b304bb044927ee00052aeb5c18100"></a><!-- doxytag: member="MapViewController::currentGPSPoint" ref="a623b304bb044927ee00052aeb5c18100" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_g_p_s_point.html">GPSPoint</a> *) currentGPSPoint<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00026">26</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00544">fitMapToRegion</a>, <a class="el" href="_map_view_controller_8m_source.html#l00732">locationUpdate:</a> und <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b5fb733f6bd00dd08f1cf90808f4420"></a><!-- doxytag: member="MapViewController::currentGPSPointPos" ref="a8b5fb733f6bd00dd08f1cf90808f4420" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) currentGPSPointPos<code> [read, write, assign]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00025">25</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9c11e3ae9fc617f0c978ef3cf9f3e867"></a><!-- doxytag: member="MapViewController::currentPOI" ref="a9c11e3ae9fc617f0c978ef3cf9f3e867" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_p_o_i.html">POI</a> *) currentPOI<code> [read, write, copy]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00044">44</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>, <a class="el" href="_map_view_controller_8m_source.html#l00530">showCurrentPOIInMap</a> und <a class="el" href="_map_view_controller_8m_source.html#l00186">showMarks:</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa20f046169a89b035199e22efae744d2"></a><!-- doxytag: member="MapViewController::currentPOIList" ref="aa20f046169a89b035199e22efae744d2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSMutableArray *) currentPOIList<code> [read, write, copy]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00045">45</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac4ce9dd86dc3db11a6573ae2bccfecc6"></a><!-- doxytag: member="MapViewController::foundPOI" ref="ac4ce9dd86dc3db11a6573ae2bccfecc6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) foundPOI<code> [read, write, assign]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00043">43</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00516">playAudioOfPOI</a> und <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8da7a737d0d98fc23afd9e6dbf766026"></a><!-- doxytag: member="MapViewController::gpsCalc" ref="a8da7a737d0d98fc23afd9e6dbf766026" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_g_p_s_calculator.html">GPSCalculator</a> *) gpsCalc<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00033">33</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad0402524f486125ee10dff142c7b3ffd"></a><!-- doxytag: member="MapViewController::gpsStatus" ref="ad0402524f486125ee10dff142c7b3ffd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UILabel *) gpsStatus<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00036">36</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00741">locationError:</a> und <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a64d3497885159ef092e213a71a5a7e42"></a><!-- doxytag: member="MapViewController::gpsStatusBarButton" ref="a64d3497885159ef092e213a71a5a7e42" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIBarButtonItem *) gpsStatusBarButton<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00037">37</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a306718a79bf2bf4553b90226aad82a1a"></a><!-- doxytag: member="MapViewController::poiDetailsView" ref="a306718a79bf2bf4553b90226aad82a1a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_p_o_i_details_view_controller.html">POIDetailsViewController</a> *) poiDetailsView<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00022">22</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a29e38febc1e20365e2a84a25e84cea30"></a><!-- doxytag: member="MapViewController::poiListView" ref="a29e38febc1e20365e2a84a25e84cea30" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_p_o_i_list_view_controller.html">POIListViewController</a> *) poiListView<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00023">23</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a318f1f10cedf2e27f4ba6db3de2558b9"></a><!-- doxytag: member="MapViewController::settings" ref="a318f1f10cedf2e27f4ba6db3de2558b9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_app_settings.html">AppSettings</a> *) settings<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00040">40</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00732">locationUpdate:</a>, <a class="el" href="_map_view_controller_8m_source.html#l00516">playAudioOfPOI</a> und <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa496b5d41e4cd44cd9c910b980667dc1"></a><!-- doxytag: member="MapViewController::visitedPois" ref="aa496b5d41e4cd44cd9c910b980667dc1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSMutableArray *) visitedPois<code> [read, write, copy]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_map_view_controller_8h_source.html#l00027">27</a> der Datei <a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00502">poiWasVisited:</a> und <a class="el" href="_map_view_controller_8m_source.html#l00313">setGPSPoint</a>.</p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>Classes/<a class="el" href="_map_view_controller_8h_source.html">MapViewController.h</a></li>
+<li>Classes/<a class="el" href="_map_view_controller_8m_source.html">MapViewController.m</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:33 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

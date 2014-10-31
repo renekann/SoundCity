@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: Classes/CSRouteAnnotation.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<h1>Classes/CSRouteAnnotation.h</h1><a href="_c_s_route_annotation_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">//  CSRouteAnnotation.h</span>
+<a name="l00003"></a>00003 <span class="comment">//  testMapp</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//  Created by Craig on 8/18/09.</span>
+<a name="l00006"></a>00006 <span class="comment">//  Copyright Craig Spitzkoff 2009. All rights reserved.</span>
+<a name="l00007"></a>00007 <span class="comment">//</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#import &lt;MapKit/MapKit.h&gt;</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 <span class="comment">// annotation that is used to tell the map about a route. </span>
+<a name="l00013"></a><a class="code" href="interface_c_s_route_annotation.html">00013</a> <span class="keyword">@interface </span><a class="code" href="interface_c_s_route_annotation.html">CSRouteAnnotation</a> : NSObject &lt;MKAnnotation&gt;
+<a name="l00014"></a>00014 {
+<a name="l00015"></a>00015         <span class="comment">// points that make up the route. </span>
+<a name="l00016"></a>00016         NSMutableArray* <a class="code" href="interface_c_s_route_annotation.html#a975d9e7d09b9150af827aa054e0d19a6">_points</a>; 
+<a name="l00017"></a><a class="code" href="interface_c_s_route_annotation.html#a975d9e7d09b9150af827aa054e0d19a6">00017</a>         
+<a name="l00018"></a>00018         <span class="comment">// computed span of the route</span>
+<a name="l00019"></a>00019         MKCoordinateSpan <a class="code" href="interface_c_s_route_annotation.html#ace21640a062565e3945123770d623a7f">_span</a>;
+<a name="l00020"></a><a class="code" href="interface_c_s_route_annotation.html#ace21640a062565e3945123770d623a7f">00020</a>         
+<a name="l00021"></a>00021         <span class="comment">// computed center of the route. </span>
+<a name="l00022"></a>00022         CLLocationCoordinate2D <a class="code" href="interface_c_s_route_annotation.html#aa799ff3d0f0b78f4c58870120fa4e4ac">_center</a>; 
+<a name="l00023"></a><a class="code" href="interface_c_s_route_annotation.html#aa799ff3d0f0b78f4c58870120fa4e4ac">00023</a>         
+<a name="l00024"></a>00024         <span class="comment">// color of the line that will be rendered. </span>
+<a name="l00025"></a>00025         UIColor* <a class="code" href="interface_c_s_route_annotation.html#a84a2b7a56cb528ac237f11812f65b39b">_lineColor</a>;
+<a name="l00026"></a><a class="code" href="interface_c_s_route_annotation.html#a84a2b7a56cb528ac237f11812f65b39b">00026</a>         
+<a name="l00027"></a>00027         <span class="comment">// id of the route we can use for indexing. </span>
+<a name="l00028"></a>00028         NSString* <a class="code" href="interface_c_s_route_annotation.html#a0bf15691d61df903641f20d2ff015792">_routeID</a>;
+<a name="l00029"></a><a class="code" href="interface_c_s_route_annotation.html#a0bf15691d61df903641f20d2ff015792">00029</a> }
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="comment">// initialize with an array of points representing the route. </span>
+<a name="l00032"></a>00032 -(id) initWithPoints:(NSArray*) points;
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 @property (readonly) MKCoordinateRegion region;
+<a name="l00035"></a><a class="code" href="interface_c_s_route_annotation.html#a006eed04181dd41b76f25c171b8e7f99">00035</a> @property (nonatomic, retain) UIColor* lineColor;
+<a name="l00036"></a><a class="code" href="interface_c_s_route_annotation.html#a9c0ec690061a38e929c03ac92f0f7f36">00036</a> @property (nonatomic, retain) NSMutableArray* points;
+<a name="l00037"></a><a class="code" href="interface_c_s_route_annotation.html#ab02d74b832bc93750f3406722fe41d31">00037</a> @property (nonatomic, retain) NSString* routeID;
+<a name="l00038"></a><a class="code" href="interface_c_s_route_annotation.html#a7f8991c355eb08ae7213b44ed8110f1a">00038</a> 
+<a name="l00039"></a>00039 @end
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:32 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

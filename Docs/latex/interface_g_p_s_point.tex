@@ -1,0 +1,103 @@
+\hypertarget{interface_g_p_s_point}{
+\subsection{GPSPoint Klassenreferenz}
+\label{interface_g_p_s_point}\index{GPSPoint@{GPSPoint}}
+}
+
+
+{\ttfamily \#import $<$GPSPoint.h$>$}\subsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_g_p_s_point_a8c6767117b9803d4f1ac4a4b11ec4b0d}{initWithPrimaryKey:}
+\item 
+(void) -\/ \hyperlink{interface_g_p_s_point_a22ce3b0053229f96c6bf029ddeaaa504}{setData::longitude:}
+\item 
+(void) -\/ \hyperlink{interface_g_p_s_point_a2d74fe2063a4f68b5d4ea1d9eed77ae0}{coordinateFromString:}
+\end{DoxyCompactItemize}
+\subsubsection*{Propertys}
+\begin{DoxyCompactItemize}
+\item 
+CLLocationCoordinate2D \hyperlink{interface_g_p_s_point_ac1135721ea8a2458bd7e6bb05a4f2bce}{coordinate}
+\item 
+NSInteger $\ast$ \hyperlink{interface_g_p_s_point_a45b895e9be26a0d7c0ae84139b47f4be}{gpsid}
+\item 
+NSString $\ast$ \hyperlink{interface_g_p_s_point_a6695a368f34ece5bf6181cb49b5fd6b2}{title}
+\item 
+double \hyperlink{interface_g_p_s_point_aeb7b3c8169a9ed47bce47101b2419216}{latitude}
+\item 
+double \hyperlink{interface_g_p_s_point_a6ac49bdcdd308340aa71e5236a6ed51a}{longitude}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Ausführliche Beschreibung}
+
+
+Definiert in Zeile 12 der Datei GPSPoint.h.
+
+\subsubsection{Dokumentation der Elementfunktionen}
+\hypertarget{interface_g_p_s_point_a2d74fe2063a4f68b5d4ea1d9eed77ae0}{
+\index{GPSPoint@{GPSPoint}!coordinateFromString:@{coordinateFromString:}}
+\index{coordinateFromString:@{coordinateFromString:}!GPSPoint@{GPSPoint}}
+\paragraph[{coordinateFromString:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) coordinateFromString: (NSString $\ast$) {\em coordString}}\hfill}
+\label{interface_g_p_s_point_a2d74fe2063a4f68b5d4ea1d9eed77ae0}
+\hypertarget{interface_g_p_s_point_a8c6767117b9803d4f1ac4a4b11ec4b0d}{
+\index{GPSPoint@{GPSPoint}!initWithPrimaryKey:@{initWithPrimaryKey:}}
+\index{initWithPrimaryKey:@{initWithPrimaryKey:}!GPSPoint@{GPSPoint}}
+\paragraph[{initWithPrimaryKey:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) initWithPrimaryKey: (NSInteger) {\em pk}}\hfill}
+\label{interface_g_p_s_point_a8c6767117b9803d4f1ac4a4b11ec4b0d}
+
+
+Definiert in Zeile 17 der Datei GPSPoint.m.
+
+Benutzt gpsid.\hypertarget{interface_g_p_s_point_a22ce3b0053229f96c6bf029ddeaaa504}{
+\index{GPSPoint@{GPSPoint}!setData::longitude:@{setData::longitude:}}
+\index{setData::longitude:@{setData::longitude:}!GPSPoint@{GPSPoint}}
+\paragraph[{setData::longitude:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) setData: (NSString $\ast$) {\em latitude}\/ : (double) {\em lat}\/ longitude: (double) {\em lon}}\hfill}
+\label{interface_g_p_s_point_a22ce3b0053229f96c6bf029ddeaaa504}
+
+
+\subsubsection{Dokumentation der Propertys}
+\hypertarget{interface_g_p_s_point_ac1135721ea8a2458bd7e6bb05a4f2bce}{
+\index{GPSPoint@{GPSPoint}!coordinate@{coordinate}}
+\index{coordinate@{coordinate}!GPSPoint@{GPSPoint}}
+\paragraph[{coordinate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (CLLocationCoordinate2D) coordinate\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, assign\mbox{]}}}\hfill}
+\label{interface_g_p_s_point_ac1135721ea8a2458bd7e6bb05a4f2bce}
+
+
+Definiert in Zeile 13 der Datei GPSPoint.h.
+
+Wird benutzt von TrackRouteViewController::fitMapToRegion, MapViewController::fitMapToRegion, TrackRouteViewController::locationUpdate:, MapViewController::locationUpdate: und TrackRouteViewController::updatePositionOnMap.\hypertarget{interface_g_p_s_point_a45b895e9be26a0d7c0ae84139b47f4be}{
+\index{GPSPoint@{GPSPoint}!gpsid@{gpsid}}
+\index{gpsid@{gpsid}!GPSPoint@{GPSPoint}}
+\paragraph[{gpsid}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSInteger $\ast$) gpsid\hspace{0.3cm}{\ttfamily  \mbox{[}read, assign\mbox{]}}}\hfill}
+\label{interface_g_p_s_point_a45b895e9be26a0d7c0ae84139b47f4be}
+
+
+Definiert in Zeile 14 der Datei GPSPoint.h.
+
+Wird benutzt von initWithPrimaryKey:.\hypertarget{interface_g_p_s_point_aeb7b3c8169a9ed47bce47101b2419216}{
+\index{GPSPoint@{GPSPoint}!latitude@{latitude}}
+\index{latitude@{latitude}!GPSPoint@{GPSPoint}}
+\paragraph[{latitude}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (double) latitude\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, assign\mbox{]}}}\hfill}
+\label{interface_g_p_s_point_aeb7b3c8169a9ed47bce47101b2419216}
+
+
+Definiert in Zeile 16 der Datei GPSPoint.h.\hypertarget{interface_g_p_s_point_a6ac49bdcdd308340aa71e5236a6ed51a}{
+\index{GPSPoint@{GPSPoint}!longitude@{longitude}}
+\index{longitude@{longitude}!GPSPoint@{GPSPoint}}
+\paragraph[{longitude}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (double) longitude\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, assign\mbox{]}}}\hfill}
+\label{interface_g_p_s_point_a6ac49bdcdd308340aa71e5236a6ed51a}
+
+
+Definiert in Zeile 17 der Datei GPSPoint.h.\hypertarget{interface_g_p_s_point_a6695a368f34ece5bf6181cb49b5fd6b2}{
+\index{GPSPoint@{GPSPoint}!title@{title}}
+\index{title@{title}!GPSPoint@{GPSPoint}}
+\paragraph[{title}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSString $\ast$) title\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, copy\mbox{]}}}\hfill}
+\label{interface_g_p_s_point_a6695a368f34ece5bf6181cb49b5fd6b2}
+
+
+Definiert in Zeile 15 der Datei GPSPoint.h.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:\begin{DoxyCompactItemize}
+\item 
+Classes/\hyperlink{_g_p_s_point_8h}{GPSPoint.h}\item 
+Classes/\hyperlink{_g_p_s_point_8m}{GPSPoint.m}\end{DoxyCompactItemize}

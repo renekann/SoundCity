@@ -1,0 +1,217 @@
+\hypertarget{interface_sound_city_app_delegate}{
+\subsection{SoundCityAppDelegate Klassenreferenz}
+\label{interface_sound_city_app_delegate}\index{SoundCityAppDelegate@{SoundCityAppDelegate}}
+}
+
+
+{\ttfamily \#import $<$SoundCityAppDelegate.h$>$}\subsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+(BOOL) -\/ \hyperlink{interface_sound_city_app_delegate_a7aa1b9b78348047311af130f2714596f}{loadXML}
+\item 
+(void) -\/ \hyperlink{interface_sound_city_app_delegate_ab52c63a7c4dcb1303a96f4acd3f4db0f}{reloadXML}
+\item 
+(void) -\/ \hyperlink{interface_sound_city_app_delegate_ac8941fa34f517a66ec3db85d928ba0a0}{readGPSPointsFromDatabase}
+\end{DoxyCompactItemize}
+\subsubsection*{Geschützte Attribute}
+\begin{DoxyCompactItemize}
+\item 
+UIWindow $\ast$ \hyperlink{interface_sound_city_app_delegate_a69c920faf02b68581fdc0543ff0e56a1}{window}
+\item 
+UITabBarController $\ast$ \hyperlink{interface_sound_city_app_delegate_aae84b25a8186a168c98ad9584e31e332}{tabBarController}
+\item 
+\hyperlink{interface_loading_view}{LoadingView} $\ast$ \hyperlink{interface_sound_city_app_delegate_ae8ac0a409e5e027419977730dfb7fa76}{loadingView}
+\item 
+Reachability $\ast$ \hyperlink{interface_sound_city_app_delegate_ab7e88e1a16d0c057c86cef12fc6fcb93}{hostReach}
+\end{DoxyCompactItemize}
+\subsubsection*{Propertys}
+\begin{DoxyCompactItemize}
+\item 
+IBOutlet UIWindow $\ast$ \hyperlink{interface_sound_city_app_delegate_a2bb7d766b3f7e8c43fad9f7c5050549e}{window}
+\item 
+IBOutlet UITabBarController $\ast$ \hyperlink{interface_sound_city_app_delegate_abeda0b4bd58fbf9cf62b1641f7fdf31c}{tabBarController}
+\item 
+NSMutableArray $\ast$ \hyperlink{interface_sound_city_app_delegate_a0edc5a15f6188d5a6a80e6f636690642}{gpspoints}
+\item 
+NSMutableArray $\ast$ \hyperlink{interface_sound_city_app_delegate_aeac7ef371e675b53b754f6d9d02d183d}{routes}
+\item 
+\hyperlink{interface_route}{Route} $\ast$ \hyperlink{interface_sound_city_app_delegate_a10dee28d622e01c6acae7df512172b72}{currentRoute}
+\item 
+\hyperlink{interface_database_controller}{DatabaseController} $\ast$ \hyperlink{interface_sound_city_app_delegate_a692eabf939d719d6fa61205327df9a67}{databaseController}
+\item 
+\hyperlink{interface_app_settings}{AppSettings} $\ast$ \hyperlink{interface_sound_city_app_delegate_a0e22551289b704c129fd5268ff45c8ad}{settings}
+\item 
+\hyperlink{interface_g_p_s_calculator}{GPSCalculator} $\ast$ \hyperlink{interface_sound_city_app_delegate_a5a2710c1bcf8b87d74b67d4f536fbf1b}{gpsCalc}
+\item 
+\hyperlink{interface_sound_controller}{SoundController} $\ast$ \hyperlink{interface_sound_city_app_delegate_a05e1eebd4d2b5cefeb4237ac3c94500b}{soundController}
+\item 
+BOOL $\ast$ \hyperlink{interface_sound_city_app_delegate_a35c584d369e69d0e25a8f62d713b3747}{routeChanged}
+\item 
+BOOL \hyperlink{interface_sound_city_app_delegate_a076c894032a8dd5ceec3cd7161071863}{hasInternetConnection}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Ausführliche Beschreibung}
+
+
+Definiert in Zeile 20 der Datei SoundCityAppDelegate.h.
+
+\subsubsection{Dokumentation der Elementfunktionen}
+\hypertarget{interface_sound_city_app_delegate_a7aa1b9b78348047311af130f2714596f}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!loadXML@{loadXML}}
+\index{loadXML@{loadXML}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{loadXML}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (BOOL) loadXML }\hfill}
+\label{interface_sound_city_app_delegate_a7aa1b9b78348047311af130f2714596f}
+
+
+Definiert in Zeile 122 der Datei SoundCityAppDelegate.m.
+
+Benutzt routes.
+
+Wird benutzt von reloadXML.\hypertarget{interface_sound_city_app_delegate_ac8941fa34f517a66ec3db85d928ba0a0}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!readGPSPointsFromDatabase@{readGPSPointsFromDatabase}}
+\index{readGPSPointsFromDatabase@{readGPSPointsFromDatabase}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{readGPSPointsFromDatabase}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) readGPSPointsFromDatabase }\hfill}
+\label{interface_sound_city_app_delegate_ac8941fa34f517a66ec3db85d928ba0a0}
+
+
+Definiert in Zeile 195 der Datei SoundCityAppDelegate.m.
+
+Benutzt databaseController, DatabaseController::databasePath und gpspoints.\hypertarget{interface_sound_city_app_delegate_ab52c63a7c4dcb1303a96f4acd3f4db0f}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!reloadXML@{reloadXML}}
+\index{reloadXML@{reloadXML}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{reloadXML}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) reloadXML }\hfill}
+\label{interface_sound_city_app_delegate_ab52c63a7c4dcb1303a96f4acd3f4db0f}
+
+
+Definiert in Zeile 103 der Datei SoundCityAppDelegate.m.
+
+Benutzt loadingView, loadXML und routes.
+
+\subsubsection{Dokumentation der Datenelemente}
+\hypertarget{interface_sound_city_app_delegate_ab7e88e1a16d0c057c86cef12fc6fcb93}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!hostReach@{hostReach}}
+\index{hostReach@{hostReach}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{hostReach}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (Reachability$\ast$) {\bf hostReach}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_ab7e88e1a16d0c057c86cef12fc6fcb93}
+
+
+Definiert in Zeile 37 der Datei SoundCityAppDelegate.h.\hypertarget{interface_sound_city_app_delegate_ae8ac0a409e5e027419977730dfb7fa76}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!loadingView@{loadingView}}
+\index{loadingView@{loadingView}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{loadingView}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf LoadingView}$\ast$) {\bf loadingView}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_ae8ac0a409e5e027419977730dfb7fa76}
+
+
+Definiert in Zeile 33 der Datei SoundCityAppDelegate.h.
+
+Wird benutzt von reloadXML.\hypertarget{interface_sound_city_app_delegate_aae84b25a8186a168c98ad9584e31e332}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!tabBarController@{tabBarController}}
+\index{tabBarController@{tabBarController}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{tabBarController}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (UITabBarController$\ast$) {\bf tabBarController}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_aae84b25a8186a168c98ad9584e31e332}
+
+
+Definiert in Zeile 26 der Datei SoundCityAppDelegate.h.\hypertarget{interface_sound_city_app_delegate_a69c920faf02b68581fdc0543ff0e56a1}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!window@{window}}
+\index{window@{window}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{window}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (UIWindow$\ast$) {\bf window}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_a69c920faf02b68581fdc0543ff0e56a1}
+
+
+Definiert in Zeile 25 der Datei SoundCityAppDelegate.h.
+
+\subsubsection{Dokumentation der Propertys}
+\hypertarget{interface_sound_city_app_delegate_a10dee28d622e01c6acae7df512172b72}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!currentRoute@{currentRoute}}
+\index{currentRoute@{currentRoute}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{currentRoute}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Route} $\ast$) currentRoute\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_a10dee28d622e01c6acae7df512172b72}
+
+
+Definiert in Zeile 30 der Datei SoundCityAppDelegate.h.
+
+Wird benutzt von MapViewController::initMapWithRoute und MapViewController::setGPSPoint.\hypertarget{interface_sound_city_app_delegate_a692eabf939d719d6fa61205327df9a67}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!databaseController@{databaseController}}
+\index{databaseController@{databaseController}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{databaseController}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf DatabaseController} $\ast$) databaseController\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_a692eabf939d719d6fa61205327df9a67}
+
+
+Definiert in Zeile 21 der Datei SoundCityAppDelegate.h.
+
+Wird benutzt von readGPSPointsFromDatabase.\hypertarget{interface_sound_city_app_delegate_a5a2710c1bcf8b87d74b67d4f536fbf1b}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!gpsCalc@{gpsCalc}}
+\index{gpsCalc@{gpsCalc}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{gpsCalc}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf GPSCalculator} $\ast$) gpsCalc\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_a5a2710c1bcf8b87d74b67d4f536fbf1b}
+
+
+Definiert in Zeile 23 der Datei SoundCityAppDelegate.h.\hypertarget{interface_sound_city_app_delegate_a0edc5a15f6188d5a6a80e6f636690642}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!gpspoints@{gpspoints}}
+\index{gpspoints@{gpspoints}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{gpspoints}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSMutableArray $\ast$) gpspoints\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_a0edc5a15f6188d5a6a80e6f636690642}
+
+
+Definiert in Zeile 28 der Datei SoundCityAppDelegate.h.
+
+Wird benutzt von readGPSPointsFromDatabase und MapViewController::setGPSPoint.\hypertarget{interface_sound_city_app_delegate_a076c894032a8dd5ceec3cd7161071863}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!hasInternetConnection@{hasInternetConnection}}
+\index{hasInternetConnection@{hasInternetConnection}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{hasInternetConnection}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (BOOL) hasInternetConnection\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, assign\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_a076c894032a8dd5ceec3cd7161071863}
+
+
+Definiert in Zeile 34 der Datei SoundCityAppDelegate.h.\hypertarget{interface_sound_city_app_delegate_a35c584d369e69d0e25a8f62d713b3747}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!routeChanged@{routeChanged}}
+\index{routeChanged@{routeChanged}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{routeChanged}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (BOOL $\ast$) routeChanged\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, assign\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_a35c584d369e69d0e25a8f62d713b3747}
+
+
+Definiert in Zeile 31 der Datei SoundCityAppDelegate.h.
+
+Wird benutzt von MapViewController::initMapWithRoute.\hypertarget{interface_sound_city_app_delegate_aeac7ef371e675b53b754f6d9d02d183d}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!routes@{routes}}
+\index{routes@{routes}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{routes}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSMutableArray $\ast$) routes\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_aeac7ef371e675b53b754f6d9d02d183d}
+
+
+Definiert in Zeile 29 der Datei SoundCityAppDelegate.h.
+
+Wird benutzt von loadXML und reloadXML.\hypertarget{interface_sound_city_app_delegate_a0e22551289b704c129fd5268ff45c8ad}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!settings@{settings}}
+\index{settings@{settings}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{settings}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf AppSettings} $\ast$) settings\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_a0e22551289b704c129fd5268ff45c8ad}
+
+
+Definiert in Zeile 22 der Datei SoundCityAppDelegate.h.\hypertarget{interface_sound_city_app_delegate_a05e1eebd4d2b5cefeb4237ac3c94500b}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!soundController@{soundController}}
+\index{soundController@{soundController}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{soundController}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf SoundController} $\ast$) soundController\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_a05e1eebd4d2b5cefeb4237ac3c94500b}
+
+
+Definiert in Zeile 36 der Datei SoundCityAppDelegate.h.\hypertarget{interface_sound_city_app_delegate_abeda0b4bd58fbf9cf62b1641f7fdf31c}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!tabBarController@{tabBarController}}
+\index{tabBarController@{tabBarController}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{tabBarController}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBOutlet UITabBarController$\ast$) {\bf tabBarController}\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_abeda0b4bd58fbf9cf62b1641f7fdf31c}
+
+
+Definiert in Zeile 42 der Datei SoundCityAppDelegate.h.\hypertarget{interface_sound_city_app_delegate_a2bb7d766b3f7e8c43fad9f7c5050549e}{
+\index{SoundCityAppDelegate@{SoundCityAppDelegate}!window@{window}}
+\index{window@{window}!SoundCityAppDelegate@{SoundCityAppDelegate}}
+\paragraph[{window}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBOutlet UIWindow$\ast$) {\bf window}\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_sound_city_app_delegate_a2bb7d766b3f7e8c43fad9f7c5050549e}
+
+
+Definiert in Zeile 41 der Datei SoundCityAppDelegate.h.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:\begin{DoxyCompactItemize}
+\item 
+Classes/\hyperlink{_sound_city_app_delegate_8h}{SoundCityAppDelegate.h}\item 
+Classes/\hyperlink{_sound_city_app_delegate_8m}{SoundCityAppDelegate.m}\end{DoxyCompactItemize}

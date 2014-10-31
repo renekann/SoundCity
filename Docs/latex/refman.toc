@@ -1,0 +1,472 @@
+\select@language {german}
+\contentsline {section}{\numberline {1}Ausstehende Aufgaben}{1}{section.1}
+\contentsline {section}{\numberline {2}Klassen-\/Verzeichnis}{1}{section.2}
+\contentsline {subsection}{\numberline {2.1}Klassenhierarchie}{1}{subsection.2.1}
+\contentsline {section}{\numberline {3}Klassen-\/Verzeichnis}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Auflistung der Klassen}{2}{subsection.3.1}
+\contentsline {section}{\numberline {4}Datei-\/Verzeichnis}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}Auflistung der Dateien}{4}{subsection.4.1}
+\contentsline {section}{\numberline {5}Klassen-\/Dokumentation}{6}{section.5}
+\contentsline {subsection}{\numberline {5.1}AddGPSPointView Klassenreferenz}{6}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Ausf\IeC {\"u}hrliche Beschreibung}{6}{subsubsection.5.1.1}
+\contentsline {subsection}{\numberline {5.2}AppSettings Klassenreferenz}{6}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Ausf\IeC {\"u}hrliche Beschreibung}{7}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Dokumentation der Elementfunktionen}{7}{subsubsection.5.2.2}
+\contentsline {paragraph}{\numberline {5.2.2.1}sharedAppSettings}{7}{paragraph.5.2.2.1}
+\contentsline {subsubsection}{\numberline {5.2.3}Dokumentation der Propertys}{7}{subsubsection.5.2.3}
+\contentsline {paragraph}{\numberline {5.2.3.1}cancelCurrentStreamIfDetailsAppear}{7}{paragraph.5.2.3.1}
+\contentsline {paragraph}{\numberline {5.2.3.2}epsilon}{7}{paragraph.5.2.3.2}
+\contentsline {paragraph}{\numberline {5.2.3.3}playAudioAutomatic}{7}{paragraph.5.2.3.3}
+\contentsline {paragraph}{\numberline {5.2.3.4}showVisitedPOIsAgain}{8}{paragraph.5.2.3.4}
+\contentsline {paragraph}{\numberline {5.2.3.5}useGPS}{8}{paragraph.5.2.3.5}
+\contentsline {subsection}{\numberline {5.3}AudioOnMapViewController Klassenreferenz}{8}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Ausf\IeC {\"u}hrliche Beschreibung}{8}{subsubsection.5.3.1}
+\contentsline {subsection}{\numberline {5.4}CSImageAnnotationView Klassenreferenz}{8}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Ausf\IeC {\"u}hrliche Beschreibung}{9}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}Dokumentation der Datenelemente}{9}{subsubsection.5.4.2}
+\contentsline {paragraph}{\numberline {5.4.2.1}\_\discretionary {-}{}{}imageView}{9}{paragraph.5.4.2.1}
+\contentsline {paragraph}{\numberline {5.4.2.2}internalDrawingView}{9}{paragraph.5.4.2.2}
+\contentsline {subsubsection}{\numberline {5.4.3}Dokumentation der Propertys}{9}{subsubsection.5.4.3}
+\contentsline {paragraph}{\numberline {5.4.3.1}imageView}{9}{paragraph.5.4.3.1}
+\contentsline {paragraph}{\numberline {5.4.3.2}mkAnno}{9}{paragraph.5.4.3.2}
+\contentsline {subsection}{\numberline {5.5}CSMapAnnotation Klassenreferenz}{9}{subsection.5.5}
+\contentsline {subsubsection}{\numberline {5.5.1}Ausf\IeC {\"u}hrliche Beschreibung}{10}{subsubsection.5.5.1}
+\contentsline {subsubsection}{\numberline {5.5.2}Dokumentation der Elementfunktionen}{10}{subsubsection.5.5.2}
+\contentsline {paragraph}{\numberline {5.5.2.1}initWithCoordinate:annotationType:title:}{10}{paragraph.5.5.2.1}
+\contentsline {subsubsection}{\numberline {5.5.3}Dokumentation der Datenelemente}{10}{subsubsection.5.5.3}
+\contentsline {paragraph}{\numberline {5.5.3.1}\_\discretionary {-}{}{}annotationType}{10}{paragraph.5.5.3.1}
+\contentsline {paragraph}{\numberline {5.5.3.2}\_\discretionary {-}{}{}coordinate}{10}{paragraph.5.5.3.2}
+\contentsline {paragraph}{\numberline {5.5.3.3}\_\discretionary {-}{}{}title}{10}{paragraph.5.5.3.3}
+\contentsline {paragraph}{\numberline {5.5.3.4}\_\discretionary {-}{}{}url}{11}{paragraph.5.5.3.4}
+\contentsline {paragraph}{\numberline {5.5.3.5}\_\discretionary {-}{}{}userData}{11}{paragraph.5.5.3.5}
+\contentsline {subsubsection}{\numberline {5.5.4}Dokumentation der Propertys}{11}{subsubsection.5.5.4}
+\contentsline {paragraph}{\numberline {5.5.4.1}annotationType}{11}{paragraph.5.5.4.1}
+\contentsline {paragraph}{\numberline {5.5.4.2}url}{11}{paragraph.5.5.4.2}
+\contentsline {paragraph}{\numberline {5.5.4.3}userData}{11}{paragraph.5.5.4.3}
+\contentsline {subsection}{\numberline {5.6}CSRouteAnnotation Klassenreferenz}{11}{subsection.5.6}
+\contentsline {subsubsection}{\numberline {5.6.1}Ausf\IeC {\"u}hrliche Beschreibung}{12}{subsubsection.5.6.1}
+\contentsline {subsubsection}{\numberline {5.6.2}Dokumentation der Elementfunktionen}{12}{subsubsection.5.6.2}
+\contentsline {paragraph}{\numberline {5.6.2.1}initWithPoints:}{12}{paragraph.5.6.2.1}
+\contentsline {subsubsection}{\numberline {5.6.3}Dokumentation der Datenelemente}{12}{subsubsection.5.6.3}
+\contentsline {paragraph}{\numberline {5.6.3.1}\_\discretionary {-}{}{}center}{12}{paragraph.5.6.3.1}
+\contentsline {paragraph}{\numberline {5.6.3.2}\_\discretionary {-}{}{}lineColor}{12}{paragraph.5.6.3.2}
+\contentsline {paragraph}{\numberline {5.6.3.3}\_\discretionary {-}{}{}points}{13}{paragraph.5.6.3.3}
+\contentsline {paragraph}{\numberline {5.6.3.4}\_\discretionary {-}{}{}routeID}{13}{paragraph.5.6.3.4}
+\contentsline {paragraph}{\numberline {5.6.3.5}\_\discretionary {-}{}{}span}{13}{paragraph.5.6.3.5}
+\contentsline {subsubsection}{\numberline {5.6.4}Dokumentation der Propertys}{13}{subsubsection.5.6.4}
+\contentsline {paragraph}{\numberline {5.6.4.1}lineColor}{13}{paragraph.5.6.4.1}
+\contentsline {paragraph}{\numberline {5.6.4.2}points}{13}{paragraph.5.6.4.2}
+\contentsline {paragraph}{\numberline {5.6.4.3}region}{13}{paragraph.5.6.4.3}
+\contentsline {paragraph}{\numberline {5.6.4.4}routeID}{13}{paragraph.5.6.4.4}
+\contentsline {subsection}{\numberline {5.7}CSRouteView Klassenreferenz}{14}{subsection.5.7}
+\contentsline {subsubsection}{\numberline {5.7.1}Ausf\IeC {\"u}hrliche Beschreibung}{14}{subsubsection.5.7.1}
+\contentsline {subsubsection}{\numberline {5.7.2}Dokumentation der Elementfunktionen}{14}{subsubsection.5.7.2}
+\contentsline {paragraph}{\numberline {5.7.2.1}initWithFrame:drawArrows:}{14}{paragraph.5.7.2.1}
+\contentsline {paragraph}{\numberline {5.7.2.2}regionChanged}{14}{paragraph.5.7.2.2}
+\contentsline {subsubsection}{\numberline {5.7.3}Dokumentation der Datenelemente}{15}{subsubsection.5.7.3}
+\contentsline {paragraph}{\numberline {5.7.3.1}\_\discretionary {-}{}{}internalRouteView}{15}{paragraph.5.7.3.1}
+\contentsline {paragraph}{\numberline {5.7.3.2}\_\discretionary {-}{}{}mapView}{15}{paragraph.5.7.3.2}
+\contentsline {subsubsection}{\numberline {5.7.4}Dokumentation der Propertys}{15}{subsubsection.5.7.4}
+\contentsline {paragraph}{\numberline {5.7.4.1}mapView}{15}{paragraph.5.7.4.1}
+\contentsline {subsection}{\numberline {5.8}CSRouteViewInternal Klassenreferenz}{15}{subsection.5.8}
+\contentsline {subsubsection}{\numberline {5.8.1}Ausf\IeC {\"u}hrliche Beschreibung}{16}{subsubsection.5.8.1}
+\contentsline {subsubsection}{\numberline {5.8.2}Dokumentation der Elementfunktionen}{16}{subsubsection.5.8.2}
+\contentsline {paragraph}{\numberline {5.8.2.1}directionfOfLine:p2:}{16}{paragraph.5.8.2.1}
+\contentsline {paragraph}{\numberline {5.8.2.2}drawArrow:routeArrow:}{16}{paragraph.5.8.2.2}
+\contentsline {paragraph}{\numberline {5.8.2.3}radians:}{16}{paragraph.5.8.2.3}
+\contentsline {subsubsection}{\numberline {5.8.3}Dokumentation der Datenelemente}{16}{subsubsection.5.8.3}
+\contentsline {paragraph}{\numberline {5.8.3.1}\_\discretionary {-}{}{}routeView}{16}{paragraph.5.8.3.1}
+\contentsline {subsubsection}{\numberline {5.8.4}Dokumentation der Propertys}{16}{subsubsection.5.8.4}
+\contentsline {paragraph}{\numberline {5.8.4.1}drawArrows}{16}{paragraph.5.8.4.1}
+\contentsline {paragraph}{\numberline {5.8.4.2}routeView}{16}{paragraph.5.8.4.2}
+\contentsline {subsection}{\numberline {5.9}DatabaseController Klassenreferenz}{17}{subsection.5.9}
+\contentsline {subsubsection}{\numberline {5.9.1}Ausf\IeC {\"u}hrliche Beschreibung}{17}{subsubsection.5.9.1}
+\contentsline {subsubsection}{\numberline {5.9.2}Dokumentation der Elementfunktionen}{17}{subsubsection.5.9.2}
+\contentsline {paragraph}{\numberline {5.9.2.1}checkAndCreateDatabase}{17}{paragraph.5.9.2.1}
+\contentsline {paragraph}{\numberline {5.9.2.2}openDatabase}{18}{paragraph.5.9.2.2}
+\contentsline {subsubsection}{\numberline {5.9.3}Dokumentation der Propertys}{18}{subsubsection.5.9.3}
+\contentsline {paragraph}{\numberline {5.9.3.1}databaseName}{18}{paragraph.5.9.3.1}
+\contentsline {paragraph}{\numberline {5.9.3.2}databasePath}{18}{paragraph.5.9.3.2}
+\contentsline {subsection}{\numberline {5.10}DrawingView Klassenreferenz}{18}{subsection.5.10}
+\contentsline {subsubsection}{\numberline {5.10.1}Ausf\IeC {\"u}hrliche Beschreibung}{18}{subsubsection.5.10.1}
+\contentsline {subsubsection}{\numberline {5.10.2}Dokumentation der Propertys}{18}{subsubsection.5.10.2}
+\contentsline {paragraph}{\numberline {5.10.2.1}mkAnno}{18}{paragraph.5.10.2.1}
+\contentsline {subsection}{\numberline {5.11}FirstViewController Klassenreferenz}{19}{subsection.5.11}
+\contentsline {subsubsection}{\numberline {5.11.1}Ausf\IeC {\"u}hrliche Beschreibung}{19}{subsubsection.5.11.1}
+\contentsline {subsection}{\numberline {5.12}GPSCalculator Klassenreferenz}{19}{subsection.5.12}
+\contentsline {subsubsection}{\numberline {5.12.1}Ausf\IeC {\"u}hrliche Beschreibung}{19}{subsubsection.5.12.1}
+\contentsline {subsubsection}{\numberline {5.12.2}Dokumentation der Elementfunktionen}{20}{subsubsection.5.12.2}
+\contentsline {paragraph}{\numberline {5.12.2.1}locationManager:didFailWithError:}{20}{paragraph.5.12.2.1}
+\contentsline {paragraph}{\numberline {5.12.2.2}locationManager:didUpdateToLocation:fromLocation:}{20}{paragraph.5.12.2.2}
+\contentsline {paragraph}{\numberline {5.12.2.3}nearestPOIExists:gpspoint:}{20}{paragraph.5.12.2.3}
+\contentsline {paragraph}{\numberline {5.12.2.4}sharedAppGPSCalc}{20}{paragraph.5.12.2.4}
+\contentsline {subsubsection}{\numberline {5.12.3}Dokumentation der Propertys}{20}{subsubsection.5.12.3}
+\contentsline {paragraph}{\numberline {5.12.3.1}currentLocation}{20}{paragraph.5.12.3.1}
+\contentsline {paragraph}{\numberline {5.12.3.2}delegate}{21}{paragraph.5.12.3.2}
+\contentsline {paragraph}{\numberline {5.12.3.3}gpsStatus}{21}{paragraph.5.12.3.3}
+\contentsline {paragraph}{\numberline {5.12.3.4}locationManager}{21}{paragraph.5.12.3.4}
+\contentsline {paragraph}{\numberline {5.12.3.5}nearestPOI}{21}{paragraph.5.12.3.5}
+\contentsline {paragraph}{\numberline {5.12.3.6}nearestPOIList}{21}{paragraph.5.12.3.6}
+\contentsline {paragraph}{\numberline {5.12.3.7}settings}{21}{paragraph.5.12.3.7}
+\contentsline {subsection}{\numberline {5.13}$<$GPSCalculatorDelegate$>$ Protokollreferenz}{22}{subsection.5.13}
+\contentsline {subsubsection}{\numberline {5.13.1}Ausf\IeC {\"u}hrliche Beschreibung}{22}{subsubsection.5.13.1}
+\contentsline {subsubsection}{\numberline {5.13.2}Dokumentation der Elementfunktionen}{22}{subsubsection.5.13.2}
+\contentsline {paragraph}{\numberline {5.13.2.1}locationError:}{22}{paragraph.5.13.2.1}
+\contentsline {paragraph}{\numberline {5.13.2.2}locationUpdate:}{22}{paragraph.5.13.2.2}
+\contentsline {subsection}{\numberline {5.14}GPSPoint Klassenreferenz}{22}{subsection.5.14}
+\contentsline {subsubsection}{\numberline {5.14.1}Ausf\IeC {\"u}hrliche Beschreibung}{23}{subsubsection.5.14.1}
+\contentsline {subsubsection}{\numberline {5.14.2}Dokumentation der Elementfunktionen}{23}{subsubsection.5.14.2}
+\contentsline {paragraph}{\numberline {5.14.2.1}coordinateFromString:}{23}{paragraph.5.14.2.1}
+\contentsline {paragraph}{\numberline {5.14.2.2}initWithPrimaryKey:}{23}{paragraph.5.14.2.2}
+\contentsline {paragraph}{\numberline {5.14.2.3}setData::longitude:}{23}{paragraph.5.14.2.3}
+\contentsline {subsubsection}{\numberline {5.14.3}Dokumentation der Propertys}{23}{subsubsection.5.14.3}
+\contentsline {paragraph}{\numberline {5.14.3.1}coordinate}{23}{paragraph.5.14.3.1}
+\contentsline {paragraph}{\numberline {5.14.3.2}gpsid}{23}{paragraph.5.14.3.2}
+\contentsline {paragraph}{\numberline {5.14.3.3}latitude}{24}{paragraph.5.14.3.3}
+\contentsline {paragraph}{\numberline {5.14.3.4}longitude}{24}{paragraph.5.14.3.4}
+\contentsline {paragraph}{\numberline {5.14.3.5}title}{24}{paragraph.5.14.3.5}
+\contentsline {subsection}{\numberline {5.15}LoadingView Klassenreferenz}{24}{subsection.5.15}
+\contentsline {subsubsection}{\numberline {5.15.1}Ausf\IeC {\"u}hrliche Beschreibung}{24}{subsubsection.5.15.1}
+\contentsline {subsubsection}{\numberline {5.15.2}Dokumentation der Elementfunktionen}{25}{subsubsection.5.15.2}
+\contentsline {paragraph}{\numberline {5.15.2.1}addLabel}{25}{paragraph.5.15.2.1}
+\contentsline {paragraph}{\numberline {5.15.2.2}addLoadingSpinner}{25}{paragraph.5.15.2.2}
+\contentsline {subsubsection}{\numberline {5.15.3}Dokumentation der Datenelemente}{25}{subsubsection.5.15.3}
+\contentsline {paragraph}{\numberline {5.15.3.1}loadingSpinner}{25}{paragraph.5.15.3.1}
+\contentsline {subsubsection}{\numberline {5.15.4}Dokumentation der Propertys}{25}{subsubsection.5.15.4}
+\contentsline {paragraph}{\numberline {5.15.4.1}loadingStatus}{25}{paragraph.5.15.4.1}
+\contentsline {subsection}{\numberline {5.16}MapView Klassenreferenz}{25}{subsection.5.16}
+\contentsline {subsubsection}{\numberline {5.16.1}Ausf\IeC {\"u}hrliche Beschreibung}{25}{subsubsection.5.16.1}
+\contentsline {subsection}{\numberline {5.17}MapViewController Klassenreferenz}{26}{subsection.5.17}
+\contentsline {subsubsection}{\numberline {5.17.1}Ausf\IeC {\"u}hrliche Beschreibung}{27}{subsubsection.5.17.1}
+\contentsline {subsubsection}{\numberline {5.17.2}Dokumentation der Elementfunktionen}{27}{subsubsection.5.17.2}
+\contentsline {paragraph}{\numberline {5.17.2.1}fitMapToRegion}{27}{paragraph.5.17.2.1}
+\contentsline {paragraph}{\numberline {5.17.2.2}initMapWithRoute}{27}{paragraph.5.17.2.2}
+\contentsline {paragraph}{\numberline {5.17.2.3}locationError:}{27}{paragraph.5.17.2.3}
+\contentsline {paragraph}{\numberline {5.17.2.4}locationUpdate:}{27}{paragraph.5.17.2.4}
+\contentsline {paragraph}{\numberline {5.17.2.5}playAudioOfPOI}{28}{paragraph.5.17.2.5}
+\contentsline {paragraph}{\numberline {5.17.2.6}poiWasVisited:}{28}{paragraph.5.17.2.6}
+\contentsline {paragraph}{\numberline {5.17.2.7}setGPSPoint}{28}{paragraph.5.17.2.7}
+\contentsline {paragraph}{\numberline {5.17.2.8}showCurrentPOIInMap}{29}{paragraph.5.17.2.8}
+\contentsline {paragraph}{\numberline {5.17.2.9}showMarks:}{29}{paragraph.5.17.2.9}
+\contentsline {subsubsection}{\numberline {5.17.3}Dokumentation der Datenelemente}{29}{subsubsection.5.17.3}
+\contentsline {paragraph}{\numberline {5.17.3.1}\_\discretionary {-}{}{}routeViews}{29}{paragraph.5.17.3.1}
+\contentsline {paragraph}{\numberline {5.17.3.2}appDelegate}{29}{paragraph.5.17.3.2}
+\contentsline {paragraph}{\numberline {5.17.3.3}mapView}{29}{paragraph.5.17.3.3}
+\contentsline {subsubsection}{\numberline {5.17.4}Dokumentation der Propertys}{29}{subsubsection.5.17.4}
+\contentsline {paragraph}{\numberline {5.17.4.1}btnPause}{29}{paragraph.5.17.4.1}
+\contentsline {paragraph}{\numberline {5.17.4.2}btnPlay}{30}{paragraph.5.17.4.2}
+\contentsline {paragraph}{\numberline {5.17.4.3}buttonMap}{30}{paragraph.5.17.4.3}
+\contentsline {paragraph}{\numberline {5.17.4.4}currentGPSPoint}{30}{paragraph.5.17.4.4}
+\contentsline {paragraph}{\numberline {5.17.4.5}currentGPSPointPos}{30}{paragraph.5.17.4.5}
+\contentsline {paragraph}{\numberline {5.17.4.6}currentPOI}{30}{paragraph.5.17.4.6}
+\contentsline {paragraph}{\numberline {5.17.4.7}currentPOIList}{30}{paragraph.5.17.4.7}
+\contentsline {paragraph}{\numberline {5.17.4.8}foundPOI}{30}{paragraph.5.17.4.8}
+\contentsline {paragraph}{\numberline {5.17.4.9}gpsCalc}{31}{paragraph.5.17.4.9}
+\contentsline {paragraph}{\numberline {5.17.4.10}gpsStatus}{31}{paragraph.5.17.4.10}
+\contentsline {paragraph}{\numberline {5.17.4.11}gpsStatusBarButton}{31}{paragraph.5.17.4.11}
+\contentsline {paragraph}{\numberline {5.17.4.12}poiDetailsView}{31}{paragraph.5.17.4.12}
+\contentsline {paragraph}{\numberline {5.17.4.13}poiListView}{31}{paragraph.5.17.4.13}
+\contentsline {paragraph}{\numberline {5.17.4.14}settings}{31}{paragraph.5.17.4.14}
+\contentsline {paragraph}{\numberline {5.17.4.15}visitedPois}{31}{paragraph.5.17.4.15}
+\contentsline {subsection}{\numberline {5.18}MLog Klassenreferenz}{32}{subsection.5.18}
+\contentsline {subsubsection}{\numberline {5.18.1}Ausf\IeC {\"u}hrliche Beschreibung}{32}{subsubsection.5.18.1}
+\contentsline {subsubsection}{\numberline {5.18.2}Dokumentation der Elementfunktionen}{32}{subsubsection.5.18.2}
+\contentsline {paragraph}{\numberline {5.18.2.1}logFile:lineNumber:format:}{32}{paragraph.5.18.2.1}
+\contentsline {paragraph}{\numberline {5.18.2.2}setLogOn:}{32}{paragraph.5.18.2.2}
+\contentsline {subsection}{\numberline {5.19}POI Klassenreferenz}{32}{subsection.5.19}
+\contentsline {subsubsection}{\numberline {5.19.1}Ausf\IeC {\"u}hrliche Beschreibung}{33}{subsubsection.5.19.1}
+\contentsline {subsubsection}{\numberline {5.19.2}Dokumentation der Elementfunktionen}{33}{subsubsection.5.19.2}
+\contentsline {paragraph}{\numberline {5.19.2.1}drawPOI:}{33}{paragraph.5.19.2.1}
+\contentsline {paragraph}{\numberline {5.19.2.2}getLatitude}{33}{paragraph.5.19.2.2}
+\contentsline {paragraph}{\numberline {5.19.2.3}getLongitude}{34}{paragraph.5.19.2.3}
+\contentsline {paragraph}{\numberline {5.19.2.4}initCoordinate}{34}{paragraph.5.19.2.4}
+\contentsline {paragraph}{\numberline {5.19.2.5}initWithPrimaryKey:}{34}{paragraph.5.19.2.5}
+\contentsline {paragraph}{\numberline {5.19.2.6}isEqual:}{34}{paragraph.5.19.2.6}
+\contentsline {paragraph}{\numberline {5.19.2.7}playSound}{34}{paragraph.5.19.2.7}
+\contentsline {paragraph}{\numberline {5.19.2.8}setData::longitude:soundURL:}{34}{paragraph.5.19.2.8}
+\contentsline {paragraph}{\numberline {5.19.2.9}stopSound}{34}{paragraph.5.19.2.9}
+\contentsline {subsubsection}{\numberline {5.19.3}Dokumentation der Propertys}{35}{subsubsection.5.19.3}
+\contentsline {paragraph}{\numberline {5.19.3.1}appDelegate}{35}{paragraph.5.19.3.1}
+\contentsline {paragraph}{\numberline {5.19.3.2}coordinate}{35}{paragraph.5.19.3.2}
+\contentsline {paragraph}{\numberline {5.19.3.3}details}{35}{paragraph.5.19.3.3}
+\contentsline {paragraph}{\numberline {5.19.3.4}detailsTextLength}{35}{paragraph.5.19.3.4}
+\contentsline {paragraph}{\numberline {5.19.3.5}distance}{35}{paragraph.5.19.3.5}
+\contentsline {paragraph}{\numberline {5.19.3.6}imageURL}{35}{paragraph.5.19.3.6}
+\contentsline {paragraph}{\numberline {5.19.3.7}latitude}{35}{paragraph.5.19.3.7}
+\contentsline {paragraph}{\numberline {5.19.3.8}longitude}{36}{paragraph.5.19.3.8}
+\contentsline {paragraph}{\numberline {5.19.3.9}pid}{36}{paragraph.5.19.3.9}
+\contentsline {paragraph}{\numberline {5.19.3.10}soundURL}{36}{paragraph.5.19.3.10}
+\contentsline {paragraph}{\numberline {5.19.3.11}title}{36}{paragraph.5.19.3.11}
+\contentsline {paragraph}{\numberline {5.19.3.12}userData}{36}{paragraph.5.19.3.12}
+\contentsline {paragraph}{\numberline {5.19.3.13}videoURL}{36}{paragraph.5.19.3.13}
+\contentsline {subsection}{\numberline {5.20}POIDetailsViewController Klassenreferenz}{37}{subsection.5.20}
+\contentsline {subsubsection}{\numberline {5.20.1}Ausf\IeC {\"u}hrliche Beschreibung}{37}{subsubsection.5.20.1}
+\contentsline {subsubsection}{\numberline {5.20.2}Dokumentation der Elementfunktionen}{37}{subsubsection.5.20.2}
+\contentsline {paragraph}{\numberline {5.20.2.1}calculateHeightOfTextFromWidth:text:withFont::}{37}{paragraph.5.20.2.1}
+\contentsline {paragraph}{\numberline {5.20.2.2}reloadTable}{37}{paragraph.5.20.2.2}
+\contentsline {subsubsection}{\numberline {5.20.3}Dokumentation der Datenelemente}{37}{subsubsection.5.20.3}
+\contentsline {paragraph}{\numberline {5.20.3.1}appDelegate}{37}{paragraph.5.20.3.1}
+\contentsline {subsubsection}{\numberline {5.20.4}Dokumentation der Propertys}{38}{subsubsection.5.20.4}
+\contentsline {paragraph}{\numberline {5.20.4.1}buttonSound}{38}{paragraph.5.20.4.1}
+\contentsline {paragraph}{\numberline {5.20.4.2}contentArray}{38}{paragraph.5.20.4.2}
+\contentsline {paragraph}{\numberline {5.20.4.3}footerView}{38}{paragraph.5.20.4.3}
+\contentsline {paragraph}{\numberline {5.20.4.4}poi}{38}{paragraph.5.20.4.4}
+\contentsline {paragraph}{\numberline {5.20.4.5}sectionArray}{38}{paragraph.5.20.4.5}
+\contentsline {paragraph}{\numberline {5.20.4.6}settings}{38}{paragraph.5.20.4.6}
+\contentsline {paragraph}{\numberline {5.20.4.7}videoPlayer}{38}{paragraph.5.20.4.7}
+\contentsline {subsection}{\numberline {5.21}POIListViewController Klassenreferenz}{39}{subsection.5.21}
+\contentsline {subsubsection}{\numberline {5.21.1}Ausf\IeC {\"u}hrliche Beschreibung}{39}{subsubsection.5.21.1}
+\contentsline {subsubsection}{\numberline {5.21.2}Dokumentation der Datenelemente}{39}{subsubsection.5.21.2}
+\contentsline {paragraph}{\numberline {5.21.2.1}appDelegate}{39}{paragraph.5.21.2.1}
+\contentsline {subsubsection}{\numberline {5.21.3}Dokumentation der Propertys}{39}{subsubsection.5.21.3}
+\contentsline {paragraph}{\numberline {5.21.3.1}poiDetailsView}{39}{paragraph.5.21.3.1}
+\contentsline {paragraph}{\numberline {5.21.3.2}route}{39}{paragraph.5.21.3.2}
+\contentsline {subsection}{\numberline {5.22}Route Klassenreferenz}{39}{subsection.5.22}
+\contentsline {subsubsection}{\numberline {5.22.1}Ausf\IeC {\"u}hrliche Beschreibung}{40}{subsubsection.5.22.1}
+\contentsline {subsubsection}{\numberline {5.22.2}Dokumentation der Propertys}{40}{subsubsection.5.22.2}
+\contentsline {paragraph}{\numberline {5.22.2.1}details}{40}{paragraph.5.22.2.1}
+\contentsline {paragraph}{\numberline {5.22.2.2}dummyGPSPoints}{40}{paragraph.5.22.2.2}
+\contentsline {paragraph}{\numberline {5.22.2.3}image}{40}{paragraph.5.22.2.3}
+\contentsline {paragraph}{\numberline {5.22.2.4}name}{40}{paragraph.5.22.2.4}
+\contentsline {paragraph}{\numberline {5.22.2.5}pois}{40}{paragraph.5.22.2.5}
+\contentsline {paragraph}{\numberline {5.22.2.6}rid}{41}{paragraph.5.22.2.6}
+\contentsline {paragraph}{\numberline {5.22.2.7}routepoints}{41}{paragraph.5.22.2.7}
+\contentsline {subsection}{\numberline {5.23}RouteArrow Klassenreferenz}{41}{subsection.5.23}
+\contentsline {subsubsection}{\numberline {5.23.1}Ausf\IeC {\"u}hrliche Beschreibung}{41}{subsubsection.5.23.1}
+\contentsline {subsubsection}{\numberline {5.23.2}Dokumentation der Elementfunktionen}{41}{subsubsection.5.23.2}
+\contentsline {paragraph}{\numberline {5.23.2.1}calculateAngle:toPoint:}{41}{paragraph.5.23.2.1}
+\contentsline {subsubsection}{\numberline {5.23.3}Dokumentation der Propertys}{42}{subsubsection.5.23.3}
+\contentsline {paragraph}{\numberline {5.23.3.1}angle}{42}{paragraph.5.23.3.1}
+\contentsline {paragraph}{\numberline {5.23.3.2}direction}{42}{paragraph.5.23.3.2}
+\contentsline {paragraph}{\numberline {5.23.3.3}middlePoint}{42}{paragraph.5.23.3.3}
+\contentsline {subsection}{\numberline {5.24}RoutePoint Klassenreferenz}{42}{subsection.5.24}
+\contentsline {subsubsection}{\numberline {5.24.1}Ausf\IeC {\"u}hrliche Beschreibung}{42}{subsubsection.5.24.1}
+\contentsline {subsubsection}{\numberline {5.24.2}Dokumentation der Elementfunktionen}{43}{subsubsection.5.24.2}
+\contentsline {paragraph}{\numberline {5.24.2.1}initCoordinate}{43}{paragraph.5.24.2.1}
+\contentsline {subsubsection}{\numberline {5.24.3}Dokumentation der Propertys}{43}{subsubsection.5.24.3}
+\contentsline {paragraph}{\numberline {5.24.3.1}coordinate}{43}{paragraph.5.24.3.1}
+\contentsline {paragraph}{\numberline {5.24.3.2}latitude}{43}{paragraph.5.24.3.2}
+\contentsline {paragraph}{\numberline {5.24.3.3}longitude}{43}{paragraph.5.24.3.3}
+\contentsline {subsection}{\numberline {5.25}RoutesViewController Klassenreferenz}{43}{subsection.5.25}
+\contentsline {subsubsection}{\numberline {5.25.1}Ausf\IeC {\"u}hrliche Beschreibung}{44}{subsubsection.5.25.1}
+\contentsline {subsubsection}{\numberline {5.25.2}Dokumentation der Elementfunktionen}{44}{subsubsection.5.25.2}
+\contentsline {paragraph}{\numberline {5.25.2.1}doneSearching\_\discretionary {-}{}{}Clicked:}{44}{paragraph.5.25.2.1}
+\contentsline {paragraph}{\numberline {5.25.2.2}searchTableView}{44}{paragraph.5.25.2.2}
+\contentsline {subsubsection}{\numberline {5.25.3}Dokumentation der Datenelemente}{44}{subsubsection.5.25.3}
+\contentsline {paragraph}{\numberline {5.25.3.1}appDelegate}{44}{paragraph.5.25.3.1}
+\contentsline {paragraph}{\numberline {5.25.3.2}letUserSelectRow}{44}{paragraph.5.25.3.2}
+\contentsline {paragraph}{\numberline {5.25.3.3}searchBar}{45}{paragraph.5.25.3.3}
+\contentsline {paragraph}{\numberline {5.25.3.4}searching}{45}{paragraph.5.25.3.4}
+\contentsline {subsubsection}{\numberline {5.25.4}Dokumentation der Propertys}{45}{subsubsection.5.25.4}
+\contentsline {paragraph}{\numberline {5.25.4.1}poiDetailsView}{45}{paragraph.5.25.4.1}
+\contentsline {paragraph}{\numberline {5.25.4.2}poiListView}{45}{paragraph.5.25.4.2}
+\contentsline {paragraph}{\numberline {5.25.4.3}searchBar}{45}{paragraph.5.25.4.3}
+\contentsline {paragraph}{\numberline {5.25.4.4}settings}{45}{paragraph.5.25.4.4}
+\contentsline {subsection}{\numberline {5.26}SettingsGPSStatusDetailsViewController Klassenreferenz}{46}{subsection.5.26}
+\contentsline {subsubsection}{\numberline {5.26.1}Ausf\IeC {\"u}hrliche Beschreibung}{46}{subsubsection.5.26.1}
+\contentsline {subsubsection}{\numberline {5.26.2}Dokumentation der Propertys}{46}{subsubsection.5.26.2}
+\contentsline {paragraph}{\numberline {5.26.2.1}gpsCalc}{46}{paragraph.5.26.2.1}
+\contentsline {subsection}{\numberline {5.27}SettingsViewController Klassenreferenz}{46}{subsection.5.27}
+\contentsline {subsubsection}{\numberline {5.27.1}Ausf\IeC {\"u}hrliche Beschreibung}{47}{subsubsection.5.27.1}
+\contentsline {subsubsection}{\numberline {5.27.2}Dokumentation der Elementfunktionen}{47}{subsubsection.5.27.2}
+\contentsline {paragraph}{\numberline {5.27.2.1}changeEpsilonSlider:}{47}{paragraph.5.27.2.1}
+\contentsline {paragraph}{\numberline {5.27.2.2}setPlayAudioAutomatic:}{47}{paragraph.5.27.2.2}
+\contentsline {paragraph}{\numberline {5.27.2.3}setShowVisitedPoisAgain:}{47}{paragraph.5.27.2.3}
+\contentsline {paragraph}{\numberline {5.27.2.4}setUseGPS:}{47}{paragraph.5.27.2.4}
+\contentsline {paragraph}{\numberline {5.27.2.5}setValues}{47}{paragraph.5.27.2.5}
+\contentsline {subsubsection}{\numberline {5.27.3}Dokumentation der Datenelemente}{48}{subsubsection.5.27.3}
+\contentsline {paragraph}{\numberline {5.27.3.1}appDelegate}{48}{paragraph.5.27.3.1}
+\contentsline {subsubsection}{\numberline {5.27.4}Dokumentation der Propertys}{48}{subsubsection.5.27.4}
+\contentsline {paragraph}{\numberline {5.27.4.1}gpsCalc}{48}{paragraph.5.27.4.1}
+\contentsline {paragraph}{\numberline {5.27.4.2}gpsDetailsView}{48}{paragraph.5.27.4.2}
+\contentsline {paragraph}{\numberline {5.27.4.3}gpsStatus}{48}{paragraph.5.27.4.3}
+\contentsline {paragraph}{\numberline {5.27.4.4}labelCurrentEpsilon}{48}{paragraph.5.27.4.4}
+\contentsline {paragraph}{\numberline {5.27.4.5}settings}{48}{paragraph.5.27.4.5}
+\contentsline {subsection}{\numberline {5.28}SoundCityAppDelegate Klassenreferenz}{49}{subsection.5.28}
+\contentsline {subsubsection}{\numberline {5.28.1}Ausf\IeC {\"u}hrliche Beschreibung}{49}{subsubsection.5.28.1}
+\contentsline {subsubsection}{\numberline {5.28.2}Dokumentation der Elementfunktionen}{50}{subsubsection.5.28.2}
+\contentsline {paragraph}{\numberline {5.28.2.1}loadXML}{50}{paragraph.5.28.2.1}
+\contentsline {paragraph}{\numberline {5.28.2.2}readGPSPointsFromDatabase}{50}{paragraph.5.28.2.2}
+\contentsline {paragraph}{\numberline {5.28.2.3}reloadXML}{50}{paragraph.5.28.2.3}
+\contentsline {subsubsection}{\numberline {5.28.3}Dokumentation der Datenelemente}{50}{subsubsection.5.28.3}
+\contentsline {paragraph}{\numberline {5.28.3.1}hostReach}{50}{paragraph.5.28.3.1}
+\contentsline {paragraph}{\numberline {5.28.3.2}loadingView}{50}{paragraph.5.28.3.2}
+\contentsline {paragraph}{\numberline {5.28.3.3}tabBarController}{50}{paragraph.5.28.3.3}
+\contentsline {paragraph}{\numberline {5.28.3.4}window}{51}{paragraph.5.28.3.4}
+\contentsline {subsubsection}{\numberline {5.28.4}Dokumentation der Propertys}{51}{subsubsection.5.28.4}
+\contentsline {paragraph}{\numberline {5.28.4.1}currentRoute}{51}{paragraph.5.28.4.1}
+\contentsline {paragraph}{\numberline {5.28.4.2}databaseController}{51}{paragraph.5.28.4.2}
+\contentsline {paragraph}{\numberline {5.28.4.3}gpsCalc}{51}{paragraph.5.28.4.3}
+\contentsline {paragraph}{\numberline {5.28.4.4}gpspoints}{51}{paragraph.5.28.4.4}
+\contentsline {paragraph}{\numberline {5.28.4.5}hasInternetConnection}{51}{paragraph.5.28.4.5}
+\contentsline {paragraph}{\numberline {5.28.4.6}routeChanged}{51}{paragraph.5.28.4.6}
+\contentsline {paragraph}{\numberline {5.28.4.7}routes}{52}{paragraph.5.28.4.7}
+\contentsline {paragraph}{\numberline {5.28.4.8}settings}{52}{paragraph.5.28.4.8}
+\contentsline {paragraph}{\numberline {5.28.4.9}soundController}{52}{paragraph.5.28.4.9}
+\contentsline {paragraph}{\numberline {5.28.4.10}tabBarController}{52}{paragraph.5.28.4.10}
+\contentsline {paragraph}{\numberline {5.28.4.11}window}{52}{paragraph.5.28.4.11}
+\contentsline {subsection}{\numberline {5.29}SoundController Klassenreferenz}{52}{subsection.5.29}
+\contentsline {subsubsection}{\numberline {5.29.1}Ausf\IeC {\"u}hrliche Beschreibung}{53}{subsubsection.5.29.1}
+\contentsline {subsubsection}{\numberline {5.29.2}Dokumentation der Elementfunktionen}{53}{subsubsection.5.29.2}
+\contentsline {paragraph}{\numberline {5.29.2.1}createStreamer}{53}{paragraph.5.29.2.1}
+\contentsline {paragraph}{\numberline {5.29.2.2}destroyStreamer}{53}{paragraph.5.29.2.2}
+\contentsline {paragraph}{\numberline {5.29.2.3}startStream}{53}{paragraph.5.29.2.3}
+\contentsline {paragraph}{\numberline {5.29.2.4}stopStream}{54}{paragraph.5.29.2.4}
+\contentsline {subsubsection}{\numberline {5.29.3}Dokumentation der Datenelemente}{54}{subsubsection.5.29.3}
+\contentsline {paragraph}{\numberline {5.29.3.1}progressUpdateTimer}{54}{paragraph.5.29.3.1}
+\contentsline {subsubsection}{\numberline {5.29.4}Dokumentation der Propertys}{54}{subsubsection.5.29.4}
+\contentsline {paragraph}{\numberline {5.29.4.1}soundstate}{54}{paragraph.5.29.4.1}
+\contentsline {paragraph}{\numberline {5.29.4.2}streamer}{54}{paragraph.5.29.4.2}
+\contentsline {paragraph}{\numberline {5.29.4.3}url}{54}{paragraph.5.29.4.3}
+\contentsline {subsection}{\numberline {5.30}SoundStreamController Klassenreferenz}{54}{subsection.5.30}
+\contentsline {subsubsection}{\numberline {5.30.1}Ausf\IeC {\"u}hrliche Beschreibung}{55}{subsubsection.5.30.1}
+\contentsline {subsection}{\numberline {5.31}TrackRouteSaveViewController Klassenreferenz}{55}{subsection.5.31}
+\contentsline {subsubsection}{\numberline {5.31.1}Ausf\IeC {\"u}hrliche Beschreibung}{55}{subsubsection.5.31.1}
+\contentsline {subsubsection}{\numberline {5.31.2}Dokumentation der Propertys}{55}{subsubsection.5.31.2}
+\contentsline {paragraph}{\numberline {5.31.2.1}route}{55}{paragraph.5.31.2.1}
+\contentsline {subsection}{\numberline {5.32}TrackRouteViewController Klassenreferenz}{55}{subsection.5.32}
+\contentsline {subsubsection}{\numberline {5.32.1}Ausf\IeC {\"u}hrliche Beschreibung}{56}{subsubsection.5.32.1}
+\contentsline {subsubsection}{\numberline {5.32.2}Dokumentation der Elementfunktionen}{56}{subsubsection.5.32.2}
+\contentsline {paragraph}{\numberline {5.32.2.1}discardData:}{56}{paragraph.5.32.2.1}
+\contentsline {paragraph}{\numberline {5.32.2.2}drawRoute}{56}{paragraph.5.32.2.2}
+\contentsline {paragraph}{\numberline {5.32.2.3}dummyUpdate:}{57}{paragraph.5.32.2.3}
+\contentsline {paragraph}{\numberline {5.32.2.4}fitMapToRegion}{57}{paragraph.5.32.2.4}
+\contentsline {paragraph}{\numberline {5.32.2.5}handleTrackingButton:}{57}{paragraph.5.32.2.5}
+\contentsline {paragraph}{\numberline {5.32.2.6}locationError:}{57}{paragraph.5.32.2.6}
+\contentsline {paragraph}{\numberline {5.32.2.7}locationUpdate:}{57}{paragraph.5.32.2.7}
+\contentsline {paragraph}{\numberline {5.32.2.8}saveData:}{57}{paragraph.5.32.2.8}
+\contentsline {paragraph}{\numberline {5.32.2.9}updatePositionOnMap}{58}{paragraph.5.32.2.9}
+\contentsline {subsubsection}{\numberline {5.32.3}Dokumentation der Datenelemente}{58}{subsubsection.5.32.3}
+\contentsline {paragraph}{\numberline {5.32.3.1}\_\discretionary {-}{}{}routeViews}{58}{paragraph.5.32.3.1}
+\contentsline {paragraph}{\numberline {5.32.3.2}btnDiscardTracking}{58}{paragraph.5.32.3.2}
+\contentsline {paragraph}{\numberline {5.32.3.3}btnSaveTrackingData}{58}{paragraph.5.32.3.3}
+\contentsline {paragraph}{\numberline {5.32.3.4}btnTrackingHandling}{58}{paragraph.5.32.3.4}
+\contentsline {paragraph}{\numberline {5.32.3.5}dummyGPSPos}{58}{paragraph.5.32.3.5}
+\contentsline {paragraph}{\numberline {5.32.3.6}mapView}{59}{paragraph.5.32.3.6}
+\contentsline {subsubsection}{\numberline {5.32.4}Dokumentation der Propertys}{59}{subsubsection.5.32.4}
+\contentsline {paragraph}{\numberline {5.32.4.1}btnDiscardTracking}{59}{paragraph.5.32.4.1}
+\contentsline {paragraph}{\numberline {5.32.4.2}btnSaveTrackingData}{59}{paragraph.5.32.4.2}
+\contentsline {paragraph}{\numberline {5.32.4.3}btnTrackingHandling}{59}{paragraph.5.32.4.3}
+\contentsline {paragraph}{\numberline {5.32.4.4}currentGPSPoint}{59}{paragraph.5.32.4.4}
+\contentsline {paragraph}{\numberline {5.32.4.5}gpsCalc}{59}{paragraph.5.32.4.5}
+\contentsline {paragraph}{\numberline {5.32.4.6}route}{59}{paragraph.5.32.4.6}
+\contentsline {paragraph}{\numberline {5.32.4.7}saveTrackView}{60}{paragraph.5.32.4.7}
+\contentsline {paragraph}{\numberline {5.32.4.8}state}{60}{paragraph.5.32.4.8}
+\contentsline {paragraph}{\numberline {5.32.4.9}trackingStatusLabel}{60}{paragraph.5.32.4.9}
+\contentsline {subsection}{\numberline {5.33}VideoPlayer Klassenreferenz}{60}{subsection.5.33}
+\contentsline {subsubsection}{\numberline {5.33.1}Ausf\IeC {\"u}hrliche Beschreibung}{60}{subsubsection.5.33.1}
+\contentsline {subsubsection}{\numberline {5.33.2}Dokumentation der Elementfunktionen}{61}{subsubsection.5.33.2}
+\contentsline {paragraph}{\numberline {5.33.2.1}play}{61}{paragraph.5.33.2.1}
+\contentsline {subsubsection}{\numberline {5.33.3}Dokumentation der Propertys}{61}{subsubsection.5.33.3}
+\contentsline {paragraph}{\numberline {5.33.3.1}videoURL}{61}{paragraph.5.33.3.1}
+\contentsline {subsection}{\numberline {5.34}XMLParser Klassenreferenz}{61}{subsection.5.34}
+\contentsline {subsubsection}{\numberline {5.34.1}Ausf\IeC {\"u}hrliche Beschreibung}{61}{subsubsection.5.34.1}
+\contentsline {subsubsection}{\numberline {5.34.2}Dokumentation der Elementfunktionen}{62}{subsubsection.5.34.2}
+\contentsline {paragraph}{\numberline {5.34.2.1}initXMLParser}{62}{paragraph.5.34.2.1}
+\contentsline {subsubsection}{\numberline {5.34.3}Dokumentation der Datenelemente}{62}{subsubsection.5.34.3}
+\contentsline {paragraph}{\numberline {5.34.3.1}appDelegate}{62}{paragraph.5.34.3.1}
+\contentsline {paragraph}{\numberline {5.34.3.2}currentElementTag}{62}{paragraph.5.34.3.2}
+\contentsline {paragraph}{\numberline {5.34.3.3}currentElementValue}{62}{paragraph.5.34.3.3}
+\contentsline {subsubsection}{\numberline {5.34.4}Dokumentation der Propertys}{62}{subsubsection.5.34.4}
+\contentsline {paragraph}{\numberline {5.34.4.1}poi}{62}{paragraph.5.34.4.1}
+\contentsline {paragraph}{\numberline {5.34.4.2}route}{62}{paragraph.5.34.4.2}
+\contentsline {paragraph}{\numberline {5.34.4.3}routepoint}{63}{paragraph.5.34.4.3}
+\contentsline {section}{\numberline {6}Datei-\/Dokumentation}{63}{section.6}
+\contentsline {subsection}{\numberline {6.1}AddGPSPointController.h-\/Dateireferenz}{63}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}AddGPSPointController.m-\/Dateireferenz}{63}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Classes/AppSettings.h-\/Dateireferenz}{63}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Classes/AppSettings.m-\/Dateireferenz}{63}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Classes/AudioOnMapViewController.h-\/Dateireferenz}{63}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Classes/AudioOnMapViewController.m-\/Dateireferenz}{64}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}Classes/CSImageAnnotationView.h-\/Dateireferenz}{64}{subsection.6.7}
+\contentsline {subsection}{\numberline {6.8}Classes/CSImageAnnotationView.m-\/Dateireferenz}{64}{subsection.6.8}
+\contentsline {subsubsection}{\numberline {6.8.1}Makro-\/Dokumentation}{64}{subsubsection.6.8.1}
+\contentsline {paragraph}{\numberline {6.8.1.1}kBorder}{64}{paragraph.6.8.1.1}
+\contentsline {paragraph}{\numberline {6.8.1.2}kHeight}{64}{paragraph.6.8.1.2}
+\contentsline {paragraph}{\numberline {6.8.1.3}kWidth}{65}{paragraph.6.8.1.3}
+\contentsline {subsection}{\numberline {6.9}Classes/CSMapAnnotation.h-\/Dateireferenz}{65}{subsection.6.9}
+\contentsline {subsubsection}{\numberline {6.9.1}Dokumentation der Aufz\IeC {\"a}hlungstypen}{65}{subsubsection.6.9.1}
+\contentsline {paragraph}{\numberline {6.9.1.1}CSMapAnnotationType}{65}{paragraph.6.9.1.1}
+\contentsline {subsection}{\numberline {6.10}Classes/CSMapAnnotation.m-\/Dateireferenz}{65}{subsection.6.10}
+\contentsline {subsection}{\numberline {6.11}Classes/CSRouteAnnotation.h-\/Dateireferenz}{65}{subsection.6.11}
+\contentsline {subsection}{\numberline {6.12}Classes/CSRouteAnnotation.m-\/Dateireferenz}{66}{subsection.6.12}
+\contentsline {subsection}{\numberline {6.13}Classes/CSRouteView.h-\/Dateireferenz}{66}{subsection.6.13}
+\contentsline {subsection}{\numberline {6.14}Classes/CSRouteView.m-\/Dateireferenz}{66}{subsection.6.14}
+\contentsline {subsection}{\numberline {6.15}Classes/DatabaseController.h-\/Dateireferenz}{66}{subsection.6.15}
+\contentsline {subsection}{\numberline {6.16}Classes/DatabaseController.m-\/Dateireferenz}{66}{subsection.6.16}
+\contentsline {subsection}{\numberline {6.17}Classes/FirstViewController.h-\/Dateireferenz}{67}{subsection.6.17}
+\contentsline {subsection}{\numberline {6.18}Classes/FirstViewController.m-\/Dateireferenz}{67}{subsection.6.18}
+\contentsline {subsection}{\numberline {6.19}Classes/GPSCalculator.h-\/Dateireferenz}{67}{subsection.6.19}
+\contentsline {subsection}{\numberline {6.20}Classes/GPSCalculator.m-\/Dateireferenz}{67}{subsection.6.20}
+\contentsline {subsection}{\numberline {6.21}Classes/GPSPoint.h-\/Dateireferenz}{67}{subsection.6.21}
+\contentsline {subsection}{\numberline {6.22}Classes/GPSPoint.m-\/Dateireferenz}{67}{subsection.6.22}
+\contentsline {subsection}{\numberline {6.23}Classes/LoadingView.h-\/Dateireferenz}{68}{subsection.6.23}
+\contentsline {subsection}{\numberline {6.24}Classes/LoadingView.m-\/Dateireferenz}{68}{subsection.6.24}
+\contentsline {subsection}{\numberline {6.25}Classes/MapViewController.h-\/Dateireferenz}{68}{subsection.6.25}
+\contentsline {subsection}{\numberline {6.26}Classes/MapViewController.m-\/Dateireferenz}{68}{subsection.6.26}
+\contentsline {subsubsection}{\numberline {6.26.1}Makro-\/Dokumentation}{69}{subsubsection.6.26.1}
+\contentsline {paragraph}{\numberline {6.26.1.1}MLogString}{69}{paragraph.6.26.1.1}
+\contentsline {subsection}{\numberline {6.27}Classes/MLog.h-\/Dateireferenz}{69}{subsection.6.27}
+\contentsline {subsection}{\numberline {6.28}Classes/MLog.m-\/Dateireferenz}{69}{subsection.6.28}
+\contentsline {subsection}{\numberline {6.29}Classes/POI.h-\/Dateireferenz}{69}{subsection.6.29}
+\contentsline {subsection}{\numberline {6.30}Classes/POI.m-\/Dateireferenz}{70}{subsection.6.30}
+\contentsline {subsubsection}{\numberline {6.30.1}Makro-\/Dokumentation}{70}{subsubsection.6.30.1}
+\contentsline {paragraph}{\numberline {6.30.1.1}MLogString}{70}{paragraph.6.30.1.1}
+\contentsline {subsection}{\numberline {6.31}Classes/Route.h-\/Dateireferenz}{70}{subsection.6.31}
+\contentsline {subsection}{\numberline {6.32}Classes/Route.m-\/Dateireferenz}{70}{subsection.6.32}
+\contentsline {subsection}{\numberline {6.33}Classes/RouteArrow.h-\/Dateireferenz}{70}{subsection.6.33}
+\contentsline {subsection}{\numberline {6.34}Classes/RouteArrow.m-\/Dateireferenz}{71}{subsection.6.34}
+\contentsline {subsection}{\numberline {6.35}Classes/RoutePoint.h-\/Dateireferenz}{71}{subsection.6.35}
+\contentsline {subsection}{\numberline {6.36}Classes/RoutePoint.m-\/Dateireferenz}{71}{subsection.6.36}
+\contentsline {subsection}{\numberline {6.37}Classes/SettingsGPSStatusDetailsViewController.h-\/Dateireferenz}{71}{subsection.6.37}
+\contentsline {subsection}{\numberline {6.38}Classes/SettingsGPSStatusDetailsViewController.m-\/Dateireferenz}{71}{subsection.6.38}
+\contentsline {subsection}{\numberline {6.39}Classes/SoundCityAppDelegate.h-\/Dateireferenz}{71}{subsection.6.39}
+\contentsline {subsection}{\numberline {6.40}Classes/SoundCityAppDelegate.m-\/Dateireferenz}{72}{subsection.6.40}
+\contentsline {subsubsection}{\numberline {6.40.1}Makro-\/Dokumentation}{72}{subsubsection.6.40.1}
+\contentsline {paragraph}{\numberline {6.40.1.1}MLogString}{72}{paragraph.6.40.1.1}
+\contentsline {subsection}{\numberline {6.41}Classes/SoundStreamController.h-\/Dateireferenz}{72}{subsection.6.41}
+\contentsline {subsection}{\numberline {6.42}Classes/SoundStreamController.m-\/Dateireferenz}{73}{subsection.6.42}
+\contentsline {subsection}{\numberline {6.43}Classes/TrackRouteSaveViewController.h-\/Dateireferenz}{73}{subsection.6.43}
+\contentsline {subsection}{\numberline {6.44}Classes/TrackRouteSaveViewController.m-\/Dateireferenz}{73}{subsection.6.44}
+\contentsline {subsection}{\numberline {6.45}Classes/TrackRouteViewController.h-\/Dateireferenz}{73}{subsection.6.45}
+\contentsline {subsection}{\numberline {6.46}Classes/TrackRouteViewController.m-\/Dateireferenz}{73}{subsection.6.46}
+\contentsline {subsubsection}{\numberline {6.46.1}Makro-\/Dokumentation}{74}{subsubsection.6.46.1}
+\contentsline {paragraph}{\numberline {6.46.1.1}MLogString}{74}{paragraph.6.46.1.1}
+\contentsline {subsubsection}{\numberline {6.46.2}Variablen-\/Dokumentation}{74}{subsubsection.6.46.2}
+\contentsline {paragraph}{\numberline {6.46.2.1}BUTTON\_\discretionary {-}{}{}LABEL\_\discretionary {-}{}{}START\_\discretionary {-}{}{}TRACKING}{74}{paragraph.6.46.2.1}
+\contentsline {paragraph}{\numberline {6.46.2.2}BUTTON\_\discretionary {-}{}{}LABEL\_\discretionary {-}{}{}STOP\_\discretionary {-}{}{}TRACKING}{75}{paragraph.6.46.2.2}
+\contentsline {paragraph}{\numberline {6.46.2.3}BUTTON\_\discretionary {-}{}{}LABEL\_\discretionary {-}{}{}WAITING\_\discretionary {-}{}{}FOR\_\discretionary {-}{}{}USER}{75}{paragraph.6.46.2.3}
+\contentsline {paragraph}{\numberline {6.46.2.4}NOT\_\discretionary {-}{}{}TRACKING}{75}{paragraph.6.46.2.4}
+\contentsline {paragraph}{\numberline {6.46.2.5}ROUTE\_\discretionary {-}{}{}TRACKED}{75}{paragraph.6.46.2.5}
+\contentsline {paragraph}{\numberline {6.46.2.6}TRACKING}{75}{paragraph.6.46.2.6}
+\contentsline {subsection}{\numberline {6.47}Classes/VideoPlayer.h-\/Dateireferenz}{75}{subsection.6.47}
+\contentsline {subsection}{\numberline {6.48}Classes/VideoPlayer.m-\/Dateireferenz}{75}{subsection.6.48}
+\contentsline {subsection}{\numberline {6.49}Classes/XMLParser.h-\/Dateireferenz}{76}{subsection.6.49}
+\contentsline {subsection}{\numberline {6.50}Classes/XMLParser.m-\/Dateireferenz}{76}{subsection.6.50}
+\contentsline {subsection}{\numberline {6.51}main.m-\/Dateireferenz}{76}{subsection.6.51}
+\contentsline {subsubsection}{\numberline {6.51.1}Dokumentation der Funktionen}{76}{subsubsection.6.51.1}
+\contentsline {paragraph}{\numberline {6.51.1.1}main}{76}{paragraph.6.51.1.1}
+\contentsline {subsection}{\numberline {6.52}MapView.h-\/Dateireferenz}{76}{subsection.6.52}
+\contentsline {subsection}{\numberline {6.53}MapView.m-\/Dateireferenz}{77}{subsection.6.53}
+\contentsline {subsection}{\numberline {6.54}POIDetailsViewController.h-\/Dateireferenz}{77}{subsection.6.54}
+\contentsline {subsection}{\numberline {6.55}POIDetailsViewController.m-\/Dateireferenz}{77}{subsection.6.55}
+\contentsline {subsection}{\numberline {6.56}POIListViewController.h-\/Dateireferenz}{77}{subsection.6.56}
+\contentsline {subsection}{\numberline {6.57}POIListViewController.m-\/Dateireferenz}{77}{subsection.6.57}
+\contentsline {subsection}{\numberline {6.58}RoutesViewController.h-\/Dateireferenz}{78}{subsection.6.58}
+\contentsline {subsection}{\numberline {6.59}RoutesViewController.m-\/Dateireferenz}{78}{subsection.6.59}
+\contentsline {subsubsection}{\numberline {6.59.1}Makro-\/Dokumentation}{78}{subsubsection.6.59.1}
+\contentsline {paragraph}{\numberline {6.59.1.1}MLogString}{78}{paragraph.6.59.1.1}
+\contentsline {subsection}{\numberline {6.60}SettingsViewController.h-\/Dateireferenz}{78}{subsection.6.60}
+\contentsline {subsection}{\numberline {6.61}SettingsViewController.m-\/Dateireferenz}{79}{subsection.6.61}
+\contentsline {subsection}{\numberline {6.62}SoundController.h-\/Dateireferenz}{79}{subsection.6.62}
+\contentsline {subsubsection}{\numberline {6.62.1}Variablen-\/Dokumentation}{79}{subsubsection.6.62.1}
+\contentsline {paragraph}{\numberline {6.62.1.1}IDLE}{79}{paragraph.6.62.1.1}
+\contentsline {paragraph}{\numberline {6.62.1.2}PLAYING}{79}{paragraph.6.62.1.2}
+\contentsline {paragraph}{\numberline {6.62.1.3}STOPPED}{79}{paragraph.6.62.1.3}
+\contentsline {paragraph}{\numberline {6.62.1.4}WAITING}{80}{paragraph.6.62.1.4}
+\contentsline {subsection}{\numberline {6.63}SoundController.m-\/Dateireferenz}{80}{subsection.6.63}
+\contentsline {subsubsection}{\numberline {6.63.1}Variablen-\/Dokumentation}{80}{subsubsection.6.63.1}
+\contentsline {paragraph}{\numberline {6.63.1.1}IDLE}{80}{paragraph.6.63.1.1}
+\contentsline {paragraph}{\numberline {6.63.1.2}PLAYING}{80}{paragraph.6.63.1.2}
+\contentsline {paragraph}{\numberline {6.63.1.3}STOPPED}{80}{paragraph.6.63.1.3}
+\contentsline {paragraph}{\numberline {6.63.1.4}WAITING}{80}{paragraph.6.63.1.4}

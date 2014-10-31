@@ -1,0 +1,79 @@
+\hypertarget{interface_database_controller}{
+\subsection{DatabaseController Klassenreferenz}
+\label{interface_database_controller}\index{DatabaseController@{DatabaseController}}
+}
+
+
+{\ttfamily \#import $<$DatabaseController.h$>$}\subsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_database_controller_a017e1d00d2ab97ae34771688b2e7ecca}{openDatabase}
+\item 
+(void) -\/ \hyperlink{interface_database_controller_a474e837eaaf05259fae1097b04aae5bf}{checkAndCreateDatabase}
+\end{DoxyCompactItemize}
+\subsubsection*{Propertys}
+\begin{DoxyCompactItemize}
+\item 
+NSString $\ast$ \hyperlink{interface_database_controller_aa593318b53fcf8cbe5b550ec7b00a6d6}{databasePath}
+\item 
+NSString $\ast$ \hyperlink{interface_database_controller_a921a7b3cf192bf2380264f18ed2896a5}{databaseName}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Ausführliche Beschreibung}
+
+
+Definiert in Zeile 12 der Datei DatabaseController.h.
+
+\subsubsection{Dokumentation der Elementfunktionen}
+\hypertarget{interface_database_controller_a474e837eaaf05259fae1097b04aae5bf}{
+\index{DatabaseController@{DatabaseController}!checkAndCreateDatabase@{checkAndCreateDatabase}}
+\index{checkAndCreateDatabase@{checkAndCreateDatabase}!DatabaseController@{DatabaseController}}
+\paragraph[{checkAndCreateDatabase}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) checkAndCreateDatabase }\hfill}
+\label{interface_database_controller_a474e837eaaf05259fae1097b04aae5bf}
+
+
+BOOL success; NSLog(@\char`\"{}Check Database\char`\"{});
+
+NSFileManager $\ast$fileManager = \mbox{[}NSFileManager defaultManager\mbox{]}; success = \mbox{[}fileManager fileExistsAtPath:databasePath\mbox{]};
+
+if(success) return;
+
+NSString $\ast$databasePathFromApp = \mbox{[}\mbox{[}\mbox{[}NSBundle mainBundle\mbox{]} resourcePath\mbox{]} stringByAppendingPathComponent:databaseName\mbox{]}; \mbox{[}fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil\mbox{]}; \mbox{[}fileManager release\mbox{]};
+
+Definiert in Zeile 25 der Datei DatabaseController.m.
+
+Benutzt databasePath.\hypertarget{interface_database_controller_a017e1d00d2ab97ae34771688b2e7ecca}{
+\index{DatabaseController@{DatabaseController}!openDatabase@{openDatabase}}
+\index{openDatabase@{openDatabase}!DatabaseController@{DatabaseController}}
+\paragraph[{openDatabase}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) openDatabase }\hfill}
+\label{interface_database_controller_a017e1d00d2ab97ae34771688b2e7ecca}
+
+
+Definiert in Zeile 16 der Datei DatabaseController.m.
+
+Benutzt databasePath.
+
+\subsubsection{Dokumentation der Propertys}
+\hypertarget{interface_database_controller_a921a7b3cf192bf2380264f18ed2896a5}{
+\index{DatabaseController@{DatabaseController}!databaseName@{databaseName}}
+\index{databaseName@{databaseName}!DatabaseController@{DatabaseController}}
+\paragraph[{databaseName}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSString $\ast$) databaseName\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_database_controller_a921a7b3cf192bf2380264f18ed2896a5}
+
+
+Definiert in Zeile 13 der Datei DatabaseController.h.\hypertarget{interface_database_controller_aa593318b53fcf8cbe5b550ec7b00a6d6}{
+\index{DatabaseController@{DatabaseController}!databasePath@{databasePath}}
+\index{databasePath@{databasePath}!DatabaseController@{DatabaseController}}
+\paragraph[{databasePath}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSString $\ast$) databasePath\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_database_controller_aa593318b53fcf8cbe5b550ec7b00a6d6}
+
+
+Definiert in Zeile 14 der Datei DatabaseController.h.
+
+Wird benutzt von checkAndCreateDatabase, openDatabase und SoundCityAppDelegate::readGPSPointsFromDatabase.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:\begin{DoxyCompactItemize}
+\item 
+Classes/\hyperlink{_database_controller_8h}{DatabaseController.h}\item 
+Classes/\hyperlink{_database_controller_8m}{DatabaseController.m}\end{DoxyCompactItemize}

@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: GPSCalculator Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klassen</span></a></li>
+      <li><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Auflistung&nbsp;der&nbsp;Klassen</span></a></li>
+      <li><a href="hierarchy.html"><span>Klassenhierarchie</span></a></li>
+      <li><a href="functions.html"><span>Klassen-Elemente</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>GPSCalculator Klassenreferenz</h1><!-- doxytag: class="GPSCalculator" -->
+<p><code>#import &lt;<a class="el" href="_g_p_s_calculator_8h_source.html">GPSCalculator.h</a>&gt;</code></p>
+
+<p><a href="class_g_p_s_calculator-members.html">Aufstellung aller Elemente</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_g_p_s_calculator.html#ace4b565a8dca496da97ca7e890226136">locationManager:didUpdateToLocation:fromLocation:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_g_p_s_calculator.html#a172bfe3f489df71bd558a074770caf71">locationManager:didFailWithError:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(BOOL)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_g_p_s_calculator.html#a406a446181f898802d323447150b0f67">nearestPOIExists:gpspoint:</a></td></tr>
+<tr><td colspan="2"><h2>Öffentliche, statische Methoden</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_g_p_s_calculator.html">GPSCalculator</a> *)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_g_p_s_calculator.html#a76b80925729654bc60faecb2a93e1877">sharedAppGPSCalc</a></td></tr>
+<tr><td colspan="2"><h2>Propertys</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CLLocationManager *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_p_s_calculator.html#abe4f902d1cb7d075967dc769d0b15133">locationManager</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">id&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_p_s_calculator.html#a0afb0a146e7dc7b16a6a51dc3eb69fc3">delegate</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_p_o_i.html">POI</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_p_s_calculator.html#adb62c6bc9c85129145d61bd272ed8ec4">nearestPOI</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSMutableArray *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_p_s_calculator.html#ad35926f5862c782550e8fb53c72d9ce7">nearestPOIList</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_app_settings.html">AppSettings</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_p_s_calculator.html#a16945732145e0f6c1541b57c7a9bf50e">settings</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_p_s_calculator.html#a437060e217fe7ab21e7738a19c2c9238">gpsStatus</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CLLocation *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_p_s_calculator.html#ae9268fe3bb4bfc41efa35f108fe346a0">currentLocation</a></td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8h_source.html#l00021">21</a> der Datei <a class="el" href="_g_p_s_calculator_8h_source.html">GPSCalculator.h</a>.</p>
+<hr/><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" id="a172bfe3f489df71bd558a074770caf71"></a><!-- doxytag: member="GPSCalculator::locationManager:didFailWithError:" ref="a172bfe3f489df71bd558a074770caf71" args="(CLLocationManager *manager,[didFailWithError] NSError *error)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) locationManager: </td>
+          <td></td>
+          <td class="paramtype">(CLLocationManager *)&nbsp;</td>
+          <td class="paramname"> <em>manager</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">didFailWithError:</td>
+          <td></td>
+          <td class="paramtype">(NSError *)&nbsp;</td>
+          <td class="paramname"> <em>error</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8m_source.html#l00053">53</a> der Datei <a class="el" href="_g_p_s_calculator_8m_source.html">GPSCalculator.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_g_p_s_calculator_8h_source.html#l00026">delegate</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ace4b565a8dca496da97ca7e890226136"></a><!-- doxytag: member="GPSCalculator::locationManager:didUpdateToLocation:fromLocation:" ref="ace4b565a8dca496da97ca7e890226136" args="(CLLocationManager *manager,[didUpdateToLocation] CLLocation *newLocation,[fromLocation] CLLocation *oldLocation)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) locationManager: </td>
+          <td></td>
+          <td class="paramtype">(CLLocationManager *)&nbsp;</td>
+          <td class="paramname"> <em>manager</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">didUpdateToLocation:</td>
+          <td></td>
+          <td class="paramtype">(CLLocation *)&nbsp;</td>
+          <td class="paramname"> <em>newLocation</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">fromLocation:</td>
+          <td></td>
+          <td class="paramtype">(CLLocation *)&nbsp;</td>
+          <td class="paramname"> <em>oldLocation</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8m_source.html#l00038">38</a> der Datei <a class="el" href="_g_p_s_calculator_8m_source.html">GPSCalculator.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_g_p_s_calculator_8h_source.html#l00026">delegate</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a406a446181f898802d323447150b0f67"></a><!-- doxytag: member="GPSCalculator::nearestPOIExists:gpspoint:" ref="a406a446181f898802d323447150b0f67" args="(NSMutableArray *pois,[gpspoint] GPSPoint *gpspoint)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) nearestPOIExists: </td>
+          <td></td>
+          <td class="paramtype">(NSMutableArray *)&nbsp;</td>
+          <td class="paramname"> <em>pois</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">gpspoint:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_g_p_s_point.html">GPSPoint</a> *)&nbsp;</td>
+          <td class="paramname"> <em>gpspoint</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>PrÃ¼ft, ob einer GPS Punkt in der NÃ¤he von genau einem <a class="el" href="interface_p_o_i.html">POI</a> ist Dazu darf der GPS Punkt maximal so weit entfernt sein, wie das Epsilon aus <a class="el" href="interface_app_settings.html">AppSettings</a> vorgibt </p>
+<dl><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>pois</em>&nbsp;</td><td>Array mit POIS aus der ApplicationDelegate Klasse </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>gpspoint</em>&nbsp;</td><td>Aktueller GPS Punkt </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8m_source.html#l00067">67</a> der Datei <a class="el" href="_g_p_s_calculator_8m_source.html">GPSCalculator.m</a>.</p>
+
+<p>Benutzt <a class="el" href="_app_settings_8h_source.html#l00012">AppSettings::epsilon</a>, <a class="el" href="_g_p_s_calculator_8h_source.html#l00024">nearestPOI</a>, <a class="el" href="_g_p_s_calculator_8h_source.html#l00025">nearestPOIList</a> und <a class="el" href="_g_p_s_calculator_8h_source.html#l00027">settings</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_map_view_controller_8m_source.html#l00313">MapViewController::setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a76b80925729654bc60faecb2a93e1877"></a><!-- doxytag: member="GPSCalculator::sharedAppGPSCalc" ref="a76b80925729654bc60faecb2a93e1877" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (<a class="el" href="interface_g_p_s_calculator.html">GPSCalculator</a> *) sharedAppGPSCalc </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8m_source.html#l00124">124</a> der Datei <a class="el" href="_g_p_s_calculator_8m_source.html">GPSCalculator.m</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Dokumentation der Propertys</h2>
+<a class="anchor" id="ae9268fe3bb4bfc41efa35f108fe346a0"></a><!-- doxytag: member="GPSCalculator::currentLocation" ref="ae9268fe3bb4bfc41efa35f108fe346a0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (CLLocation *) currentLocation<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8h_source.html#l00023">23</a> der Datei <a class="el" href="_g_p_s_calculator_8h_source.html">GPSCalculator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0afb0a146e7dc7b16a6a51dc3eb69fc3"></a><!-- doxytag: member="GPSCalculator::delegate" ref="a0afb0a146e7dc7b16a6a51dc3eb69fc3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) delegate<code> [read, write, assign]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8h_source.html#l00026">26</a> der Datei <a class="el" href="_g_p_s_calculator_8h_source.html">GPSCalculator.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_g_p_s_calculator_8m_source.html#l00053">locationManager:didFailWithError:</a> und <a class="el" href="_g_p_s_calculator_8m_source.html#l00038">locationManager:didUpdateToLocation:fromLocation:</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a437060e217fe7ab21e7738a19c2c9238"></a><!-- doxytag: member="GPSCalculator::gpsStatus" ref="a437060e217fe7ab21e7738a19c2c9238" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) gpsStatus<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8h_source.html#l00028">28</a> der Datei <a class="el" href="_g_p_s_calculator_8h_source.html">GPSCalculator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe4f902d1cb7d075967dc769d0b15133"></a><!-- doxytag: member="GPSCalculator::locationManager" ref="abe4f902d1cb7d075967dc769d0b15133" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (CLLocationManager *) locationManager<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8h_source.html#l00022">22</a> der Datei <a class="el" href="_g_p_s_calculator_8h_source.html">GPSCalculator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adb62c6bc9c85129145d61bd272ed8ec4"></a><!-- doxytag: member="GPSCalculator::nearestPOI" ref="adb62c6bc9c85129145d61bd272ed8ec4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_p_o_i.html">POI</a> *) nearestPOI<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>gefundener Punkt, welcher am nÃ¤chsten am aktuellen GPS Punkt ist </p>
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8h_source.html#l00024">24</a> der Datei <a class="el" href="_g_p_s_calculator_8h_source.html">GPSCalculator.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_g_p_s_calculator_8m_source.html#l00067">nearestPOIExists:gpspoint:</a> und <a class="el" href="_map_view_controller_8m_source.html#l00313">MapViewController::setGPSPoint</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad35926f5862c782550e8fb53c72d9ce7"></a><!-- doxytag: member="GPSCalculator::nearestPOIList" ref="ad35926f5862c782550e8fb53c72d9ce7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSMutableArray *) nearestPOIList<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>alle Punkte, aufsteigend nach Entfernung sortiert, die im Radius gefunden wurden </p>
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8h_source.html#l00025">25</a> der Datei <a class="el" href="_g_p_s_calculator_8h_source.html">GPSCalculator.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_g_p_s_calculator_8m_source.html#l00067">nearestPOIExists:gpspoint:</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a16945732145e0f6c1541b57c7a9bf50e"></a><!-- doxytag: member="GPSCalculator::settings" ref="a16945732145e0f6c1541b57c7a9bf50e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_app_settings.html">AppSettings</a> *) settings<code> [read, write, retain]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>aktuelle Einstellungen der App, als Singleton </p>
+
+<p>Definiert in Zeile <a class="el" href="_g_p_s_calculator_8h_source.html#l00027">27</a> der Datei <a class="el" href="_g_p_s_calculator_8h_source.html">GPSCalculator.h</a>.</p>
+
+<p>Wird benutzt von <a class="el" href="_g_p_s_calculator_8m_source.html#l00067">nearestPOIExists:gpspoint:</a>.</p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>Classes/<a class="el" href="_g_p_s_calculator_8h_source.html">GPSCalculator.h</a></li>
+<li>Classes/<a class="el" href="_g_p_s_calculator_8m_source.html">GPSCalculator.m</a></li>
+</ul>
+</div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:33 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

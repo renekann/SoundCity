@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: Classes/CSRouteView.m Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<h1>Classes/CSRouteView.m</h1><a href="_c_s_route_view_8m.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">//  CSRouteView.m</span>
+<a name="l00003"></a>00003 <span class="comment">//  testMapp</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//  Created by Craig on 8/18/09.</span>
+<a name="l00006"></a>00006 <span class="comment">//  Copyright Craig Spitzkoff 2009. All rights reserved.</span>
+<a name="l00007"></a>00007 <span class="comment">//</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#import &quot;<a class="code" href="_c_s_route_view_8h.html">CSRouteView.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#import &quot;<a class="code" href="_c_s_route_annotation_8h.html">CSRouteAnnotation.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;math.h&gt;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#import &quot;<a class="code" href="_route_arrow_8h.html">RouteArrow.h</a>&quot;</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="comment">// this is an internally used view to CSRouteView. The CSRouteView needs a subview that does not get clipped to always</span>
+<a name="l00016"></a>00016 <span class="comment">// be positioned at the full frame size and origin of the map. This way the view can be smaller than the route, but it</span>
+<a name="l00017"></a>00017 <span class="comment">// always draws in the internal subview, which is the size of the map view. </span>
+<a name="l00018"></a><a class="code" href="interface_c_s_route_view_internal.html">00018</a> <span class="keyword">@interface </span><a class="code" href="interface_c_s_route_view_internal.html">CSRouteViewInternal</a> : UIView
+<a name="l00019"></a>00019 {
+<a name="l00020"></a>00020         <span class="comment">// route view which added this as a subview. </span>
+<a name="l00021"></a><a class="code" href="interface_c_s_route_view_internal.html#a12be00963b31debb7c845f9197549adc">00021</a>         <a class="code" href="interface_c_s_route_view.html">CSRouteView</a>* <a class="code" href="interface_c_s_route_view_internal.html#a12be00963b31debb7c845f9197549adc">_routeView</a>;
+<a name="l00022"></a><a class="code" href="interface_c_s_route_view_internal.html#af74604d36a54617c902613161e126e0c">00022</a>         BOOL <a class="code" href="interface_c_s_route_view_internal.html#af74604d36a54617c902613161e126e0c">drawArrows</a>;
+<a name="l00023"></a>00023 }
+<a name="l00024"></a><a class="code" href="interface_c_s_route_view_internal.html#afdd115549c3d417e7fa33e60c7f14132">00024</a> @property (nonatomic, retain) <a class="code" href="interface_c_s_route_view.html">CSRouteView</a>* routeView;
+<a name="l00025"></a>00025 @property (nonatomic, readwrite) BOOL drawArrows;
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 - (NSString*)directionfOfLine:(CGPoint)fromPoint p2:(CGPoint)toPoint;
+<a name="l00028"></a>00028 - (<span class="keywordtype">void</span>)drawArrow:(CGContextRef)ctx routeArrow:(<a class="code" href="interface_route_arrow.html">RouteArrow</a>*)mPoint;
+<a name="l00029"></a>00029 - (<span class="keywordtype">float</span>)radians:(<span class="keywordtype">int</span>)grade;
+<a name="l00030"></a>00030 @end
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 @implementation <a class="code" href="interface_c_s_route_view_internal.html">CSRouteViewInternal</a>
+<a name="l00033"></a>00033 @synthesize routeView = _routeView, drawArrows;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 -(<span class="keywordtype">void</span>) drawRect:(CGRect) rect
+<a name="l00036"></a>00036 {
+<a name="l00037"></a>00037         <a class="code" href="interface_c_s_route_annotation.html">CSRouteAnnotation</a>* routeAnnotation = (<a class="code" href="interface_c_s_route_annotation.html">CSRouteAnnotation</a>*)<span class="keyword">self</span>.routeView.annotation;
+<a name="l00038"></a>00038         
+<a name="l00039"></a>00039         <span class="comment">// only draw our lines if we&apos;re not int he moddie of a transition and we </span>
+<a name="l00040"></a>00040         <span class="comment">// acutally have some points to draw. </span>
+<a name="l00041"></a>00041         <span class="keywordflow">if</span>(!<span class="keyword">self</span>.hidden &amp;&amp; nil != routeAnnotation.<a class="code" href="interface_c_s_route_annotation.html#ab02d74b832bc93750f3406722fe41d31">points</a> &amp;&amp; routeAnnotation.<a class="code" href="interface_c_s_route_annotation.html#ab02d74b832bc93750f3406722fe41d31">points</a>.count &gt; 0)
+<a name="l00042"></a>00042         {
+<a name="l00043"></a>00043                 CGContextRef context = UIGraphicsGetCurrentContext(); 
+<a name="l00044"></a>00044                 
+<a name="l00045"></a>00045                 NSMutableArray *middlePoints = [[NSMutableArray alloc] init]; 
+<a name="l00046"></a>00046                 
+<a name="l00047"></a>00047                 <span class="keywordflow">if</span>(nil == routeAnnotation.<a class="code" href="interface_c_s_route_annotation.html#a9c0ec690061a38e929c03ac92f0f7f36">lineColor</a>)
+<a name="l00048"></a>00048                         routeAnnotation.<a class="code" href="interface_c_s_route_annotation.html#a9c0ec690061a38e929c03ac92f0f7f36">lineColor</a> = [UIColor blueColor]; <span class="comment">// setting the property instead of the member variable will automatically reatin it.</span>
+<a name="l00049"></a>00049                 
+<a name="l00050"></a>00050                 CGContextSetStrokeColorWithColor(context, routeAnnotation.<a class="code" href="interface_c_s_route_annotation.html#a9c0ec690061a38e929c03ac92f0f7f36">lineColor</a>.CGColor);
+<a name="l00051"></a>00051                 CGContextSetRGBFillColor(context, 0.0, 0.0, 1.0, 1.0);
+<a name="l00052"></a>00052                 
+<a name="l00053"></a>00053                 <span class="comment">// Draw them with a 2.0 stroke width so they are a bit more visible.</span>
+<a name="l00054"></a>00054                 CGContextSetLineWidth(context, 2.0);
+<a name="l00055"></a>00055                 
+<a name="l00056"></a>00056                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> idx = 0; idx &lt; routeAnnotation.<a class="code" href="interface_c_s_route_annotation.html#ab02d74b832bc93750f3406722fe41d31">points</a>.count; idx++)
+<a name="l00057"></a>00057                 {
+<a name="l00058"></a>00058                         CLLocation* location = [routeAnnotation.points objectAtIndex:idx];
+<a name="l00059"></a>00059                         CGPoint point = [<span class="keyword">self</span>.routeView.mapView convertCoordinate:location.coordinate toPointToView:self];
+<a name="l00060"></a>00060                         
+<a name="l00061"></a>00061                         
+<a name="l00062"></a>00062                         <span class="keywordflow">if</span>(idx == 0)
+<a name="l00063"></a>00063                         {
+<a name="l00064"></a>00064                                 <span class="comment">// move to the first point</span>
+<a name="l00065"></a>00065                                 CGContextMoveToPoint(context, point.x, point.y);
+<a name="l00066"></a>00066                         }
+<a name="l00067"></a>00067                         <span class="keywordflow">else</span>
+<a name="l00068"></a>00068                         {
+<a name="l00069"></a>00069                                 <span class="keywordflow">if</span>(idx%2 == 0 &amp;&amp; <span class="keyword">self</span>.drawArrows == YES) {
+<a name="l00070"></a>00070                                         CLLocation* location2 = [routeAnnotation.points objectAtIndex:idx-1];
+<a name="l00071"></a>00071                                         CGPoint prevPoint = [<span class="keyword">self</span>.routeView.mapView convertCoordinate:location2.coordinate toPointToView:self];
+<a name="l00072"></a>00072                                                 
+<a name="l00073"></a>00073                                         <span class="keywordtype">float</span> mitteX = prevPoint.x - ((prevPoint.x - point.x)/2);
+<a name="l00074"></a>00074                                         <span class="keywordtype">float</span> mitteY = prevPoint.y - ((prevPoint.y - point.y)/2);
+<a name="l00075"></a>00075                                                 
+<a name="l00076"></a>00076                                         NSString *lineDirection = [<span class="keyword">self</span> <a class="code" href="interface_c_s_route_view_internal.html#a6d37fc46f0fee013405917fd7e74d455">directionfOfLine</a>:prevPoint <a class="code" href="interface_c_s_route_view_internal.html#a6d37fc46f0fee013405917fd7e74d455">p2</a>:point];
+<a name="l00077"></a>00077                                         CGPoint middlePoint = CGPointMake(mitteX, mitteY);
+<a name="l00078"></a>00078                                         
+<a name="l00079"></a>00079                                         <a class="code" href="interface_route_arrow.html">RouteArrow</a> *ra = [[<a class="code" href="interface_route_arrow.html">RouteArrow</a> alloc] init];
+<a name="l00080"></a>00080                                         [ra setDirection:lineDirection];
+<a name="l00081"></a>00081                                         [ra setMiddlePoint:middlePoint];
+<a name="l00082"></a>00082                                         [ra <a class="code" href="interface_route_arrow.html#a65c0bd1cfc1696590d3fa9f69fd51ea6">calculateAngle</a>:prevPoint <a class="code" href="interface_route_arrow.html#a65c0bd1cfc1696590d3fa9f69fd51ea6">toPoint</a>:point];
+<a name="l00083"></a>00083                                                 
+<a name="l00084"></a>00084                                         [middlePoints addObject:ra];
+<a name="l00085"></a>00085                                         
+<a name="l00086"></a>00086                                         CGContextMoveToPoint(context, prevPoint.x, prevPoint.y);
+<a name="l00087"></a>00087                                 }
+<a name="l00088"></a>00088                                 CGContextAddLineToPoint(context, point.x, point.y);
+<a name="l00089"></a>00089                         }
+<a name="l00090"></a>00090                 }
+<a name="l00091"></a>00091                 
+<a name="l00092"></a>00092                 
+<a name="l00093"></a>00093                 CGContextStrokePath(context);
+<a name="l00094"></a>00094                 
+<a name="l00095"></a>00095                 <span class="keywordflow">if</span>(<span class="keyword">self</span>.drawArrows == YES) {
+<a name="l00096"></a>00096                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> mp = 0; mp &lt; middlePoints.count; mp++)
+<a name="l00097"></a>00097                         {
+<a name="l00098"></a>00098                                 <a class="code" href="interface_route_arrow.html">RouteArrow</a> *ra = [middlePoints objectAtIndex:mp];
+<a name="l00099"></a>00099                                 [<span class="keyword">self</span> <a class="code" href="interface_c_s_route_view_internal.html#a0dfb98537646ea91c04f9b0f34234896">drawArrow</a>:context <a class="code" href="interface_c_s_route_view_internal.html#a0dfb98537646ea91c04f9b0f34234896">routeArrow</a>:ra];
+<a name="l00100"></a>00100                         }
+<a name="l00101"></a>00101                 }
+<a name="l00102"></a>00102                 
+<a name="l00103"></a>00103                 <span class="comment">// debug. Draw the line around our view. </span>
+<a name="l00104"></a>00104                 <span class="comment">/*</span>
+<a name="l00105"></a>00105 <span class="comment">                CGContextMoveToPoint(context, 0, 0);</span>
+<a name="l00106"></a>00106 <span class="comment">                CGContextAddLineToPoint(context, 0, self.frame.size.height);</span>
+<a name="l00107"></a>00107 <span class="comment">                CGContextAddLineToPoint(context, self.frame.size.width, self.frame.size.height);</span>
+<a name="l00108"></a>00108 <span class="comment">                CGContextAddLineToPoint(context, self.frame.size.width, 0);</span>
+<a name="l00109"></a>00109 <span class="comment">                CGContextAddLineToPoint(context, 0, 0);</span>
+<a name="l00110"></a>00110 <span class="comment">                CGContextStrokePath(context);</span>
+<a name="l00111"></a>00111 <span class="comment">                 */</span>
+<a name="l00112"></a>00112         }
+<a name="l00113"></a>00113 }
+<a name="l00114"></a>00114 
+<a name="l00115"></a><a class="code" href="interface_c_s_route_view_internal.html#a0dfb98537646ea91c04f9b0f34234896">00115</a> -(void)drawArrow:(CGContextRef)ctx routeArrow:(<a class="code" href="interface_route_arrow.html">RouteArrow</a>*)ra {
+<a name="l00116"></a>00116         
+<a name="l00117"></a>00117         CGPoint p = ra.<a class="code" href="interface_route_arrow.html#a0f958b0fee2afdfcbb7bae201a914c7c">middlePoint</a>;
+<a name="l00118"></a>00118         
+<a name="l00119"></a>00119         CGContextSaveGState(ctx);
+<a name="l00120"></a>00120         CGContextTranslateCTM(ctx, p.x, p.y);
+<a name="l00121"></a>00121         CGContextRotateCTM(ctx,ra.<a class="code" href="interface_route_arrow.html#a0cb54129ee3e72c2bac68f7086c38594">angle</a>);
+<a name="l00122"></a>00122         
+<a name="l00123"></a>00123         UIImage *image = [UIImage imageNamed:@&quot;routeArrow.png&quot;];
+<a name="l00124"></a>00124         CGContextDrawImage(ctx, CGRectMake(-(image.size.width/2), -(image.size.height/2), image.size.width, image.size.height), image.CGImage);
+<a name="l00125"></a>00125         CGContextRestoreGState(ctx);
+<a name="l00126"></a>00126 }
+<a name="l00127"></a>00127 
+<a name="l00128"></a><a class="code" href="interface_c_s_route_view_internal.html#afdb41f6a8d65f8a382d14c4c860e2e24">00128</a> -(float)radians:(<span class="keywordtype">int</span>)grade {
+<a name="l00129"></a>00129         <span class="keywordflow">return</span> (grade * M_PI) / 180;
+<a name="l00130"></a>00130 }
+<a name="l00131"></a>00131 
+<a name="l00132"></a><a class="code" href="interface_c_s_route_view_internal.html#a6d37fc46f0fee013405917fd7e74d455">00132</a> - (NSString*)directionfOfLine:(CGPoint)fromPoint p2:(CGPoint)toPoint {
+<a name="l00133"></a>00133         
+<a name="l00134"></a>00134         NSString *lineDirection = <span class="stringliteral">@&quot;&quot;</span>;
+<a name="l00135"></a>00135         
+<a name="l00136"></a>00136         <span class="comment">// Linie verlÃ¤uft von links oben nach rechts unten, also x und y Ã¤ndern sich</span>
+<a name="l00137"></a>00137         <span class="keywordflow">if</span>(fromPoint.x &lt; toPoint.x &amp;&amp; fromPoint.y &lt; toPoint.y) {
+<a name="l00138"></a>00138                 lineDirection = <span class="stringliteral">@&quot;TOP_LEFT_TO_BOTTOM_RIGHT&quot;</span>;
+<a name="l00139"></a>00139         }
+<a name="l00140"></a>00140         
+<a name="l00141"></a>00141         <span class="comment">// Linie verlÃ¤uft von rechts unten nach links oben, also x und y Ã¤ndern sich</span>
+<a name="l00142"></a>00142         <span class="keywordflow">if</span>(fromPoint.x &gt; toPoint.x &amp;&amp; fromPoint.y &gt; toPoint.y) {
+<a name="l00143"></a>00143                 lineDirection = <span class="stringliteral">@&quot;BOTTOM_RIGHT_TO_TOP_LEFT&quot;</span>;
+<a name="l00144"></a>00144         }
+<a name="l00145"></a>00145         
+<a name="l00146"></a>00146         <span class="comment">// Linie verlÃ¤uft von links unten nach rechts oben</span>
+<a name="l00147"></a>00147         <span class="keywordflow">if</span>(fromPoint.x &lt; toPoint.x &amp;&amp; fromPoint.y &gt; toPoint.y) {
+<a name="l00148"></a>00148                 lineDirection = <span class="stringliteral">@&quot;BOTTOM_LEFT_TO_TOP_RIGHT&quot;</span>;
+<a name="l00149"></a>00149         }
+<a name="l00150"></a>00150         
+<a name="l00151"></a>00151         <span class="comment">// Linie verlÃ¤uft von rechts oben nach links unten</span>
+<a name="l00152"></a>00152         <span class="keywordflow">if</span>(fromPoint.x &gt; toPoint.x &amp;&amp; fromPoint.y &lt; toPoint.y) {
+<a name="l00153"></a>00153                 lineDirection = <span class="stringliteral">@&quot;TOP_RIGHT_TO_BOTTOM_LEFT&quot;</span>;
+<a name="l00154"></a>00154         }
+<a name="l00155"></a>00155         
+<a name="l00156"></a>00156         <span class="comment">// Linie verlÃ¤uft von oben nach unten (x konstant, y Ã¤ndert sich)</span>
+<a name="l00157"></a>00157         <span class="keywordflow">if</span>(fromPoint.x == toPoint.x &amp;&amp; fromPoint.y &gt; toPoint.y) {
+<a name="l00158"></a>00158                 lineDirection = <span class="stringliteral">@&quot;TOP_TO_BOTTOM&quot;</span>;
+<a name="l00159"></a>00159         }
+<a name="l00160"></a>00160         
+<a name="l00161"></a>00161         <span class="comment">// Linie verlÃ¤uft von unten nach oben (x konstant, y Ã¤ndert sich)</span>
+<a name="l00162"></a>00162         <span class="keywordflow">if</span>(fromPoint.x == toPoint.x &amp;&amp; fromPoint.y &lt; toPoint.y) {
+<a name="l00163"></a>00163                 lineDirection = <span class="stringliteral">@&quot;BOTTOM_TO_TOP&quot;</span>;
+<a name="l00164"></a>00164         }
+<a name="l00165"></a>00165         
+<a name="l00166"></a>00166         <span class="comment">// Linie verlÃ¤uft von links nach rechts (x Ã¤ndert sich, y konstant)</span>
+<a name="l00167"></a>00167         <span class="keywordflow">if</span>(fromPoint.x &lt; toPoint.x &amp;&amp; fromPoint.y == toPoint.y) {
+<a name="l00168"></a>00168                 lineDirection = <span class="stringliteral">@&quot;LEFT_TO_RIGHT&quot;</span>;
+<a name="l00169"></a>00169         }
+<a name="l00170"></a>00170         
+<a name="l00171"></a>00171         <span class="comment">// Linie verlÃ¤uft von rechts nach links (x Ã¤ndert sich, y konstant)</span>
+<a name="l00172"></a>00172         <span class="keywordflow">if</span>(fromPoint.x &gt; toPoint.x &amp;&amp; fromPoint.y == toPoint.y) {
+<a name="l00173"></a>00173                 lineDirection = <span class="stringliteral">@&quot;RIGHT_TO_LEFT&quot;</span>;
+<a name="l00174"></a>00174         }       
+<a name="l00175"></a>00175         
+<a name="l00176"></a>00176         <span class="keywordflow">return</span> lineDirection;
+<a name="l00177"></a>00177 }
+<a name="l00178"></a>00178 
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180 -(id) init
+<a name="l00181"></a>00181 {
+<a name="l00182"></a>00182         <span class="keyword">self</span> = [<span class="keyword">super</span> init];
+<a name="l00183"></a>00183         <span class="keyword">self</span>.backgroundColor = [UIColor clearColor];
+<a name="l00184"></a>00184         <span class="keyword">self</span>.clipsToBounds = NO;
+<a name="l00185"></a>00185         
+<a name="l00186"></a>00186         <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00187"></a>00187 }
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189 -(void) dealloc
+<a name="l00190"></a>00190 {
+<a name="l00191"></a>00191         <span class="keyword">self</span>.routeView = nil;
+<a name="l00192"></a>00192         
+<a name="l00193"></a>00193         [<span class="keyword">super</span> dealloc];
+<a name="l00194"></a>00194 }
+<a name="l00195"></a>00195 <span class="keyword">@end</span>
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197 <span class="keyword">@implementation </span><a class="code" href="interface_c_s_route_view.html">CSRouteView</a>
+<a name="l00198"></a>00198 <span class="keyword">@synthesize</span> <a class="code" href="interface_c_s_route_view.html#a52bb7d64fe9655c610dd8815851059a1">mapView</a> = <a class="code" href="interface_c_s_route_view.html#a3178cd8d5a40441d57450b035e0ccb0b">_mapView</a>;
+<a name="l00199"></a>00199 
+<a name="l00200"></a><a class="code" href="interface_c_s_route_view.html#a12dc74e4cd6d4c33fa16abcf6c06e768">00200</a> - (id)initWithFrame:(CGRect)frame drawArrows:(BOOL)drawArrows {
+<a name="l00201"></a>00201     <span class="keywordflow">if</span> (<span class="keyword">self</span> = [super initWithFrame:frame]) {
+<a name="l00202"></a>00202         
+<a name="l00203"></a>00203                 <span class="keyword">self</span>.backgroundColor = [UIColor clearColor];
+<a name="l00204"></a>00204                 
+<a name="l00205"></a>00205 
+<a name="l00206"></a>00206                 <span class="comment">// do not clip the bounds. We need the CSRouteViewInternal to be able to render the route, regardless of where the</span>
+<a name="l00207"></a>00207                 <span class="comment">// actual annotation view is displayed. </span>
+<a name="l00208"></a>00208                 <span class="keyword">self</span>.clipsToBounds = NO;
+<a name="l00209"></a>00209                 
+<a name="l00210"></a>00210                 <span class="comment">// create the internal route view that does the rendering of the route. </span>
+<a name="l00211"></a>00211                 <a class="code" href="interface_c_s_route_view.html#a92cd1128c9f172fff59f1eb3e4c674cf">_internalRouteView</a> = [[[<a class="code" href="interface_c_s_route_view_internal.html">CSRouteViewInternal</a> alloc] init] autorelease];
+<a name="l00212"></a>00212                 <a class="code" href="interface_c_s_route_view.html#a92cd1128c9f172fff59f1eb3e4c674cf">_internalRouteView</a>.<a class="code" href="interface_c_s_route_view_internal.html#afdd115549c3d417e7fa33e60c7f14132">routeView</a> = <span class="keyword">self</span>;
+<a name="l00213"></a>00213                 <a class="code" href="interface_c_s_route_view.html#a92cd1128c9f172fff59f1eb3e4c674cf">_internalRouteView</a>.<a class="code" href="interface_c_s_route_view_internal.html#af74604d36a54617c902613161e126e0c">drawArrows</a> = drawArrows;
+<a name="l00214"></a>00214                 <a class="code" href="interface_c_s_route_view.html#a92cd1128c9f172fff59f1eb3e4c674cf">_internalRouteView</a>.frame = CGRectMake(0, 0, 320, 480);
+<a name="l00215"></a>00215                 [<a class="code" href="interface_c_s_route_view.html#a92cd1128c9f172fff59f1eb3e4c674cf">_internalRouteView</a> setNeedsDisplay];
+<a name="l00216"></a>00216                 
+<a name="l00217"></a>00217                 [<span class="keyword">self</span> addSubview:_internalRouteView];
+<a name="l00218"></a>00218     }
+<a name="l00219"></a>00219     <span class="keywordflow">return</span> <span class="keyword">self</span>;
+<a name="l00220"></a>00220 }
+<a name="l00221"></a>00221 
+<a name="l00222"></a>00222 -(void) setMapView:(MKMapView*) mapView
+<a name="l00223"></a>00223 {
+<a name="l00224"></a>00224         [_mapView release];
+<a name="l00225"></a>00225         <a class="code" href="interface_c_s_route_view.html#a3178cd8d5a40441d57450b035e0ccb0b">_mapView</a> = [mapView retain];
+<a name="l00226"></a>00226         
+<a name="l00227"></a>00227         [<span class="keyword">self</span> regionChanged];
+<a name="l00228"></a>00228 }
+<a name="l00229"></a><a class="code" href="interface_c_s_route_view.html#a32f44e359ed911edd65611b02ae32208">00229</a> -(void) <a class="code" href="interface_c_s_route_view.html#a32f44e359ed911edd65611b02ae32208">regionChanged</a>
+<a name="l00230"></a>00230 {
+<a name="l00231"></a>00231         <span class="comment">// move the internal route view. </span>
+<a name="l00232"></a>00232         CGPoint origin = CGPointMake(0, 0);
+<a name="l00233"></a>00233         origin = [<a class="code" href="interface_c_s_route_view.html#a3178cd8d5a40441d57450b035e0ccb0b">_mapView</a> convertPoint:origin toView:self];
+<a name="l00234"></a>00234         
+<a name="l00235"></a>00235         <a class="code" href="interface_c_s_route_view.html#a92cd1128c9f172fff59f1eb3e4c674cf">_internalRouteView</a>.frame = CGRectMake(origin.x, origin.y, <a class="code" href="interface_c_s_route_view.html#a3178cd8d5a40441d57450b035e0ccb0b">_mapView</a>.frame.size.width, <a class="code" href="interface_c_s_route_view.html#a3178cd8d5a40441d57450b035e0ccb0b">_mapView</a>.frame.size.height);
+<a name="l00236"></a>00236         [<a class="code" href="interface_c_s_route_view.html#a92cd1128c9f172fff59f1eb3e4c674cf">_internalRouteView</a> setNeedsDisplay];
+<a name="l00237"></a>00237         
+<a name="l00238"></a>00238         <span class="comment">// Check if path below other annotations and move it below if not</span>
+<a name="l00239"></a>00239         UIView *parent = <span class="keyword">self</span>.superview;
+<a name="l00240"></a>00240         
+<a name="l00241"></a>00241         <span class="keywordflow">if</span> (parent &amp;&amp; [parent.subviews indexOfObject:<span class="keyword">self</span>] != 0) {
+<a name="l00242"></a>00242                 [<span class="keyword">self</span> removeFromSuperview];
+<a name="l00243"></a>00243                 [parent insertSubview:self atIndex:0];
+<a name="l00244"></a>00244         }
+<a name="l00245"></a>00245         
+<a name="l00246"></a>00246 }
+<a name="l00247"></a>00247 
+<a name="l00248"></a>00248 - (void)dealloc 
+<a name="l00249"></a>00249 {
+<a name="l00250"></a>00250         [_mapView release];
+<a name="l00251"></a>00251         [_internalRouteView release];
+<a name="l00252"></a>00252         
+<a name="l00253"></a>00253     [<span class="keyword">super</span> dealloc];
+<a name="l00254"></a>00254 }
+<a name="l00255"></a>00255 
+<a name="l00256"></a>00256 
+<a name="l00257"></a>00257 <span class="keyword">@end</span>
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:32 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>

@@ -1,0 +1,150 @@
+\hypertarget{interface_g_p_s_calculator}{
+\subsection{GPSCalculator Klassenreferenz}
+\label{interface_g_p_s_calculator}\index{GPSCalculator@{GPSCalculator}}
+}
+
+
+{\ttfamily \#import $<$GPSCalculator.h$>$}\subsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_g_p_s_calculator_ace4b565a8dca496da97ca7e890226136}{locationManager:didUpdateToLocation:fromLocation:}
+\item 
+(void) -\/ \hyperlink{interface_g_p_s_calculator_a172bfe3f489df71bd558a074770caf71}{locationManager:didFailWithError:}
+\item 
+(BOOL) -\/ \hyperlink{interface_g_p_s_calculator_a406a446181f898802d323447150b0f67}{nearestPOIExists:gpspoint:}
+\end{DoxyCompactItemize}
+\subsubsection*{Öffentliche, statische Methoden}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_g_p_s_calculator}{GPSCalculator} $\ast$) + \hyperlink{interface_g_p_s_calculator_a76b80925729654bc60faecb2a93e1877}{sharedAppGPSCalc}
+\end{DoxyCompactItemize}
+\subsubsection*{Propertys}
+\begin{DoxyCompactItemize}
+\item 
+CLLocationManager $\ast$ \hyperlink{interface_g_p_s_calculator_abe4f902d1cb7d075967dc769d0b15133}{locationManager}
+\item 
+id \hyperlink{interface_g_p_s_calculator_a0afb0a146e7dc7b16a6a51dc3eb69fc3}{delegate}
+\item 
+\hyperlink{interface_p_o_i}{POI} $\ast$ \hyperlink{interface_g_p_s_calculator_adb62c6bc9c85129145d61bd272ed8ec4}{nearestPOI}
+\item 
+NSMutableArray $\ast$ \hyperlink{interface_g_p_s_calculator_ad35926f5862c782550e8fb53c72d9ce7}{nearestPOIList}
+\item 
+\hyperlink{interface_app_settings}{AppSettings} $\ast$ \hyperlink{interface_g_p_s_calculator_a16945732145e0f6c1541b57c7a9bf50e}{settings}
+\item 
+NSString $\ast$ \hyperlink{interface_g_p_s_calculator_a437060e217fe7ab21e7738a19c2c9238}{gpsStatus}
+\item 
+CLLocation $\ast$ \hyperlink{interface_g_p_s_calculator_ae9268fe3bb4bfc41efa35f108fe346a0}{currentLocation}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Ausführliche Beschreibung}
+
+
+Definiert in Zeile 21 der Datei GPSCalculator.h.
+
+\subsubsection{Dokumentation der Elementfunktionen}
+\hypertarget{interface_g_p_s_calculator_a172bfe3f489df71bd558a074770caf71}{
+\index{GPSCalculator@{GPSCalculator}!locationManager:didFailWithError:@{locationManager:didFailWithError:}}
+\index{locationManager:didFailWithError:@{locationManager:didFailWithError:}!GPSCalculator@{GPSCalculator}}
+\paragraph[{locationManager:didFailWithError:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) locationManager: (CLLocationManager $\ast$) {\em manager}\/ didFailWithError: (NSError $\ast$) {\em error}}\hfill}
+\label{interface_g_p_s_calculator_a172bfe3f489df71bd558a074770caf71}
+
+
+Definiert in Zeile 53 der Datei GPSCalculator.m.
+
+Benutzt delegate.\hypertarget{interface_g_p_s_calculator_ace4b565a8dca496da97ca7e890226136}{
+\index{GPSCalculator@{GPSCalculator}!locationManager:didUpdateToLocation:fromLocation:@{locationManager:didUpdateToLocation:fromLocation:}}
+\index{locationManager:didUpdateToLocation:fromLocation:@{locationManager:didUpdateToLocation:fromLocation:}!GPSCalculator@{GPSCalculator}}
+\paragraph[{locationManager:didUpdateToLocation:fromLocation:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) locationManager: (CLLocationManager $\ast$) {\em manager}\/ didUpdateToLocation: (CLLocation $\ast$) {\em newLocation}\/ fromLocation: (CLLocation $\ast$) {\em oldLocation}}\hfill}
+\label{interface_g_p_s_calculator_ace4b565a8dca496da97ca7e890226136}
+
+
+Definiert in Zeile 38 der Datei GPSCalculator.m.
+
+Benutzt delegate.\hypertarget{interface_g_p_s_calculator_a406a446181f898802d323447150b0f67}{
+\index{GPSCalculator@{GPSCalculator}!nearestPOIExists:gpspoint:@{nearestPOIExists:gpspoint:}}
+\index{nearestPOIExists:gpspoint:@{nearestPOIExists:gpspoint:}!GPSCalculator@{GPSCalculator}}
+\paragraph[{nearestPOIExists:gpspoint:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (BOOL) nearestPOIExists: (NSMutableArray $\ast$) {\em pois}\/ gpspoint: ({\bf GPSPoint} $\ast$) {\em gpspoint}}\hfill}
+\label{interface_g_p_s_calculator_a406a446181f898802d323447150b0f67}
+PrÃ¼ft, ob einer GPS Punkt in der NÃ¤he von genau einem \hyperlink{interface_p_o_i}{POI} ist Dazu darf der GPS Punkt maximal so weit entfernt sein, wie das Epsilon aus \hyperlink{interface_app_settings}{AppSettings} vorgibt 
+\begin{DoxyParams}{Parameter}
+\item[{\em pois}]Array mit POIS aus der ApplicationDelegate Klasse \item[{\em gpspoint}]Aktueller GPS Punkt \end{DoxyParams}
+
+
+Definiert in Zeile 67 der Datei GPSCalculator.m.
+
+Benutzt AppSettings::epsilon, nearestPOI, nearestPOIList und settings.
+
+Wird benutzt von MapViewController::setGPSPoint.\hypertarget{interface_g_p_s_calculator_a76b80925729654bc60faecb2a93e1877}{
+\index{GPSCalculator@{GPSCalculator}!sharedAppGPSCalc@{sharedAppGPSCalc}}
+\index{sharedAppGPSCalc@{sharedAppGPSCalc}!GPSCalculator@{GPSCalculator}}
+\paragraph[{sharedAppGPSCalc}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf GPSCalculator} $\ast$) sharedAppGPSCalc }\hfill}
+\label{interface_g_p_s_calculator_a76b80925729654bc60faecb2a93e1877}
+
+
+Definiert in Zeile 124 der Datei GPSCalculator.m.
+
+\subsubsection{Dokumentation der Propertys}
+\hypertarget{interface_g_p_s_calculator_ae9268fe3bb4bfc41efa35f108fe346a0}{
+\index{GPSCalculator@{GPSCalculator}!currentLocation@{currentLocation}}
+\index{currentLocation@{currentLocation}!GPSCalculator@{GPSCalculator}}
+\paragraph[{currentLocation}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (CLLocation $\ast$) currentLocation\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_g_p_s_calculator_ae9268fe3bb4bfc41efa35f108fe346a0}
+
+
+Definiert in Zeile 23 der Datei GPSCalculator.h.\hypertarget{interface_g_p_s_calculator_a0afb0a146e7dc7b16a6a51dc3eb69fc3}{
+\index{GPSCalculator@{GPSCalculator}!delegate@{delegate}}
+\index{delegate@{delegate}!GPSCalculator@{GPSCalculator}}
+\paragraph[{delegate}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) delegate\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, assign\mbox{]}}}\hfill}
+\label{interface_g_p_s_calculator_a0afb0a146e7dc7b16a6a51dc3eb69fc3}
+
+
+Definiert in Zeile 26 der Datei GPSCalculator.h.
+
+Wird benutzt von locationManager:didFailWithError: und locationManager:didUpdateToLocation:fromLocation:.\hypertarget{interface_g_p_s_calculator_a437060e217fe7ab21e7738a19c2c9238}{
+\index{GPSCalculator@{GPSCalculator}!gpsStatus@{gpsStatus}}
+\index{gpsStatus@{gpsStatus}!GPSCalculator@{GPSCalculator}}
+\paragraph[{gpsStatus}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSString $\ast$) gpsStatus\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_g_p_s_calculator_a437060e217fe7ab21e7738a19c2c9238}
+
+
+Definiert in Zeile 28 der Datei GPSCalculator.h.\hypertarget{interface_g_p_s_calculator_abe4f902d1cb7d075967dc769d0b15133}{
+\index{GPSCalculator@{GPSCalculator}!locationManager@{locationManager}}
+\index{locationManager@{locationManager}!GPSCalculator@{GPSCalculator}}
+\paragraph[{locationManager}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (CLLocationManager $\ast$) locationManager\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_g_p_s_calculator_abe4f902d1cb7d075967dc769d0b15133}
+
+
+Definiert in Zeile 22 der Datei GPSCalculator.h.\hypertarget{interface_g_p_s_calculator_adb62c6bc9c85129145d61bd272ed8ec4}{
+\index{GPSCalculator@{GPSCalculator}!nearestPOI@{nearestPOI}}
+\index{nearestPOI@{nearestPOI}!GPSCalculator@{GPSCalculator}}
+\paragraph[{nearestPOI}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf POI} $\ast$) nearestPOI\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_g_p_s_calculator_adb62c6bc9c85129145d61bd272ed8ec4}
+gefundener Punkt, welcher am nÃ¤chsten am aktuellen GPS Punkt ist 
+
+Definiert in Zeile 24 der Datei GPSCalculator.h.
+
+Wird benutzt von nearestPOIExists:gpspoint: und MapViewController::setGPSPoint.\hypertarget{interface_g_p_s_calculator_ad35926f5862c782550e8fb53c72d9ce7}{
+\index{GPSCalculator@{GPSCalculator}!nearestPOIList@{nearestPOIList}}
+\index{nearestPOIList@{nearestPOIList}!GPSCalculator@{GPSCalculator}}
+\paragraph[{nearestPOIList}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSMutableArray $\ast$) nearestPOIList\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_g_p_s_calculator_ad35926f5862c782550e8fb53c72d9ce7}
+alle Punkte, aufsteigend nach Entfernung sortiert, die im Radius gefunden wurden 
+
+Definiert in Zeile 25 der Datei GPSCalculator.h.
+
+Wird benutzt von nearestPOIExists:gpspoint:.\hypertarget{interface_g_p_s_calculator_a16945732145e0f6c1541b57c7a9bf50e}{
+\index{GPSCalculator@{GPSCalculator}!settings@{settings}}
+\index{settings@{settings}!GPSCalculator@{GPSCalculator}}
+\paragraph[{settings}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf AppSettings} $\ast$) settings\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_g_p_s_calculator_a16945732145e0f6c1541b57c7a9bf50e}
+aktuelle Einstellungen der App, als Singleton 
+
+Definiert in Zeile 27 der Datei GPSCalculator.h.
+
+Wird benutzt von nearestPOIExists:gpspoint:.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:\begin{DoxyCompactItemize}
+\item 
+Classes/\hyperlink{_g_p_s_calculator_8h}{GPSCalculator.h}\item 
+Classes/\hyperlink{_g_p_s_calculator_8m}{GPSCalculator.m}\end{DoxyCompactItemize}

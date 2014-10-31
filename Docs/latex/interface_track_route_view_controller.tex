@@ -1,0 +1,293 @@
+\hypertarget{interface_track_route_view_controller}{
+\subsection{TrackRouteViewController Klassenreferenz}
+\label{interface_track_route_view_controller}\index{TrackRouteViewController@{TrackRouteViewController}}
+}
+
+
+{\ttfamily \#import $<$TrackRouteViewController.h$>$}
+
+Abgeleitet von \hyperlink{protocol_g_p_s_calculator_delegate-p}{GPSCalculatorDelegate-\/p}.\subsubsection*{Öffentliche Methoden}
+\begin{DoxyCompactItemize}
+\item 
+(IBAction) -\/ \hyperlink{interface_track_route_view_controller_a2cfd0c048bca5a6eb507e2a34160ce7c}{handleTrackingButton:}
+\item 
+(IBAction) -\/ \hyperlink{interface_track_route_view_controller_afb7c18ca4ee200ca7dc53970875d4447}{saveData:}
+\item 
+(IBAction) -\/ \hyperlink{interface_track_route_view_controller_addff528a677e807a710e4c1c08f3f960}{discardData:}
+\item 
+(void) -\/ \hyperlink{interface_track_route_view_controller_a5e00299e28aae82b6687fc1321ed1873}{locationUpdate:}
+\item 
+(void) -\/ \hyperlink{interface_track_route_view_controller_a451898caf9041899f09f3c7afa57dc8b}{locationError:}
+\item 
+(void) -\/ \hyperlink{interface_track_route_view_controller_a33a6dc8e9818b566b1d15b9a1c6130f0}{updatePositionOnMap}
+\item 
+(void) -\/ \hyperlink{interface_track_route_view_controller_aa35a93f4325aa79c0043310d34ae0a35}{drawRoute}
+\item 
+(void) -\/ \hyperlink{interface_track_route_view_controller_a318fa1634b09695c451368949fd6b7d8}{fitMapToRegion}
+\item 
+(IBAction) -\/ \hyperlink{interface_track_route_view_controller_ac8d668c4e9c5a18e68512d2feb276ca1}{dummyUpdate:}
+\end{DoxyCompactItemize}
+\subsubsection*{Geschützte Attribute}
+\begin{DoxyCompactItemize}
+\item 
+NSMutableDictionary $\ast$ \hyperlink{interface_track_route_view_controller_a0048826a66f9f97e05c950c9cdb8efe9}{\_\-routeViews}
+\item 
+IBOutlet MKMapView $\ast$ \hyperlink{interface_track_route_view_controller_acfdb8629be1a1a142886ecdedbffd9a9}{mapView}
+\item 
+IBOutlet UIButton $\ast$ \hyperlink{interface_track_route_view_controller_ad5dac71250de25316647ab4f8b3d5ade}{btnTrackingHandling}
+\item 
+IBOutlet UIButton $\ast$ \hyperlink{interface_track_route_view_controller_ab96d243d196054d287fc27b9e4f21c11}{btnDiscardTracking}
+\item 
+IBOutlet UIButton $\ast$ \hyperlink{interface_track_route_view_controller_a746c3e70dcd66a9aebd7728c2446d5b6}{btnSaveTrackingData}
+\item 
+int \hyperlink{interface_track_route_view_controller_ae26e0607317b6f8389a08dc7951e18cd}{dummyGPSPos}
+\end{DoxyCompactItemize}
+\subsubsection*{Propertys}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{interface_track_route_save_view_controller}{TrackRouteSaveViewController} $\ast$ \hyperlink{interface_track_route_view_controller_a155bf96abb68b5883fdca56f840fc6fa}{saveTrackView}
+\item 
+\hyperlink{interface_g_p_s_calculator}{GPSCalculator} $\ast$ \hyperlink{interface_track_route_view_controller_a6283bcb2582d7b30fb3a14b85b8e0f3a}{gpsCalc}
+\item 
+\hyperlink{interface_g_p_s_point}{GPSPoint} $\ast$ \hyperlink{interface_track_route_view_controller_a8ce8f0629bb7838572fa5ab4cb1015f6}{currentGPSPoint}
+\item 
+\hyperlink{interface_route}{Route} $\ast$ \hyperlink{interface_track_route_view_controller_a9fd48f64851735328ea161516096137f}{route}
+\item 
+NSString $\ast$ \hyperlink{interface_track_route_view_controller_ae1dba17062d54b302adb5926250a3823}{state}
+\item 
+UIButton $\ast$ \hyperlink{interface_track_route_view_controller_a6b43bd4f8e42c4aa6cb090dc5ef14479}{btnTrackingHandling}
+\item 
+UIButton $\ast$ \hyperlink{interface_track_route_view_controller_a2ea7a7f545535b9e94105d0706ce23b4}{btnDiscardTracking}
+\item 
+UIButton $\ast$ \hyperlink{interface_track_route_view_controller_a54cf7a93068f9ae133a033aa8eb35449}{btnSaveTrackingData}
+\item 
+IBOutlet UILabel $\ast$ \hyperlink{interface_track_route_view_controller_a91899ed881e6b01cd319463c0d03b504}{trackingStatusLabel}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Ausführliche Beschreibung}
+
+
+Definiert in Zeile 17 der Datei TrackRouteViewController.h.
+
+\subsubsection{Dokumentation der Elementfunktionen}
+\hypertarget{interface_track_route_view_controller_addff528a677e807a710e4c1c08f3f960}{
+\index{TrackRouteViewController@{TrackRouteViewController}!discardData:@{discardData:}}
+\index{discardData:@{discardData:}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{discardData:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBAction) discardData: (id) {\em sender}}\hfill}
+\label{interface_track_route_view_controller_addff528a677e807a710e4c1c08f3f960}
+
+
+Definiert in Zeile 64 der Datei TrackRouteViewController.m.
+
+Benutzt route.\hypertarget{interface_track_route_view_controller_aa35a93f4325aa79c0043310d34ae0a35}{
+\index{TrackRouteViewController@{TrackRouteViewController}!drawRoute@{drawRoute}}
+\index{drawRoute@{drawRoute}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{drawRoute}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) drawRoute }\hfill}
+\label{interface_track_route_view_controller_aa35a93f4325aa79c0043310d34ae0a35}
+
+
+Definiert in Zeile 111 der Datei TrackRouteViewController.m.
+
+Benutzt mapView.
+
+Wird benutzt von updatePositionOnMap.\hypertarget{interface_track_route_view_controller_ac8d668c4e9c5a18e68512d2feb276ca1}{
+\index{TrackRouteViewController@{TrackRouteViewController}!dummyUpdate:@{dummyUpdate:}}
+\index{dummyUpdate:@{dummyUpdate:}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{dummyUpdate:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBAction) dummyUpdate: (id) {\em sender}}\hfill}
+\label{interface_track_route_view_controller_ac8d668c4e9c5a18e68512d2feb276ca1}
+
+
+Definiert in Zeile 88 der Datei TrackRouteViewController.m.
+
+Benutzt currentGPSPoint, Route::dummyGPSPoints, dummyGPSPos, route und updatePositionOnMap.\hypertarget{interface_track_route_view_controller_a318fa1634b09695c451368949fd6b7d8}{
+\index{TrackRouteViewController@{TrackRouteViewController}!fitMapToRegion@{fitMapToRegion}}
+\index{fitMapToRegion@{fitMapToRegion}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{fitMapToRegion}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) fitMapToRegion }\hfill}
+\label{interface_track_route_view_controller_a318fa1634b09695c451368949fd6b7d8}
+Setzt die Karte auf den voreingestellten Auschnitt, so dass alle POIs zu sehen sind \begin{Desc}
+\item[\hyperlink{todo__todo000002}{Noch zu erledigen}]: -\/ Ausschnitt so anpassen, dass \hyperlink{interface_route}{Route} auch in den Ausschnitt passt \end{Desc}
+
+
+Definiert in Zeile 121 der Datei TrackRouteViewController.m.
+
+Benutzt GPSPoint::coordinate, currentGPSPoint und mapView.
+
+Wird benutzt von updatePositionOnMap.\hypertarget{interface_track_route_view_controller_a2cfd0c048bca5a6eb507e2a34160ce7c}{
+\index{TrackRouteViewController@{TrackRouteViewController}!handleTrackingButton:@{handleTrackingButton:}}
+\index{handleTrackingButton:@{handleTrackingButton:}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{handleTrackingButton:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBAction) handleTrackingButton: (id) {\em sender}}\hfill}
+\label{interface_track_route_view_controller_a2cfd0c048bca5a6eb507e2a34160ce7c}
+
+
+Definiert in Zeile 37 der Datei TrackRouteViewController.m.
+
+Benutzt NOT\_\-TRACKING, state und TRACKING.\hypertarget{interface_track_route_view_controller_a451898caf9041899f09f3c7afa57dc8b}{
+\index{TrackRouteViewController@{TrackRouteViewController}!locationError:@{locationError:}}
+\index{locationError:@{locationError:}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{locationError:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) locationError: (NSError $\ast$) {\em error}}\hfill}
+\label{interface_track_route_view_controller_a451898caf9041899f09f3c7afa57dc8b}
+
+
+Erneute Implementation von \hyperlink{protocol_g_p_s_calculator_delegate-p_a890f58f3468025f475f8bb7d9aa33332}{$<$GPSCalculatorDelegate$>$}.
+
+Definiert in Zeile 153 der Datei TrackRouteViewController.m.\hypertarget{interface_track_route_view_controller_a5e00299e28aae82b6687fc1321ed1873}{
+\index{TrackRouteViewController@{TrackRouteViewController}!locationUpdate:@{locationUpdate:}}
+\index{locationUpdate:@{locationUpdate:}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{locationUpdate:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) locationUpdate: (CLLocation $\ast$) {\em location}}\hfill}
+\label{interface_track_route_view_controller_a5e00299e28aae82b6687fc1321ed1873}
+Aktuelle Position anhand des LocationManagers aus dem Objekt GPSCalc 
+
+Erneute Implementation von \hyperlink{protocol_g_p_s_calculator_delegate-p_a0adb149b836a8e03a11ea255a5f01a31}{$<$GPSCalculatorDelegate$>$}.
+
+Definiert in Zeile 145 der Datei TrackRouteViewController.m.
+
+Benutzt GPSPoint::coordinate, currentGPSPoint und updatePositionOnMap.\hypertarget{interface_track_route_view_controller_afb7c18ca4ee200ca7dc53970875d4447}{
+\index{TrackRouteViewController@{TrackRouteViewController}!saveData:@{saveData:}}
+\index{saveData:@{saveData:}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{saveData:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBAction) saveData: (id) {\em sender}}\hfill}
+\label{interface_track_route_view_controller_afb7c18ca4ee200ca7dc53970875d4447}
+
+
+Definiert in Zeile 77 der Datei TrackRouteViewController.m.
+
+Benutzt TrackRouteSaveViewController::route und saveTrackView.\hypertarget{interface_track_route_view_controller_a33a6dc8e9818b566b1d15b9a1c6130f0}{
+\index{TrackRouteViewController@{TrackRouteViewController}!updatePositionOnMap@{updatePositionOnMap}}
+\index{updatePositionOnMap@{updatePositionOnMap}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{updatePositionOnMap}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) updatePositionOnMap }\hfill}
+\label{interface_track_route_view_controller_a33a6dc8e9818b566b1d15b9a1c6130f0}
+
+
+Definiert in Zeile 95 der Datei TrackRouteViewController.m.
+
+Benutzt GPSPoint::coordinate, RoutePoint::coordinate, currentGPSPoint, drawRoute, fitMapToRegion, mapView und route.
+
+Wird benutzt von dummyUpdate: und locationUpdate:.
+
+\subsubsection{Dokumentation der Datenelemente}
+\hypertarget{interface_track_route_view_controller_a0048826a66f9f97e05c950c9cdb8efe9}{
+\index{TrackRouteViewController@{TrackRouteViewController}!\_\-routeViews@{\_\-routeViews}}
+\index{\_\-routeViews@{\_\-routeViews}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{\_\-routeViews}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSMutableDictionary$\ast$) {\bf \_\-routeViews}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_a0048826a66f9f97e05c950c9cdb8efe9}
+
+
+Definiert in Zeile 26 der Datei TrackRouteViewController.h.\hypertarget{interface_track_route_view_controller_ab96d243d196054d287fc27b9e4f21c11}{
+\index{TrackRouteViewController@{TrackRouteViewController}!btnDiscardTracking@{btnDiscardTracking}}
+\index{btnDiscardTracking@{btnDiscardTracking}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{btnDiscardTracking}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBOutlet UIButton$\ast$) {\bf btnDiscardTracking}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_ab96d243d196054d287fc27b9e4f21c11}
+
+
+Definiert in Zeile 37 der Datei TrackRouteViewController.h.\hypertarget{interface_track_route_view_controller_a746c3e70dcd66a9aebd7728c2446d5b6}{
+\index{TrackRouteViewController@{TrackRouteViewController}!btnSaveTrackingData@{btnSaveTrackingData}}
+\index{btnSaveTrackingData@{btnSaveTrackingData}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{btnSaveTrackingData}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBOutlet UIButton$\ast$) {\bf btnSaveTrackingData}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_a746c3e70dcd66a9aebd7728c2446d5b6}
+
+
+Definiert in Zeile 38 der Datei TrackRouteViewController.h.\hypertarget{interface_track_route_view_controller_ad5dac71250de25316647ab4f8b3d5ade}{
+\index{TrackRouteViewController@{TrackRouteViewController}!btnTrackingHandling@{btnTrackingHandling}}
+\index{btnTrackingHandling@{btnTrackingHandling}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{btnTrackingHandling}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBOutlet UIButton$\ast$) {\bf btnTrackingHandling}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_ad5dac71250de25316647ab4f8b3d5ade}
+
+
+Definiert in Zeile 36 der Datei TrackRouteViewController.h.\hypertarget{interface_track_route_view_controller_ae26e0607317b6f8389a08dc7951e18cd}{
+\index{TrackRouteViewController@{TrackRouteViewController}!dummyGPSPos@{dummyGPSPos}}
+\index{dummyGPSPos@{dummyGPSPos}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{dummyGPSPos}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (int) {\bf dummyGPSPos}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_ae26e0607317b6f8389a08dc7951e18cd}
+
+
+Definiert in Zeile 41 der Datei TrackRouteViewController.h.
+
+Wird benutzt von dummyUpdate:.\hypertarget{interface_track_route_view_controller_acfdb8629be1a1a142886ecdedbffd9a9}{
+\index{TrackRouteViewController@{TrackRouteViewController}!mapView@{mapView}}
+\index{mapView@{mapView}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{mapView}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBOutlet MKMapView$\ast$) {\bf mapView}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_acfdb8629be1a1a142886ecdedbffd9a9}
+
+
+Definiert in Zeile 35 der Datei TrackRouteViewController.h.
+
+Wird benutzt von drawRoute, fitMapToRegion und updatePositionOnMap.
+
+\subsubsection{Dokumentation der Propertys}
+\hypertarget{interface_track_route_view_controller_a2ea7a7f545535b9e94105d0706ce23b4}{
+\index{TrackRouteViewController@{TrackRouteViewController}!btnDiscardTracking@{btnDiscardTracking}}
+\index{btnDiscardTracking@{btnDiscardTracking}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{btnDiscardTracking}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (UIButton$\ast$) {\bf btnDiscardTracking}\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_a2ea7a7f545535b9e94105d0706ce23b4}
+
+
+Definiert in Zeile 55 der Datei TrackRouteViewController.h.\hypertarget{interface_track_route_view_controller_a54cf7a93068f9ae133a033aa8eb35449}{
+\index{TrackRouteViewController@{TrackRouteViewController}!btnSaveTrackingData@{btnSaveTrackingData}}
+\index{btnSaveTrackingData@{btnSaveTrackingData}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{btnSaveTrackingData}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (UIButton$\ast$) {\bf btnSaveTrackingData}\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_a54cf7a93068f9ae133a033aa8eb35449}
+
+
+Definiert in Zeile 56 der Datei TrackRouteViewController.h.\hypertarget{interface_track_route_view_controller_a6b43bd4f8e42c4aa6cb090dc5ef14479}{
+\index{TrackRouteViewController@{TrackRouteViewController}!btnTrackingHandling@{btnTrackingHandling}}
+\index{btnTrackingHandling@{btnTrackingHandling}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{btnTrackingHandling}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (UIButton$\ast$) {\bf btnTrackingHandling}\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_a6b43bd4f8e42c4aa6cb090dc5ef14479}
+
+
+Definiert in Zeile 54 der Datei TrackRouteViewController.h.\hypertarget{interface_track_route_view_controller_a8ce8f0629bb7838572fa5ab4cb1015f6}{
+\index{TrackRouteViewController@{TrackRouteViewController}!currentGPSPoint@{currentGPSPoint}}
+\index{currentGPSPoint@{currentGPSPoint}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{currentGPSPoint}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf GPSPoint} $\ast$) currentGPSPoint\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, assign\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_a8ce8f0629bb7838572fa5ab4cb1015f6}
+
+
+Definiert in Zeile 21 der Datei TrackRouteViewController.h.
+
+Wird benutzt von dummyUpdate:, fitMapToRegion, locationUpdate: und updatePositionOnMap.\hypertarget{interface_track_route_view_controller_a6283bcb2582d7b30fb3a14b85b8e0f3a}{
+\index{TrackRouteViewController@{TrackRouteViewController}!gpsCalc@{gpsCalc}}
+\index{gpsCalc@{gpsCalc}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{gpsCalc}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf GPSCalculator} $\ast$) gpsCalc\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_a6283bcb2582d7b30fb3a14b85b8e0f3a}
+
+
+Definiert in Zeile 20 der Datei TrackRouteViewController.h.\hypertarget{interface_track_route_view_controller_a9fd48f64851735328ea161516096137f}{
+\index{TrackRouteViewController@{TrackRouteViewController}!route@{route}}
+\index{route@{route}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{route}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf Route} $\ast$) route\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_a9fd48f64851735328ea161516096137f}
+
+
+Definiert in Zeile 22 der Datei TrackRouteViewController.h.
+
+Wird benutzt von discardData:, dummyUpdate: und updatePositionOnMap.\hypertarget{interface_track_route_view_controller_a155bf96abb68b5883fdca56f840fc6fa}{
+\index{TrackRouteViewController@{TrackRouteViewController}!saveTrackView@{saveTrackView}}
+\index{saveTrackView@{saveTrackView}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{saveTrackView}]{\setlength{\rightskip}{0pt plus 5cm}-\/ ({\bf TrackRouteSaveViewController} $\ast$) saveTrackView\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_a155bf96abb68b5883fdca56f840fc6fa}
+
+
+Definiert in Zeile 31 der Datei TrackRouteViewController.h.
+
+Wird benutzt von saveData:.\hypertarget{interface_track_route_view_controller_ae1dba17062d54b302adb5926250a3823}{
+\index{TrackRouteViewController@{TrackRouteViewController}!state@{state}}
+\index{state@{state}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{state}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (NSString $\ast$) state\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_ae1dba17062d54b302adb5926250a3823}
+
+
+Definiert in Zeile 23 der Datei TrackRouteViewController.h.
+
+Wird benutzt von handleTrackingButton:.\hypertarget{interface_track_route_view_controller_a91899ed881e6b01cd319463c0d03b504}{
+\index{TrackRouteViewController@{TrackRouteViewController}!trackingStatusLabel@{trackingStatusLabel}}
+\index{trackingStatusLabel@{trackingStatusLabel}!TrackRouteViewController@{TrackRouteViewController}}
+\paragraph[{trackingStatusLabel}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (IBOutlet UILabel $\ast$) trackingStatusLabel\hspace{0.3cm}{\ttfamily  \mbox{[}read, write, retain\mbox{]}}}\hfill}
+\label{interface_track_route_view_controller_a91899ed881e6b01cd319463c0d03b504}
+
+
+Definiert in Zeile 34 der Datei TrackRouteViewController.h.
+
+Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:\begin{DoxyCompactItemize}
+\item 
+Classes/\hyperlink{_track_route_view_controller_8h}{TrackRouteViewController.h}\item 
+Classes/\hyperlink{_track_route_view_controller_8m}{TrackRouteViewController.m}\end{DoxyCompactItemize}

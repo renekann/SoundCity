@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>SoundCity Prototyp: Classes/POI.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Erzeugt von Doxygen 1.6.1 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Hauptseite</span></a></li>
+      <li><a href="pages.html"><span>Zusätzliche&nbsp;Informationen</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<h1>Classes/POI.h</h1><a href="_p_o_i_8h.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<a name="l00002"></a>00002 <span class="comment">//  POI.h</span>
+<a name="l00003"></a>00003 <span class="comment">//  SoundCity</span>
+<a name="l00004"></a>00004 <span class="comment">//</span>
+<a name="l00005"></a>00005 <span class="comment">//  Created by administrator on 12.10.09.</span>
+<a name="l00006"></a>00006 <span class="comment">//  Copyright 2009 init ag. All rights reserved.</span>
+<a name="l00007"></a>00007 <span class="comment">//</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#import &lt;MapKit/MapKit.h&gt;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#import &quot;<a class="code" href="_sound_city_app_delegate_8h.html">SoundCityAppDelegate.h</a>&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">@class</span> POIInternalView;
+<a name="l00014"></a>00014 
+<a name="l00015"></a><a class="code" href="interface_p_o_i.html">00015</a> <span class="keyword">@interface </span><a class="code" href="interface_p_o_i.html">POI</a> : NSObject &lt;MKAnnotation&gt; {
+<a name="l00016"></a><a class="code" href="interface_p_o_i.html#a63afb07b66c43a26aa58ab7759c4f473">00016</a>         CLLocationCoordinate2D <a class="code" href="interface_p_o_i.html#a63afb07b66c43a26aa58ab7759c4f473">coordinate</a>;
+<a name="l00017"></a><a class="code" href="interface_p_o_i.html#a5bfdf0412280b12e34c4fb6e2e1a2db9">00017</a>         NSInteger <a class="code" href="interface_p_o_i.html#a5bfdf0412280b12e34c4fb6e2e1a2db9">pid</a>;
+<a name="l00018"></a><a class="code" href="interface_p_o_i.html#ae9808e7121230ffff42a799a6dec00e8">00018</a>         NSString *<a class="code" href="interface_p_o_i.html#ae9808e7121230ffff42a799a6dec00e8">title</a>;
+<a name="l00019"></a><a class="code" href="interface_p_o_i.html#af441df0d8c3d29174ca644414856d497">00019</a>         <span class="keywordtype">double</span> <a class="code" href="interface_p_o_i.html#af441df0d8c3d29174ca644414856d497">latitude</a>; 
+<a name="l00020"></a><a class="code" href="interface_p_o_i.html#a11947092f2cf76ac7b5ecd2678a376da">00020</a>         <span class="keywordtype">double</span> <a class="code" href="interface_p_o_i.html#a11947092f2cf76ac7b5ecd2678a376da">longitude</a>; 
+<a name="l00021"></a><a class="code" href="interface_p_o_i.html#aac5100d218d6107bdb9b0a355289c55c">00021</a>         NSString *<a class="code" href="interface_p_o_i.html#aac5100d218d6107bdb9b0a355289c55c">soundURL</a>;
+<a name="l00022"></a><a class="code" href="interface_p_o_i.html#a0ee15b163f9aea00a479cfc65cc34091">00022</a>         NSString *<a class="code" href="interface_p_o_i.html#a0ee15b163f9aea00a479cfc65cc34091">videoURL</a>;
+<a name="l00023"></a><a class="code" href="interface_p_o_i.html#af6c6d3845244e4d0608a3782be8dd077">00023</a>         NSString *<a class="code" href="interface_p_o_i.html#af6c6d3845244e4d0608a3782be8dd077">imageURL</a>;
+<a name="l00024"></a><a class="code" href="interface_p_o_i.html#a0b6bb6f1128c8cf4af2edd5fd47940fe">00024</a>         NSString *<a class="code" href="interface_p_o_i.html#a0b6bb6f1128c8cf4af2edd5fd47940fe">details</a>;
+<a name="l00025"></a><a class="code" href="interface_p_o_i.html#a9551f023faddf40afad4e8b9f5d87c77">00025</a>         <a class="code" href="interface_sound_city_app_delegate.html">SoundCityAppDelegate</a> *<a class="code" href="interface_p_o_i.html#a9551f023faddf40afad4e8b9f5d87c77">appDelegate</a>;
+<a name="l00026"></a><a class="code" href="interface_p_o_i.html#a90eb704b40c5beca89e7461f3c9fd8ff">00026</a>         <span class="keywordtype">double</span> <a class="code" href="interface_p_o_i.html#a90eb704b40c5beca89e7461f3c9fd8ff">distance</a>;
+<a name="l00027"></a><a class="code" href="interface_p_o_i.html#adccc1e600d247ec2e4a8a5bb241ed719">00027</a>         NSString* <a class="code" href="interface_p_o_i.html#adccc1e600d247ec2e4a8a5bb241ed719">userData</a>;
+<a name="l00028"></a>00028         
+<a name="l00029"></a><a class="code" href="interface_p_o_i.html#a22b3633a4bf768953ce7865cefa5430d">00029</a>         <span class="keywordtype">int</span> <a class="code" href="interface_p_o_i.html#a22b3633a4bf768953ce7865cefa5430d">detailsTextLength</a>;
+<a name="l00030"></a>00030 }
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 @property (nonatomic, readwrite) CLLocationCoordinate2D coordinate;
+<a name="l00033"></a>00033 @property (nonatomic, readwrite) NSInteger pid;
+<a name="l00034"></a>00034 @property (nonatomic, copy) NSString *title;
+<a name="l00035"></a>00035 @property (nonatomic, readwrite) <span class="keywordtype">double</span> latitude;
+<a name="l00036"></a>00036 @property (nonatomic, readwrite) <span class="keywordtype">double</span> longitude;
+<a name="l00037"></a>00037 @property (nonatomic, readwrite) <span class="keywordtype">double</span> distance;
+<a name="l00038"></a>00038 @property (nonatomic, copy) NSString *soundURL;
+<a name="l00039"></a>00039 @property (nonatomic, copy) NSString *videoURL;
+<a name="l00040"></a>00040 @property (nonatomic, copy) NSString *imageURL;
+<a name="l00041"></a>00041 @property (nonatomic, copy) NSString *details;
+<a name="l00042"></a>00042 @property (nonatomic, retain) <a class="code" href="interface_sound_city_app_delegate.html">SoundCityAppDelegate</a> *appDelegate;
+<a name="l00043"></a>00043 @property (nonatomic, retain) NSString* userData;
+<a name="l00044"></a>00044 @property (nonatomic, readwrite) <span class="keywordtype">int</span> detailsTextLength;
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 - (<span class="keywordtype">id</span>) initWithPrimaryKey:(NSInteger) pk;
+<a name="l00047"></a>00047 - (<span class="keywordtype">void</span>)setData:(NSString *)title latitude :(<span class="keywordtype">double</span>)lat longitude:(<span class="keywordtype">double</span>) lon soundURL:(NSString *) _soundURL; 
+<a name="l00048"></a>00048 - (BOOL)isEqual:(<span class="keywordtype">id</span>)<span class="keywordtype">object</span>;
+<a name="l00049"></a>00049 - (NSString *)getLatitude;
+<a name="l00050"></a>00050 - (NSString *)getLongitude;
+<a name="l00051"></a>00051 - (<span class="keywordtype">void</span>)initCoordinate;
+<a name="l00052"></a>00052 - (<span class="keywordtype">void</span>)playSound;
+<a name="l00053"></a>00053 - (<span class="keywordtype">void</span>)stopSound;
+<a name="l00054"></a>00054 - (CGContextRef)drawPOI:(CGContextRef)context;
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 @end
+</pre></div></div>
+<hr size="1"/><address style="text-align: right;"><small>Erzeugt am Thu Nov 12 17:19:32 2009 für SoundCity Prototyp von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
+</body>
+</html>
