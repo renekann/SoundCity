@@ -11,7 +11,7 @@ Das Projeklt wurde zwischen Oktober 2009 und 2010 umgesetzt und war mein erstes 
 
 ### Demo
 
-[VIDEO]
+https://raw.githubusercontent.com/soraxdesign/SoundCity/master/Demo/demo_iphone_app.mov
 
 ### Installation
 
